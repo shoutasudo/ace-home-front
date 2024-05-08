@@ -1,0 +1,47 @@
+.btn_more {
+    margin: 0 auto;
+    width: 200px;
+    clear: both;
+    border-radius: 3px;
+}
+
+.bdr_btn {
+    display: block;
+    text-align: center;
+    border: 2px solid #312420;
+    border-radius: 5px;
+    /* background: #fff url(/images/common/arrow_r@2x.png) 95% center no-repeat; */
+    background-size: 8px 13px;
+    width: 200px;
+    font-size: 18px;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 38px;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+}
+
+.bdr_btn:hover {
+    background-color: #e896a1;
+}
+
+.bdr_btn span {
+    background-size: 12px auto;
+}
+
+.btn_more:after {
+    content: "";
+    display: table;
+    border-left: 2px solid #312420;
+    border-right: 2px solid #312420;
+    border-bottom: 3px solid #312420;
+    width: calc(100% - 12px);
+    height: 5px;
+    margin: 0 0 0;
+    border-radius: 5px;
+
+    margin-top: 1px;
+    /* padding-left: 6px; */
+    margin-left: 6px;
+}

@@ -1,0 +1,171 @@
+header {
+    background-color: #e896a1;
+}
+.pc-header{
+    transition: width 0.5s ease, height 0.5s ease;
+}
+
+.link-icon {
+    width: 20px;
+    transform: rotate(-22deg);
+    margin-right: 6px;
+}
+
+.link-icon-horizontal {
+    width: 20px;
+    margin-right: 6px;
+}
+
+.svg-inline--fa.link-icon{
+    height: 2em;
+}
+
+.svg-inline--fa.link-icon-horizontal {
+    height: 2em;
+}
+
+.svg-inline--fa.sns-icon{
+    height: 2em;
+}
+
+nav {
+    text-align: center;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    list-style: none;
+    display: inline-block;
+    width: 16%;
+    min-width: 90px;
+    /* border-right: 1px solid; */
+}
+
+nav a.current {
+    color: white;
+    border-bottom: 2px solid white;
+}
+
+
+.openbtn6 {
+    background: #757777;
+    cursor: pointer;
+    width: 60px;
+    height: 50px;
+    z-index: 9999;
+    /*ボタンを最前面に*/
+}
+
+.openbtn6 span {
+    display: inline-block;
+    transition: all .4s;
+    /*アニメーションの設定*/
+    position: absolute;
+    left: 14px;
+    height: 2px;
+    border-radius: 2px;
+    background: #fff;
+}
+
+.openbtn6 span:nth-of-type(1) {
+    top: 13px;
+    width: 45%;
+}
+
+.openbtn6 span:nth-of-type(2) {
+    top: 25px;
+    width: 45%;
+}
+
+.openbtn6 span:nth-of-type(3) {
+    top: 37px;
+    width: 45%;
+}
+
+.openbtn6.active span:nth-of-type(1) {
+    top: 18px;
+    left: 13px;
+    transform: translateY(6px) rotate(-135deg);
+    width: 50%;
+}
+
+.openbtn6.active span:nth-of-type(2) {
+    opacity: 0;
+}
+
+.openbtn6.active span:nth-of-type(3) {
+    top: 30px;
+    left: 13px;
+    transform: translateY(-6px) rotate(135deg);
+    width: 50%;
+}
+
+#g-nav {
+    /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
+    position: fixed;
+    z-index: 999;
+    /*ナビのスタート位置と形状*/
+    top: 0;
+    right: -120%;
+    height: 100vh;
+    /*ナビの高さ*/
+    background: #757777;
+    /*動き*/
+    transition: all 0.6s;
+}
+
+/*アクティブクラスがついたら位置を0に*/
+#g-nav.panelactive {
+    right: 0;
+}
+
+/*ナビゲーションの縦スクロール*/
+#g-nav.panelactive #g-nav-list {
+    /*ナビの数が増えた場合縦スクロール*/
+    height: 530px;
+    position: fixed;
+    z-index: 999;
+    width: 30%;
+    height: 100vh;
+    /*表示する高さ*/
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/*ナビゲーション*/
+#g-nav ul {
+    position: absolute;
+    z-index: 999;
+    top: 120px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*リストのレイアウト設定*/
+
+#g-nav li {
+    list-style: none;
+    width: 100%;
+}
+
+#g-nav li a {
+    color: #ffff;
+    text-decoration: none;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 400;
+    border-bottom: 1px solid white;
+    padding-bottom: 14px;
+    padding-top: 14px;
+    width: 100%;
+}
