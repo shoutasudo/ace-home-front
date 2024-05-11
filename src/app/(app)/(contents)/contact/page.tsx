@@ -4,6 +4,7 @@ import '@/css/contact.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
 import DoubleLineBtn from '@/ _components/DoubleLineBtn'
+import Contents from '@/ _components/Contents'
 
 const ContactPage = () => {
 
@@ -12,19 +13,8 @@ const ContactPage = () => {
         console.log('submit')
     }
 
-
     return (
-        <div className='w-full md:px-8'>
-            <div className="sns-list-card-content-sub-title text-center">
-                <h2 className="text-mainPink zen-kaku-black text-md">
-                    CONTACT
-                </h2>
-            </div>
-            <div className="sns-list-card-content-main-title text-center">
-                <h1 className="text-fontMainBrown zen-kaku-bold text-lg">
-                    お問合せ
-                </h1>
-            </div>
+        <Contents subTitle={'CONTACT'} mainTitle={'お問合せ'}>
             <div className="sns-list-card-content-description mt-4">
                 <h3 className="text-gray-700 zen-kaku-regular text-xs text-center tracking-wide">
                     下記の項目に必要な情報を入力してください。
@@ -260,7 +250,8 @@ const ContactPage = () => {
                     <DoubleLineBtn content={'確認'} link={'#'} />
                 </div>
             </form>
-        </div>
+        </Contents>
+
     )
 }
 
