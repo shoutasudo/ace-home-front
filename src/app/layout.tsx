@@ -5,6 +5,7 @@ import "../css/contents.css"
 import "../css/doubleLineBtn.css"
 import "../css/header.css"
 import "../css/main.css"
+import "../css/company.css"
 
 export const metadata: Metadata = {
   title: "Create Next App",
