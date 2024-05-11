@@ -24,7 +24,7 @@ const Home = () => {
                             国内のひとり暮らしをしている方なら誰でもご利用いただけます。
                         </TopAbout>
                     </section>
-                    <section className="service  md:py-12 py-5">
+                    <section className="service md:py-12 py-5">
                         <Service />
                     </section>
                     <section className="member-register w-full px-5">
@@ -33,7 +33,7 @@ const Home = () => {
                     <section className="service-2 w-full">
                         <Service2 />
                     </section>
-                    <section className="information">
+                    <section className="information w-full mt-10">
                         <Information />
                     </section>
                     <section className="member-register w-full px-5">

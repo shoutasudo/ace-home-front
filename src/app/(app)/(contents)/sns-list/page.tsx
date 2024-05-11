@@ -3,13 +3,13 @@ import Image from 'next/image'
 
 const SnsListPage = () => {
     return (
-        <>
-            <div className="sns-list-card-content-sub-title">
+        <div className='md:px-8 px-2'>
+            <div className="sns-list-card-content-sub-title text-center">
                 <h2 className="text-mainPink zen-kaku-black text-md">
                     SNS LIST
                 </h2>
             </div>
-            <div className="sns-list-card-content-main-title">
+            <div className="sns-list-card-content-main-title text-center">
                 <h1 className="text-fontMainBrown zen-kaku-bold text-lg">
                     各種SNS一覧
                 </h1>
@@ -20,8 +20,8 @@ const SnsListPage = () => {
                 </h3>
             </div>
 
-            <div className="sns-list-card-content-sns-lists w-full  mt-3 grid grid-cols-1 gap-1 sm:grid-cols-2 sm:gap-4 md:grid-cols-3 md:gap-4">
-                <div className="sns-list-card-content-sns-card w-full p-3 mt-3 bg-white ring-mainPink rounded-lg flex justify-center sm:flex-col items-center ring-4">
+            <div className="sns-list-card-content-sns-lists w-full mt-3 grid grid-cols-1 gap-1 sm:grid-cols-2 sm:gap-4 md:grid-cols-3 md:gap-8">
+                <div className="sns-list-card-content-sns-card w-full py-6 px-5 mt-3 bg-white ring-mainPink rounded-lg flex justify-center sm:flex-col items-center ring-4">
                     <div className="w-3/12 sm:w-full">
                         <div className="sns-list-card-content-sns-card-icon flex justify-center items-center">
                             <Image
@@ -41,7 +41,7 @@ const SnsListPage = () => {
                         </p>
                     </div>
                 </div>
-                <div className="sns-list-card-content-sns-card w-full p-3 mt-3 bg-white ring-mainPink rounded-lg flex justify-center sm:flex-col items-center ring-4">
+                <div className="sns-list-card-content-sns-card w-full py-6 px-5 mt-3 bg-white ring-mainPink rounded-lg flex justify-center sm:flex-col items-center ring-4">
                     <div className="w-3/12 sm:w-full">
                         <div className="sns-list-card-content-sns-card-icon flex justify-center items-center">
                             <Image
@@ -61,7 +61,7 @@ const SnsListPage = () => {
                         </p>
                     </div>
                 </div>
-                <div className="sns-list-card-content-sns-card w-full p-3 mt-3 bg-white ring-mainPink rounded-lg flex justify-center sm:flex-col items-center ring-4">
+                <div className="sns-list-card-content-sns-card w-full py-6 px-5 mt-3 bg-white ring-mainPink rounded-lg flex justify-center sm:flex-col items-center ring-4">
                     <div className="w-3/12 sm:w-full">
                         <div className="sns-list-card-content-sns-card-icon flex justify-center items-center">
                             <Image
@@ -81,7 +81,7 @@ const SnsListPage = () => {
                         </p>
                     </div>
                 </div>
-                <div className="sns-list-card-content-sns-card w-full p-3 mt-3 bg-white ring-mainPink rounded-lg flex justify-center sm:flex-col items-center ring-4">
+                <div className="sns-list-card-content-sns-card w-full py-6 px-5 mt-3 bg-white ring-mainPink rounded-lg flex justify-center sm:flex-col items-center ring-4">
                     <div className="w-3/12 sm:w-full">
                         <div className="sns-list-card-content-sns-card-icon flex justify-center items-center">
                             <Image
@@ -101,7 +101,7 @@ const SnsListPage = () => {
                         </p>
                     </div>
                 </div>
-                <div className="sns-list-card-content-sns-card w-full p-3 mt-3 bg-white ring-mainPink rounded-lg flex justify-center sm:flex-col items-center ring-4">
+                <div className="sns-list-card-content-sns-card w-full py-6 px-5 mt-3 bg-white ring-mainPink rounded-lg flex justify-center sm:flex-col items-center ring-4">
                     <div className="w-3/12 sm:w-full">
                         <div className="sns-list-card-content-sns-card-icon flex justify-center items-center">
                             <Image
@@ -121,7 +121,7 @@ const SnsListPage = () => {
                         </p>
                     </div>
                 </div>
-                <div className="sns-list-card-content-sns-card w-full p-3 mt-3 bg-white ring-mainPink rounded-lg flex justify-center sm:flex-col items-center ring-4">
+                <div className="sns-list-card-content-sns-card w-full py-6 px-5 mt-3 bg-white ring-mainPink rounded-lg flex justify-center sm:flex-col items-center ring-4">
                     <div className="w-3/12 sm:w-full">
                         <div className="sns-list-card-content-sns-card-icon flex justify-center items-center">
                             <Image
@@ -142,7 +142,7 @@ const SnsListPage = () => {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 

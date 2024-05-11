@@ -4,7 +4,7 @@ import SnsIconList from '@/ _components/SnsIconList'
 import LinkList from '@/ _components/LinkList'
 import DrawerMenu from '@/ _components/DrawerMenu'
 import bannerDemoImage from '../../public/images/560x50.png'
-import bannerDemoImageSp from '../../public/images/380x25.png'
+import bannerDemoImageSp from '../../public/images/375x35.png'
 
 const Header = () => {
     return (
@@ -34,13 +34,16 @@ const Header = () => {
                     </div>
                 </div>
             </header>
-            <header className="sp-header w-full lg:hidden block bg-mainPink">
-                <div className="flex justify-between">
-                    <div className="header-log-sp py-2 flex justify-center w-full">
+            <header className="sp-header w-full h-full lg:hidden block bg-mainPink">
+                <div className="flex justify-center w-full">
+                    <div className="header-log-sp py-2 flex justify-center items-center w-full h-full">
                         <Image
                             src={bannerDemoImageSp}
                             alt="Example"
                             className=""
+                            width={375}
+                            height={35}
+                            layout="fixed"
                         />
                     </div>
                     <DrawerMenu />
