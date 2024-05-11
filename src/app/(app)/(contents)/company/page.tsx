@@ -1,21 +1,12 @@
 'use client'
 
+import Contents from '@/ _components/Contents'
 import Image from 'next/image'
 import React from 'react'
 
 const Company = () => {
     return (
-        <div className='w-full md:px-8'>
-            <div className="sns-list-card-content-sub-title text-center">
-                <h2 className="text-mainPink zen-kaku-black text-md">
-                    COMPANY
-                </h2>
-            </div>
-            <div className="sns-list-card-content-main-title text-center">
-                <h1 className="text-fontMainBrown zen-kaku-bold text-lg">
-                    会社概要
-                </h1>
-            </div>
+        <Contents subTitle={'COMPANY'} mainTitle={'会社概要'}>
             <div className='flex justify-center w-full flex-col mt-5'>
                 <div className="w-full">
                     <div className="overflow-x-auto">
@@ -49,7 +40,7 @@ const Company = () => {
                     <Image src="/images/758x500.png" width={758} height={500} alt='map' />
                 </div>
             </div>
-        </div>
+        </Contents>
     )
 }
 
