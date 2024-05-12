@@ -1,5 +1,6 @@
 import React from 'react'
 import '@/css/contents.css'
+import MemberRegister from '@/ _components/MemberRegister'
 
 const ContentLayout = ({ children }: { children: React.ReactNode }) => {
     return (
@@ -11,6 +12,9 @@ const ContentLayout = ({ children }: { children: React.ReactNode }) => {
                     </div>
                 </div>
             </div>
+            <section className="member-register w-full px-5">
+                <MemberRegister />
+            </section>
         </div>
     )
 }
