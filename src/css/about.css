@@ -1,0 +1,10 @@
+.about-topic-title {
+    position: relative;
+}
+
+.about-topic-icons img {
+    width: 95%;
+    height: 95%;
+    background: #F4EFF9;
+    border-radius: 50%;
+}

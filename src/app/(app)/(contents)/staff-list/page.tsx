@@ -1,7 +1,5 @@
 import Contents from '@/ _components/Contents'
-import DoubleLineBtn from '@/ _components/DoubleLineBtn'
 import StaffCard from '@/ _components/StaffCard'
-import Image from 'next/image'
 import React from 'react'
 
 const StaffListPage = () => {

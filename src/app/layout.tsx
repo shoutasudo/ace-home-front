@@ -6,6 +6,7 @@ import "../css/doubleLineBtn.css"
 import "../css/header.css"
 import "../css/main.css"
 import "../css/company.css"
+import "../css/about.css"
 
 export const metadata: Metadata = {
   title: "Create Next App",
