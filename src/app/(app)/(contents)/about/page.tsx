@@ -27,10 +27,10 @@ const AboutPage = () => {
             <div className='about-topic-title mt-8 w-full text-center'>
                 <span className='text-mainPink zen-kaku-bold tracking-widest text-lg inline-block'>3つのメリット</span>
             </div>
-            <div className='about-topic-icons flex flex-row flex-wrap lg:flex-nowrap justify-center text-center mt-5'>
+            <div className='about-topic-icons flex flex-row flex-wrap md:flex-nowrap justify-center text-center mt-5'>
                 <div className='about-topic-icon-free w-1/2 lg:w-1/3 flex justify-center flex-col'>
                     <Image src="/icons/img_free.png" width={254} height={254} alt='free' />
-                    <p className='-mt-6 text-xs zen-kaku-bold'>ずっと無料！</p>
+                    <p className='-mt-6 text-xs zen-kaku-bold text-center'>ずっと無料！</p>
                 </div>
                 <div className='about-topic-icon-free w-1/2 lg:w-1/3 flex justify-center flex-col'>
                     <Image src="/icons/img_benefits.png" width={254} height={254} alt='free' />
