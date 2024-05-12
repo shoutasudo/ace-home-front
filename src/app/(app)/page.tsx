@@ -4,6 +4,7 @@ import Service from '@/ _components/Service '
 import MemberRegister from '@/ _components/MemberRegister'
 import Service2 from '@/ _components/Service2'
 import Information from '@/ _components/Information'
+import InstagramContents from '@/ _components/InstagramContents'
 
 const Home = () => {
     return (
@@ -24,8 +25,8 @@ const Home = () => {
                             国内のひとり暮らしをしている方なら誰でもご利用いただけます。
                         </TopAbout>
                     </section>
-                    <section className="service md:py-12 py-5">
-                        <Service />
+                    <section className="instagram-contents md:py-12 py-5">
+                        <InstagramContents />
                     </section>
                     <section className="member-register w-full px-5">
                         <MemberRegister />
