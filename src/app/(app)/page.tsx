@@ -15,15 +15,7 @@ const Home = () => {
                         <TopImage />
                     </section>
                     <section className="top-about pt-10 pb-11 z-0">
-                        <TopAbout>
-                            メゾンエイブルは、お部屋探しのエイブルが運営する、
-                            <br />
-                            ひとり暮らし女性を応援するための
-                            <br />
-                            生活サポートサービスです。
-                            <br />
-                            国内のひとり暮らしをしている方なら誰でもご利用いただけます。
-                        </TopAbout>
+                        <TopAbout />
                     </section>
                     <section className="instagram-contents md:py-12 py-5">
                         <InstagramContents />

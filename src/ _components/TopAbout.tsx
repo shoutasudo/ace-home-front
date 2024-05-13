@@ -2,13 +2,17 @@
 import React from 'react'
 import DoubleLineBtn from './DoubleLineBtn'
 
-const TopAbout = ({ children }: { children: React.ReactNode }) => {
+const TopAbout = () => {
     return (
         <>
-            <div className="w-full flex justify-center">
+            <div className="top-about w-full flex justify-center">
                 <div className="max-w-5xl">
-                    <p className="lg:px-10 md:px-8 px-2 text-center noto-sans-jp font-medium lg:text-xl md:text-lg text-xs leading-5 tracking-normal">
-                        {children}
+                    <p className="lg:px-10 md:px-8 px-2 text-center font-sans font-bold lg:text-sm md:text-sm text-xs">
+                        メゾンエイブルは、お部屋探しのエイブルが運営する、
+                        <br />
+                        ひとり暮らし女性を応援するための生活サポートサービスです。
+                        <br />
+                        国内のひとり暮らしをしている方なら誰でもご利用いただけます。
                     </p>
                 </div>
             </div>
