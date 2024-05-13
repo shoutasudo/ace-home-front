@@ -23,6 +23,9 @@ module.exports = {
                 informationBg: '#F4F4F4',
                 informationText: '#858585',
             },
+            fontFamily: {
+                sawarabi: ['Sawarabi Gothic'],
+            },
         },
     },
     plugins: [require('@tailwindcss/forms')],
