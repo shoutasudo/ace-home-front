@@ -7,7 +7,7 @@ const TopImage = () => {
             <div className="top-image-container-pc w-full sm:block hidden"></div>
             <div className="top-image-container-sp sm:hidden block">
                 <Image
-                    src="/images/750x650.png"
+                    src="/images/top-banner-sp.png"
                     alt="banner"
                     width={750}
                     height={650}

@@ -11,7 +11,7 @@ const Home = () => {
         <>
             <div className="w-full">
                 <main className="mt-34">
-                    <section className="top-image w-full">
+                    <section className="top-image w-full lg:mt-32">
                         <TopImage />
                     </section>
                     <section className="top-about pt-10 pb-11 z-0">
