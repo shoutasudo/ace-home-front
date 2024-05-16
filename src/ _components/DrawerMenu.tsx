@@ -46,9 +46,9 @@ const DrawerMenu = () => {
                                         href="#">
                                         <FontAwesomeIcon
                                             icon={faMobileScreenButton}
-                                            className="lg:text-fontMainBrown text-white link-icon-horizontal"
+                                            className="lg:text-fontMainBrown text-mainPink text-2xl w-2/12"
                                         />
-                                        <span className="zen-kaku-medium text-sm tracking-widest lg:text-fontMainBrown text-white">
+                                        <span className="zen-kaku-medium text-sm tracking-widest lg:text-fontMainBrown text-white w-10/12 ml-2">
                                             ACE HOMEとは
                                         </span>
                                     </Link>
@@ -59,9 +59,9 @@ const DrawerMenu = () => {
                                         href="#">
                                         <FontAwesomeIcon
                                             icon={faTicket}
-                                            className="lg:text-fontMainBrown text-white link-icon-horizontal"
+                                            className="lg:text-fontMainBrown text-mainPink text-2xl rotate-custom w-2/12"
                                         />
-                                        <span className="zen-kaku-medium text-sm tracking-widest lg:text-fontMainBrown text-white">
+                                        <span className="zen-kaku-medium text-sm tracking-widest lg:text-fontMainBrown text-white w-10/12 ml-2">
                                             特典・クーポン
                                         </span>
                                     </Link>
@@ -72,9 +72,9 @@ const DrawerMenu = () => {
                                         href="#">
                                         <FontAwesomeIcon
                                             icon={faHeart}
-                                            className="lg:text-fontMainBrown text-white link-icon-horizontal"
+                                            className="lg:text-fontMainBrown text-mainPink text-2xl w-2/12"
                                         />
-                                        <span className="zen-kaku-medium text-sm tracking-widest lg:text-fontMainBrown text-white">
+                                        <span className="zen-kaku-medium text-sm tracking-widest lg:text-fontMainBrown text-white w-10/12 ml-2">
                                             ACE女子割
                                         </span>
                                     </Link>
@@ -85,9 +85,9 @@ const DrawerMenu = () => {
                                         href="#">
                                         <FontAwesomeIcon
                                             icon={faMobileScreenButton}
-                                            className="lg:text-fontMainBrown text-white link-icon-horizontal"
+                                            className="lg:text-fontMainBrown text-mainPink text-2xl w-2/12"
                                         />
-                                        <span className="zen-kaku-medium text-sm tracking-widest lg:text-fontMainBrown text-white">
+                                        <span className="zen-kaku-medium text-sm tracking-widest lg:text-fontMainBrown text-white w-10/12 ml-2">
                                             SNS一覧
                                         </span>
                                     </Link>
@@ -98,9 +98,9 @@ const DrawerMenu = () => {
                                         href="#">
                                         <FontAwesomeIcon
                                             icon={faComment}
-                                            className="lg:text-fontMainBrown text-white link-icon-horizontal"
+                                            className="lg:text-fontMainBrown text-mainPink text-2xl w-2/12"
                                         />
-                                        <span className="zen-kaku-medium text-sm tracking-widest lg:text-fontMainBrown text-white">
+                                        <span className="zen-kaku-medium text-sm tracking-widest lg:text-fontMainBrown text-white w-10/12 ml-2">
                                             よくある質問
                                         </span>
                                     </Link>
@@ -112,9 +112,9 @@ const DrawerMenu = () => {
                                         ">
                                         <FontAwesomeIcon
                                             icon={faEnvelope}
-                                            className="lg:text-fontMainBrown text-white link-icon-horizontal"
+                                            className="lg:text-fontMainBrown text-mainPink text-2xl w-2/12"
                                         />
-                                        <span className="zen-kaku-medium text-sm tracking-widest lg:text-fontMainBrown text-white">
+                                        <span className="zen-kaku-medium text-sm tracking-widest lg:text-fontMainBrown text-white w-10/12 ml-2">
                                             お問合せ
                                         </span>
                                     </Link>

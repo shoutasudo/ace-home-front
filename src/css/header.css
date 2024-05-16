@@ -115,7 +115,7 @@ nav a.current {
     /*ナビの高さ*/
     background: #757777;
     /*動き*/
-    transition: all 0.6s;
+    transition: all 0.5s;
 }
 
 /*アクティブクラスがついたら位置を0に*/
@@ -140,7 +140,7 @@ nav a.current {
 #g-nav ul {
     position: absolute;
     z-index: 999;
-    top: 120px;
+    top: 105px;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: left;
@@ -165,7 +165,11 @@ nav a.current {
     letter-spacing: 0.1em;
     font-weight: 400;
     border-bottom: 1px solid white;
-    padding-bottom: 14px;
-    padding-top: 14px;
+    padding-bottom: 12px;
+    padding-top: 12px;
     width: 100%;
+}
+
+.rotate-custom {
+    transform: rotate(-22deg);
 }

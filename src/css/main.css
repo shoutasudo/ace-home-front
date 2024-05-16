@@ -1,6 +1,6 @@
 .top-image-container-pc {
     height: 750px;
-    background: url('../../public/images/1920x700.png') center center repeat-x;
+    background: url('../../public/images/top-banner-pc.png') center center repeat-x;
     background-size: cover;
     background-repeat: no-repeat;
 }
