@@ -1,6 +1,5 @@
 import TopImage from '@/ _components/TopImage'
 import TopAbout from '@/ _components/TopAbout'
-import Service from '@/ _components/Service '
 import MemberRegister from '@/ _components/MemberRegister'
 import Service2 from '@/ _components/Service2'
 import Information from '@/ _components/Information'
