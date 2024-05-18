@@ -14,7 +14,7 @@ const LinkList = () => {
         <nav>
             <ul className="w-full">
                 <li className="lg:border-r-2 lg:border-neutral-700 px-5 lg:px-0">
-                    <Link className="flex justify-center items-center" href="#">
+                    <Link className="flex justify-center items-center" href="/about">
                         <FontAwesomeIcon
                             icon={faMobileScreenButton}
                             className="lg:text-fontMainBrown text-white link-icon-horizontal"
@@ -25,31 +25,20 @@ const LinkList = () => {
                     </Link>
                 </li>
                 <li className="lg:border-r-2 lg:border-neutral-700 px-5 lg:px-0">
-                    <Link className="flex justify-center items-center" href="#">
+                    <Link className="flex justify-center items-center" href="/staff-list">
                         <FontAwesomeIcon
                             icon={faTicket}
                             className="lg:text-fontMainBrown text-white link-icon-horizontal"
                         />
                         <span className="zen-kaku-medium text-sm tracking-widest lg:text-fontMainBrown text-white">
-                            特典・クーポン
+                            スタッフ一覧
                         </span>
                     </Link>
                 </li>
                 <li className="lg:border-r-2 lg:border-neutral-700 px-5 lg:px-0">
-                    <Link className="flex justify-center items-center" href="#">
+                    <Link className="flex justify-center items-center" href="/sns-list">
                         <FontAwesomeIcon
                             icon={faHeart}
-                            className="lg:text-fontMainBrown text-white link-icon-horizontal"
-                        />
-                        <span className="zen-kaku-medium text-sm tracking-widest lg:text-fontMainBrown text-white">
-                            ACE女子割
-                        </span>
-                    </Link>
-                </li>
-                <li className="lg:border-r-2 lg:border-neutral-700 px-5 lg:px-0">
-                    <Link className="flex justify-center items-center" href="#">
-                        <FontAwesomeIcon
-                            icon={faMobileScreenButton}
                             className="lg:text-fontMainBrown text-white link-icon-horizontal"
                         />
                         <span className="zen-kaku-medium text-sm tracking-widest lg:text-fontMainBrown text-white">
@@ -57,19 +46,30 @@ const LinkList = () => {
                         </span>
                     </Link>
                 </li>
+                {/* <li className="lg:border-r-2 lg:border-neutral-700 px-5 lg:px-0">
+                    <Link className="flex justify-center items-center" href="/privacy-policy">
+                        <FontAwesomeIcon
+                            icon={faMobileScreenButton}
+                            className="lg:text-fontMainBrown text-white link-icon-horizontal"
+                        />
+                        <span className="zen-kaku-medium text-sm tracking-widest lg:text-fontMainBrown text-white">
+                            プライバシーポリシー
+                        </span>
+                    </Link>
+                </li> */}
                 <li className="lg:border-r-2 lg:border-neutral-700 px-5 lg:px-0">
-                    <Link className="flex justify-center items-center" href="#">
+                    <Link className="flex justify-center items-center" href="/company">
                         <FontAwesomeIcon
                             icon={faComment}
                             className="lg:text-fontMainBrown text-white link-icon-horizontal"
                         />
                         <span className="zen-kaku-medium text-sm tracking-widest lg:text-fontMainBrown text-white">
-                            よくある質問
+                            会社概要
                         </span>
                     </Link>
                 </li>
                 <li className="px-5 lg:px-0">
-                    <Link className="flex justify-center items-center" href="#">
+                    <Link className="flex justify-center items-center" href="/contact">
                         <FontAwesomeIcon
                             icon={faEnvelope}
                             className="lg:text-fontMainBrown text-white link-icon-horizontal"
