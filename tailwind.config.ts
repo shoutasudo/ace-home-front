@@ -17,7 +17,7 @@ module.exports = {
         },
         extend: {
             colors: {
-                mainPink: '#e896a1',
+                mainPink: '#eb8d91',
                 mainGray: '#EEEBEB',
                 fontMainBrown: '#473133',
                 informationBg: '#F4F4F4',
