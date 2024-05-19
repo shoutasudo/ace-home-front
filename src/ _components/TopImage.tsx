@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 
 const TopImage = () => {
+
     return (
         <>
             <div className="top-image-container-pc w-full sm:block hidden"></div>
