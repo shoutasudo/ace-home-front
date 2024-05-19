@@ -28,6 +28,10 @@ header {
     height: 2em;
 }
 
+.sns-icon{
+    cursor: pointer;
+}
+
 nav {
     text-align: center;
 }

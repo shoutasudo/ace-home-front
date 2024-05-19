@@ -8,16 +8,17 @@ import {
     faFacebook,
     faTiktok,
 } from '@fortawesome/free-brands-svg-icons'
+import Link from 'next/link'
 
 const SnsIconList = () => {
     return (
-        <div className="flex justify-around items-center w-full">
-            <div className="">
+        <div className="flex justify-around items-center w-full px-12">
+            <Link href="#" className="">
                 <FontAwesomeIcon
                     icon={faLine}
                     className="w-full cursor-pointer sns-icon"
                 />
-            </div>
+            </Link>
             <div className="">
                 <FontAwesomeIcon
                     icon={faInstagram}
@@ -30,18 +31,18 @@ const SnsIconList = () => {
                     className="w-full cursor-pointer sns-icon"
                 />
             </div>
-            <div className="">
+            {/* <div className="">
                 <FontAwesomeIcon
                     icon={faSquareYoutube}
                     className="w-full cursor-pointer sns-icon"
                 />
-            </div>
-            <div className="">
+            </div> */}
+            {/* <div className="">
                 <FontAwesomeIcon
                     icon={faFacebook}
                     className="w-full cursor-pointer sns-icon"
                 />
-            </div>
+            </div> */}
             <div className="">
                 <FontAwesomeIcon
                     icon={faTiktok}
