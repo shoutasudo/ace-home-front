@@ -19,8 +19,10 @@ const Header = () => {
                                 <Link href="/">
                                     <div className="header-log-pc cursor-pointer">
                                         <Image
-                                            src={bannerDemoImage}
+                                            src="/icons/header-banner-white-pc-1.png"
                                             alt="Example"
+                                            width={560}
+                                            height={50}
                                         />
                                     </div>
                                 </Link>
@@ -39,23 +41,21 @@ const Header = () => {
             </header>
             <header className="sp-header w-full h-full lg:hidden block bg-mainPink">
                 <div className="flex justify-center w-full">
-                    <div className="header-log-sp py-1 flex justify-center items-center w-full h-full pl-16">
+                    <div className="header-log-sp py-2 flex justify-center items-center w-full h-full sm:pl-16 px-2">
                         <Link href="/">
                             <Image
-                                src="/icons/logo-white.png"
+                                src="/icons/header-banner-white.png"
                                 alt="Example"
                                 className=""
-                                width={45}
-                                height={45}
+                                width={325}
+                                height={33}
                                 layout="fixed"
                             />
                         </Link>
                     </div>
-                    <div>
-                        <DrawerMenu />
-                    </div>
+                    <DrawerMenu />
                 </div>
-            </header>
+            </header >
         </>
     )
 }
