@@ -7,6 +7,7 @@ import "../css/header.css"
 import "../css/main.css"
 import "../css/company.css"
 import "../css/topAbout.css"
+import "../css/InstagramContents.css"
 
 
 export const metadata: Metadata = {
