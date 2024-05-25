@@ -5,7 +5,7 @@ import TopScrollBanner from "@/ _components/TopScrollBanner"
 const AppLayout = ({ children }:{children: React.ReactNode}) => {
     return (
         <>
-            <div className="w-full fixed top-0">
+            <div className="w-full fixed top-0 z-50">
                 <Header />
             </div>
             <div className="w-full">{children}</div>

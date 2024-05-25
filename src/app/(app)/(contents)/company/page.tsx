@@ -1,7 +1,6 @@
 'use client'
 
 import Contents from '@/ _components/Contents'
-import Image from 'next/image'
 import React from 'react'
 
 const Company = () => {
@@ -19,7 +18,7 @@ const Company = () => {
                                 <tr className="flex flex-col sm:flex-row items-center">
                                     <th className='bg-mainPink text-white font-bold text-center w-full sm:w-1/3 min-w-4 border-t-0 border-l border-b border-gray-300 px-4 py-2'>本社</th>
                                     <td className='border border-t-0 border-gray-300 bg-white px-4 py-2 w-full sm:w-2/3 text-center text-fontMainBrown'>兵庫県神戸市長田区長田町５丁目３番２号
-</td>
+                                    </td>
                                 </tr>
                                 <tr className="flex flex-col sm:flex-row items-center">
                                     <th className='bg-mainPink text-white font-bold text-center w-full sm:w-1/3 min-w-4 border-t-0 border-l border-b border-gray-300 px-4 py-2'>代表電話番号</th>

@@ -1,0 +1,12 @@
+.instagram-img{
+    overflow: hidden;
+}
+
+.instagram-img {
+    transition: 1s all;
+}
+
+.instagram-img:hover {
+    transform: scale(1.1, 1.1);
+    transition: 1s all;
+}
