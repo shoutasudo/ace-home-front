@@ -7,3 +7,61 @@
         letter-spacing: 0px;
     }
 }
+
+.balloon-l {
+    position: relative;
+    display: inline-block;
+    background: #ffffff;
+    border-radius: 3px;
+    padding: 16px;
+    font-weight: bold;
+    color: #858585;
+}
+
+.balloon-l::before {
+    content: "";
+    border-width: 12px;
+    border-style: solid;
+    border-color: #ffffff transparent transparent transparent;
+    position: absolute;
+    top: 54%;
+    left: 102%;
+    transform: translateX(-50%) rotate(-90deg);
+
+}
+
+.balloon-r {
+    position: relative;
+    display: inline-block;
+    background: #ffffff;
+    border-radius: 3px;
+    padding: 16px;
+    font-weight: bold;
+    color: #858585;
+}
+
+.balloon-r::before {
+    content: "";
+    border-width: 12px;
+    border-style: solid;
+    border-color: #ffffff transparent transparent transparent;
+    position: absolute;
+    top: 54%;
+    left: -2%;
+    transform: translateX(-50%) rotate(90deg);
+
+}
+
+@media (max-width: 799px) {
+    .balloon-r::before,
+    .balloon-l::before {
+        display: none;
+    }
+}
+
+.double-border {
+    @apply border-solid border-2;
+    /* 通常のボーダー幅とスタイルを適用 */
+    border-image: linear-gradient(90deg, #000 1px, transparent 0) 1;
+    /* 線形グラデーションを使用して二重線を作成 */
+}

@@ -17,11 +17,11 @@ const Header = () => {
                         <section className="header-top w-full flex justify-between items-end">
                             <div className="log w-full">
                                 <Link href="/">
-                                    <div className="header-log-pc cursor-pointer">
+                                    <div className="header-log-pc cursor-pointer pb-1">
                                         <Image
-                                            src="/icons/header-banner-white-pc-1.png"
+                                            src="/icons/header-banner-pc-2.png"
                                             alt="Example"
-                                            width={560}
+                                            width={289}
                                             height={50}
                                         />
                                     </div>
