@@ -46,7 +46,7 @@ const InstagramContents = () => {
                     </div>
                     <div className="member-register-container w-full my-10 max-w-4xl flex justify-center">
                         <div className='w-full grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-4 place-items-center'>
-                            {infos.slice(0, visibleItems).map((info) =>
+                            {infos?.slice(0, visibleItems).map((info) =>
                             (
                                 <div key={info.id} className='flex justify-center items-center w-11/12'>
                                     <Link href={info.permalink}>
