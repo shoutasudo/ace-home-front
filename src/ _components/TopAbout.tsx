@@ -8,16 +8,16 @@ const TopAbout = () => {
             <div className="top-about w-full flex justify-center">
                 <div className="max-w-5xl">
                     <p className="lg:px-10 md:px-8 px-2 text-center font-sans font-bold lg:text-sm md:text-sm text-xs">
-                        メゾンエイブルは、お部屋探しのエイブルが運営する、
+                        ACE HOMEは、兵庫県神戸市で女性が運営する、
                         <br />
-                        ひとり暮らし女性を応援するための生活サポートサービスです。
+                        女性為の、女性による不動産屋さんです。
                         <br />
-                        国内のひとり暮らしをしている方なら誰でもご利用いただけます。
+                        一人暮らしの女性が、<br />安心してお部屋を探せるように専属スタッフがサポートします。
                     </p>
                 </div>
             </div>
             <div className="top-about-btn pt-8">
-                <DoubleLineBtn content={'ご利用はこちら'} link={'#'} />
+                <DoubleLineBtn content={'more'} link={'/about'} />
             </div>
         </>
     )
