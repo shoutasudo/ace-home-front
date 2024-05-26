@@ -48,7 +48,7 @@ const DrawerMenu = () => {
                                             icon={faMobileScreenButton}
                                             className="lg:text-fontMainBrown text-mainPink text-2xl w-2/12"
                                         />
-                                        <span className="zen-kaku-medium text-sm tracking-widest lg:text-fontMainBrown text-white w-10/12 ml-2">
+                                        <span className="zen-kaku-medium text-xs tracking-widest text-white w-10/12 ml-2">
                                             ACE HOMEとは
                                         </span>
                                     </Link>
@@ -61,7 +61,7 @@ const DrawerMenu = () => {
                                             icon={faTicket}
                                             className="lg:text-fontMainBrown text-mainPink text-2xl rotate-custom w-2/12"
                                         />
-                                        <span className="zen-kaku-medium text-sm tracking-widest lg:text-fontMainBrown text-white w-10/12 ml-2">
+                                        <span className="zen-kaku-medium text-xs tracking-widest text-white w-10/12 ml-2">
                                             特典・クーポン
                                         </span>
                                     </Link>
@@ -74,7 +74,7 @@ const DrawerMenu = () => {
                                             icon={faHeart}
                                             className="lg:text-fontMainBrown text-mainPink text-2xl w-2/12"
                                         />
-                                        <span className="zen-kaku-medium text-sm tracking-widest lg:text-fontMainBrown text-white w-10/12 ml-2">
+                                        <span className="zen-kaku-medium text-xs tracking-widest text-white w-10/12 ml-2">
                                             ACE女子割
                                         </span>
                                     </Link>
@@ -87,7 +87,7 @@ const DrawerMenu = () => {
                                             icon={faMobileScreenButton}
                                             className="lg:text-fontMainBrown text-mainPink text-2xl w-2/12"
                                         />
-                                        <span className="zen-kaku-medium text-sm tracking-widest lg:text-fontMainBrown text-white w-10/12 ml-2">
+                                        <span className="zen-kaku-medium text-xs tracking-widest text-white w-10/12 ml-2">
                                             SNS一覧
                                         </span>
                                     </Link>
@@ -100,7 +100,7 @@ const DrawerMenu = () => {
                                             icon={faComment}
                                             className="lg:text-fontMainBrown text-mainPink text-2xl w-2/12"
                                         />
-                                        <span className="zen-kaku-medium text-sm tracking-widest lg:text-fontMainBrown text-white w-10/12 ml-2">
+                                        <span className="zen-kaku-medium text-xs tracking-widest text-white w-10/12 ml-2">
                                             よくある質問
                                         </span>
                                     </Link>
@@ -114,7 +114,7 @@ const DrawerMenu = () => {
                                             icon={faEnvelope}
                                             className="lg:text-fontMainBrown text-mainPink text-2xl w-2/12"
                                         />
-                                        <span className="zen-kaku-medium text-sm tracking-widest lg:text-fontMainBrown text-white w-10/12 ml-2">
+                                        <span className="zen-kaku-medium text-xs tracking-widest text-white w-10/12 ml-2">
                                             お問合せ
                                         </span>
                                     </Link>
