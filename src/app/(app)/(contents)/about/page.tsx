@@ -32,7 +32,7 @@ const AboutPage = () => {
                 <div className=''>
                     <div className='flex justify-center w-full'>
                         <div className='md:w-10/12 w-full'>
-                            <p className='zen-kaku-bold text-fontMainBrown text-lg'>
+                            <p className='zen-kaku-bold text-fontMainBrown md:text-md text-sm'>
                                 <span className='text-mainPink'>Q. </span>
                                 女性の為ってどーゆー事？</p>
                         </div>
@@ -40,7 +40,7 @@ const AboutPage = () => {
                     <div className='flex justify-center mt-2'>
                         <div className='flex justify-center items-start md:w-10/12 w-full'>
                             <div className="balloon-l md:w-9/12 w-full">
-                                <p className='zen-kaku-bold'>
+                                <p className='zen-kaku-bold md:text-md text-sm'>
                                     まず当社は、女性が一人様でもご来店しやすいようにスタッフは<br />
                                     <span className='text-mainPink'>全員女性スタッフ</span>になります。<br />
                                     そこから更に、当社の女性スタッフ<span className='text-mainPink'>「女性の一人暮らし」</span>に<br />
@@ -65,7 +65,7 @@ const AboutPage = () => {
                 <div className=''>
                     <div className='flex justify-center w-full'>
                         <div className='md:w-10/12 w-full'>
-                            <p className='zen-kaku-bold text-fontMainBrown text-lg'>
+                            <p className='zen-kaku-bold text-fontMainBrown md:text-md text-sm'>
                                 <span className='text-mainPink'>Q. </span>
                                 女性の為ってどーゆー事？</p>
                         </div>
@@ -82,7 +82,7 @@ const AboutPage = () => {
                                 />
                             </div>
                             <div className="balloon-r md:w-9/12 w-full">
-                                <p className='zen-kaku-bold'>
+                                <p className='zen-kaku-bold md:text-md text-sm'>
                                     まず当社は、女性が一人様でもご来店しやすいようにスタッフは<br />
                                     <span className='text-mainPink'>全員女性スタッフ</span>になります。<br />
                                     そこから更に、当社の女性スタッフ<span className='text-mainPink'>「女性の一人暮らし」</span>に<br />
@@ -98,7 +98,7 @@ const AboutPage = () => {
                 <div className=''>
                     <div className='flex justify-center w-full'>
                         <div className='md:w-10/12 w-full'>
-                            <p className='zen-kaku-bold text-fontMainBrown text-lg'>
+                            <p className='zen-kaku-bold text-fontMainBrown md:text-md text-sm'>
                                 <span className='text-mainPink'>Q. </span>
                                 女性の為ってどーゆー事？</p>
                         </div>
@@ -106,7 +106,7 @@ const AboutPage = () => {
                     <div className='flex justify-center mt-2'>
                         <div className='flex justify-center items-start md:w-10/12 w-full'>
                             <div className="balloon-l md:w-9/12 w-full">
-                                <p className='zen-kaku-bold'>
+                                <p className='zen-kaku-bold md:text-md text-sm'>
                                     まず当社は、女性が一人様でもご来店しやすいようにスタッフは<br />
                                     <span className='text-mainPink'>全員女性スタッフ</span>になります。<br />
                                     そこから更に、当社の女性スタッフ<span className='text-mainPink'>「女性の一人暮らし」</span>に<br />
