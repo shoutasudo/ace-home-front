@@ -33,37 +33,49 @@ const InstagramContents = () => {
     }, []);
 
     return (
-        <div className="flex justify-center flex-col">
-            <div className="flex justify-center items-center flex-col px-0">
-                <div className="member-register-container w-full my-10 max-w-4xl flex justify-center">
-                    <div className='w-full grid grid-cols-3 gap-4'>
-                        {infos.slice(0, visibleItems).map((info) =>
-                        (
-                            <div key={info.id} className='flex justify-center items-center w-11/12'>
-                                <Link href={info.permalink}>
-                                    <Image
-                                        src={info.media_url}
-                                        width={300}
-                                        height={300}
-                                        alt='instagram-img'
-                                        object-fit="cover"
-                                        className='instagram-img rounded-md'
-                                    />
-                                </Link>
-                            </div>
-                        )
-                        )}
+
+        <div className="flex justify-center items-center flex-col">
+            <div className="instagram-contents-container flex justify-center flex-col w-full max-w-4xl">
+                <div className="instagram-contents-container-card w-full flex justify-center items-center flex-col border border-mainPink border-t-8 py-10 sm:px-10 px-2">
+                    <div className="service-2-container-card-title-image w-full flex justify-center items-center flex-col">
+                        <Image
+                            src="/images/495x123.png"
+                            width={495}
+                            height={123}
+                            alt="service-2-image"
+                        />
                     </div>
+                    <div className="member-register-container w-full my-10 max-w-4xl flex justify-center">
+                        <div className='w-full grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-4 place-items-center'>
+                            {infos.slice(0, visibleItems).map((info) =>
+                            (
+                                <div key={info.id} className='flex justify-center items-center w-11/12'>
+                                    <Link href={info.permalink}>
+                                        <Image
+                                            src={info.media_url}
+                                            width={300}
+                                            height={300}
+                                            alt='instagram-img'
+                                            object-fit="cover"
+                                            className='instagram-img rounded-md'
+                                        />
+                                    </Link>
+                                </div>
+                            )
+                            )}
+                        </div>
+                    </div>
+                    {infos.length > visibleItems && (
+                        <div className="instagram-more-btn">
+                            {/* 現状クライアントで組んでるが想定ではonclickで６個ずづ表示していく想定。 */}
+                            {/* もし、遷移先をインスタグラムにする場合は、サーバーサイドで組みなす */}
+                            <DoubleLineBtn content={'more'} link={'#'} />
+                        </div>
+                    )}
                 </div>
-                {infos.length > visibleItems && (
-                    <div className="instagram-more-btn">
-                        {/* 現状クライアントで組んでるが想定ではonclickで６個ずづ表示していく想定。 */}
-                        {/* もし、遷移先をインスタグラムにする場合は、サーバーサイドで組みなす */}
-                        <DoubleLineBtn content={'more'} link={'#'} />
-                    </div>
-                )}
             </div>
         </div>
+
     )
 }
 
