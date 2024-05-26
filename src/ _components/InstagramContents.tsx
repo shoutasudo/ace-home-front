@@ -33,8 +33,7 @@ const InstagramContents = () => {
     }, []);
 
     return (
-
-        <div className="flex justify-center items-center flex-col">
+        <div className='flex justify-center items-center'>
             <div className="instagram-contents-container flex justify-center flex-col w-full max-w-4xl">
                 <div className="instagram-contents-container-card w-full flex justify-center items-center flex-col border border-mainPink border-t-8 py-10 sm:px-10 px-2">
                     <div className="service-2-container-card-title-image w-full flex justify-center items-center flex-col">

@@ -6,7 +6,7 @@ const Service2 = () => {
     return (
         <div className="flex justify-center items-center flex-col">
             <div className="service-2-container flex justify-center flex-col w-full max-w-4xl">
-                <div className="service-2-container-card w-full flex justify-center items-center flex-col border border-mainPink border-t-8 py-10 px-10">
+                <div className="service-2-container-card w-full flex justify-center items-center flex-col border border-mainPink border-t-8 py-10 sm:px-10 px-2">
                     <div className="service-2-container-card-title-image w-full flex justify-center items-center flex-col">
                         <Image
                             src="/images/495x123.png"

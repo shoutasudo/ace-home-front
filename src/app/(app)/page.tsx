@@ -19,7 +19,7 @@ const Home = () => {
                     <section className="instagram-contents md:py-2 py-5">
                         <InstagramContents />
                     </section>
-                    <section className="member-register w-full px-5">
+                    <section className="member-register w-full px-2">
                         <MemberRegister />
                     </section>
                     <section className="service-2 w-full">

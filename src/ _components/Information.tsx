@@ -4,7 +4,7 @@ import DoubleLineBtn from './DoubleLineBtn'
 
 const Information = () => {
     return (
-        <div className="information-container w-full flex justify-center items-center flex-col bg-informationBg py-6 px-5">
+        <div className="information-container w-full flex justify-center items-center flex-col bg-informationBg py-6 ms:px-5 px-2">
             <div className="w-full max-w-4xl">
                 <div className="information-container-title flex justify-center items-center mb-5">
                     <h2 className="noto-sans-jp font-medium text-xl tracking-normal">
@@ -22,11 +22,11 @@ const Information = () => {
 
                     <div className="flex items-start w-full">
                         <div className="information-container-content-date w-3/12 md:w-2/12 lg:w-1/12">
-                            <p className="text-informationText zen-kaku-bold tracking-wide text-sm">
+                            <p className="text-informationText zen-kaku-bold tracking-wide sm:text-sm text-xs">
                                 2024.12.30
                             </p>
                         </div>
-                        <div className="information-container-content-sub-title w-9/12 md:w-10/12 lg:w-11/12 lg:pl-5">
+                        <div className="information-container-content-sub-title w-9/12 md:w-10/12 lg:w-11/12 lg:pl-5 pl-4">
                             <Link
                                 href={'#'}
                                 className="text-informationText noto-sans-jp font-medium tracking-wider text-sm md:text-md">
@@ -49,11 +49,11 @@ const Information = () => {
 
                     <div className="flex items-start w-full">
                         <div className="information-container-content-date w-3/12 md:w-2/12 lg:w-1/12">
-                            <p className="text-informationText zen-kaku-bold tracking-wide text-sm">
+                            <p className="text-informationText zen-kaku-bold tracking-wide sm:text-sm text-xs">
                                 2024.12.30
                             </p>
                         </div>
-                        <div className="information-container-content-sub-title w-9/12 md:w-10/12 lg:w-11/12 lg:pl-5">
+                        <div className="information-container-content-sub-title w-9/12 md:w-10/12 lg:w-11/12 lg:pl-5 pl-4">
                             <Link
                                 href={'#'}
                                 className="text-informationText noto-sans-jp font-medium tracking-wider text-sm md:text-md">
@@ -76,11 +76,11 @@ const Information = () => {
 
                     <div className="flex items-start w-full">
                         <div className="information-container-content-date w-3/12 md:w-2/12 lg:w-1/12">
-                            <p className="text-informationText zen-kaku-bold tracking-wide text-sm">
+                            <p className="text-informationText zen-kaku-bold tracking-wide sm:text-sm text-xs">
                                 2024.12.30
                             </p>
                         </div>
-                        <div className="information-container-content-sub-title w-9/12 md:w-10/12 lg:w-11/12 lg:pl-5">
+                        <div className="information-container-content-sub-title w-9/12 md:w-10/12 lg:w-11/12 lg:pl-5 pl-4">
                             <Link
                                 href={'#'}
                                 className="text-informationText noto-sans-jp font-medium tracking-wider text-sm md:text-md">
