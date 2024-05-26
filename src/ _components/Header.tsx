@@ -19,7 +19,7 @@ const Header = () => {
                                 <Link href="/">
                                     <div className="header-log-pc cursor-pointer">
                                         <Image
-                                            src="/icons/header-banner-white-pc-1.png"
+                                            src="/icons/header-banner-pc-1.png"
                                             alt="Example"
                                             width={560}
                                             height={50}

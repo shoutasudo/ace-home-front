@@ -17,9 +17,9 @@ const LinkList = () => {
                     <Link className="flex justify-center items-center" href="/about">
                         <FontAwesomeIcon
                             icon={faMobileScreenButton}
-                            className="lg:text-fontMainBrown text-white link-icon-horizontal"
+                            className="text-fontMainBrown link-icon-horizontal"
                         />
-                        <span className="zen-kaku-medium text-sm tracking-widest lg:text-fontMainBrown text-white">
+                        <span className="zen-kaku-bold text-sm tracking-widest text-fontMainBrown hover:text-white transition-all duration-500 ease-out">
                             ACE HOMEとは
                         </span>
                     </Link>
@@ -28,9 +28,9 @@ const LinkList = () => {
                     <Link className="flex justify-center items-center" href="/staff-list">
                         <FontAwesomeIcon
                             icon={faTicket}
-                            className="lg:text-fontMainBrown text-white link-icon-horizontal"
+                            className="text-fontMainBrown link-icon-horizontal"
                         />
-                        <span className="zen-kaku-medium text-sm tracking-widest lg:text-fontMainBrown text-white">
+                        <span className="zen-kaku-bold text-sm tracking-widest text-fontMainBrown hover:text-white transition-all duration-500 ease-out">
                             スタッフ一覧
                         </span>
                     </Link>
@@ -39,9 +39,9 @@ const LinkList = () => {
                     <Link className="flex justify-center items-center" href="/sns-list">
                         <FontAwesomeIcon
                             icon={faHeart}
-                            className="lg:text-fontMainBrown text-white link-icon-horizontal"
+                            className="text-fontMainBrown link-icon-horizontal"
                         />
-                        <span className="zen-kaku-medium text-sm tracking-widest lg:text-fontMainBrown text-white">
+                        <span className="zen-kaku-bold text-sm tracking-widest text-fontMainBrown hover:text-white transition-all duration-500 ease-out">
                             SNS一覧
                         </span>
                     </Link>
@@ -63,7 +63,7 @@ const LinkList = () => {
                             icon={faComment}
                             className="lg:text-fontMainBrown text-white link-icon-horizontal"
                         />
-                        <span className="zen-kaku-medium text-sm tracking-widest lg:text-fontMainBrown text-white">
+                        <span className="zen-kaku-bold text-sm tracking-widest text-fontMainBrown hover:text-white transition-all duration-500 ease-out">
                             会社概要
                         </span>
                     </Link>
@@ -74,7 +74,7 @@ const LinkList = () => {
                             icon={faEnvelope}
                             className="lg:text-fontMainBrown text-white link-icon-horizontal"
                         />
-                        <span className="zen-kaku-medium text-sm tracking-widest lg:text-fontMainBrown text-white">
+                        <span className="zen-kaku-bold text-sm tracking-widest text-fontMainBrown hover:text-white transition-all duration-500 ease-out">
                             お問合せ
                         </span>
                     </Link>
