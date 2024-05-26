@@ -44,7 +44,7 @@ const Header = () => {
                     <div className="header-log-sp py-2 flex justify-center items-center w-full h-full sm:pl-16 px-2">
                         <Link href="/">
                             <Image
-                                src="/icons/header-banner-white.png"
+                                src="/icons/header-banner-sp-2-1.png"
                                 alt="Example"
                                 className=""
                                 width={325}
