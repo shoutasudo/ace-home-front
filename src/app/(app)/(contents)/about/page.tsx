@@ -163,7 +163,7 @@ const AboutPage = () => {
                 </p>
             </div>
             <div className='about-topic-img mt-10 flex justify-center'>
-                <Image src="/icons/main2-logo-c.png" width={420} height={60} alt='topic-footer' />
+                <Image src="/icons/banner-horizontal.png" width={420} height={60} alt='topic-footer' />
             </div>
         </div>
     )

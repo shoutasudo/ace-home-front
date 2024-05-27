@@ -19,7 +19,7 @@ const Header = () => {
                                 <Link href="/">
                                     <div className="header-log-pc cursor-pointer pb-1">
                                         <Image
-                                            src="/icons/header-banner-pc-2.png"
+                                            src="/icons/banner-horizontal-white.png"
                                             alt="Example"
                                             width={289}
                                             height={50}
@@ -44,11 +44,11 @@ const Header = () => {
                     <div className="header-log-sp py-2 flex justify-center items-center w-full h-full sm:pl-16 px-2">
                         <Link href="/">
                             <Image
-                                src="/icons/header-banner-sp.png"
+                                src="/icons/banner-horizontal-white.png"
                                 alt="Example"
                                 className=""
-                                width={325}
-                                height={33}
+                                width={200}
+                                height={50}
                                 layout="fixed"
                             />
                         </Link>

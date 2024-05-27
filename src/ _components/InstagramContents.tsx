@@ -38,7 +38,7 @@ const InstagramContents = () => {
                 <div className="instagram-contents-container-card w-full flex justify-center items-center flex-col border border-mainPink border-t-8 py-10 sm:px-10 px-2">
                     <div className="service-2-container-card-title-image w-full flex justify-center items-center flex-col">
                         <Image
-                            src="/images/495x123.png"
+                            src="/icons/instagram-banner.png"
                             width={495}
                             height={123}
                             alt="service-2-image"

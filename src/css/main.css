@@ -34,12 +34,8 @@
 
 .service-2-container-card,
 .instagram-contents-container-card {
-    background-color: hsla(0, 0%, 100%, 1);
+    background-color: hsla(310, 66%, 98%, 1);
     background-image:
-        radial-gradient(at 46% 43%, hsla(28, 100%, 74%, 0) 0px, transparent 50%),
-        radial-gradient(at 90% 0%, hsla(189, 100%, 56%, 0.85) 0px, transparent 50%),
-        radial-gradient(at 56% 6%, hsla(355, 100%, 93%, 1) 0px, transparent 50%),
-        radial-gradient(at 0% 100%, hsla(22, 100%, 77%, 0) 0px, transparent 50%),
-        radial-gradient(at 80% 100%, hsla(240, 0%, 100%, 1) 0px, transparent 50%),
-        radial-gradient(at 25% 0%, hsla(343, 100%, 76%, 0.97) 0px, transparent 50%);
+        radial-gradient(at 10% 0%, hsla(28, 100%, 74%, 0.38) 0px, transparent 50%),
+        radial-gradient(at 89% 0%, hsla(187, 100%, 76%, 0.68) 0px, transparent 50%);
 }
