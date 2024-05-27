@@ -6,8 +6,8 @@
 }
 
 .card-content {
-    background-color: hsla(300, 100%, 93%, 1);
-    background-image:
-        radial-gradient(at 10% 0%, hsla(28, 100%, 74%, 0.38) 0px, transparent 50%),
-        radial-gradient(at 89% 0%, hsla(187, 100%, 76%, 0.68) 0px, transparent 50%);
+    background-color: hsla(310, 66%, 98%, 1);
+        background-image:
+            radial-gradient(at 10% 0%, hsla(28, 100%, 74%, 0.38) 0px, transparent 50%),
+            radial-gradient(at 89% 0%, hsla(187, 100%, 76%, 0.68) 0px, transparent 50%);
 }

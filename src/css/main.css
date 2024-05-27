@@ -32,8 +32,7 @@
     z-index: 3;
 } */
 
-.service-2-container-card,
-.instagram-contents-container-card {
+.service-2-container-card {
     background-color: hsla(310, 66%, 98%, 1);
     background-image:
         radial-gradient(at 10% 0%, hsla(28, 100%, 74%, 0.38) 0px, transparent 50%),
