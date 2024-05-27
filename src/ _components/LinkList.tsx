@@ -13,35 +13,35 @@ const LinkList = () => {
     return (
         <nav>
             <ul className="w-full">
-                <li className="lg:border-r-2 lg:border-neutral-700 px-5 lg:px-0">
+                <li className="lg:border-r-2 lg:border-neutral-700 px-5 lg:px-0 text-fontMainBrown hover:text-white transition-all duration-500 ease-out">
                     <Link className="flex justify-center items-center" href="/about">
                         <FontAwesomeIcon
                             icon={faMobileScreenButton}
-                            className="lg:text-fontMainBrown text-white link-icon-horizontal"
+                            className="link-icon-horizontal"
                         />
-                        <span className="zen-kaku-medium text-sm tracking-widest lg:text-fontMainBrown text-white">
+                        <span className="zen-kaku-medium text-sm tracking-widest">
                             ACE HOMEとは
                         </span>
                     </Link>
                 </li>
-                <li className="lg:border-r-2 lg:border-neutral-700 px-5 lg:px-0">
+                <li className="lg:border-r-2 lg:border-neutral-700 px-5 lg:px-0 text-fontMainBrown hover:text-white transition-all duration-500 ease-out">
                     <Link className="flex justify-center items-center" href="/staff-list">
                         <FontAwesomeIcon
                             icon={faTicket}
-                            className="lg:text-fontMainBrown text-white link-icon-horizontal"
+                            className="link-icon-horizontal"
                         />
-                        <span className="zen-kaku-medium text-sm tracking-widest lg:text-fontMainBrown text-white">
+                        <span className="zen-kaku-medium text-sm tracking-widest">
                             スタッフ一覧
                         </span>
                     </Link>
                 </li>
-                <li className="lg:border-r-2 lg:border-neutral-700 px-5 lg:px-0">
+                <li className="lg:border-r-2 lg:border-neutral-700 px-5 lg:px-0 text-fontMainBrown hover:text-white transition-all duration-500 ease-out">
                     <Link className="flex justify-center items-center" href="/sns-list">
                         <FontAwesomeIcon
                             icon={faHeart}
-                            className="lg:text-fontMainBrown text-white link-icon-horizontal"
+                            className="link-icon-horizontal"
                         />
-                        <span className="zen-kaku-medium text-sm tracking-widest lg:text-fontMainBrown text-white">
+                        <span className="zen-kaku-medium text-sm tracking-widest">
                             SNS一覧
                         </span>
                     </Link>
@@ -57,24 +57,24 @@ const LinkList = () => {
                         </span>
                     </Link>
                 </li> */}
-                <li className="lg:border-r-2 lg:border-neutral-700 px-5 lg:px-0">
+                <li className="lg:border-r-2 lg:border-neutral-700 px-5 lg:px-0 text-fontMainBrown hover:text-white transition-all duration-500 ease-out">
                     <Link className="flex justify-center items-center" href="/company">
                         <FontAwesomeIcon
                             icon={faComment}
-                            className="lg:text-fontMainBrown text-white link-icon-horizontal"
+                            className=" link-icon-horizontal"
                         />
-                        <span className="zen-kaku-medium text-sm tracking-widest lg:text-fontMainBrown text-white">
+                        <span className="zen-kaku-medium text-sm tracking-widest ">
                             会社概要
                         </span>
                     </Link>
                 </li>
-                <li className="px-5 lg:px-0">
+                <li className="px-5 lg:px-0 text-fontMainBrown hover:text-white transition-all duration-500 ease-out">
                     <Link className="flex justify-center items-center" href="/contact">
                         <FontAwesomeIcon
                             icon={faEnvelope}
-                            className="lg:text-fontMainBrown text-white link-icon-horizontal"
+                            className=" link-icon-horizontal"
                         />
-                        <span className="zen-kaku-medium text-sm tracking-widest lg:text-fontMainBrown text-white">
+                        <span className="zen-kaku-medium text-sm tracking-widest ">
                             お問合せ
                         </span>
                     </Link>

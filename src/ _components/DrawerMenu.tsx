@@ -43,7 +43,7 @@ const DrawerMenu = () => {
                                 <li className="lg:border-r-2 lg:border-neutral-700 px-5 lg:px-0">
                                     <Link
                                         className="flex justify-center items-center"
-                                        href="#">
+                                        href="/about">
                                         <FontAwesomeIcon
                                             icon={faMobileScreenButton}
                                             className="lg:text-fontMainBrown text-mainPink text-2xl w-2/12"
@@ -56,26 +56,26 @@ const DrawerMenu = () => {
                                 <li className="lg:border-r-2 lg:border-neutral-700 px-5 lg:px-0">
                                     <Link
                                         className="flex justify-center items-center"
-                                        href="#">
+                                        href="staff-list">
                                         <FontAwesomeIcon
                                             icon={faTicket}
                                             className="lg:text-fontMainBrown text-mainPink text-2xl rotate-custom w-2/12"
                                         />
                                         <span className="zen-kaku-medium text-sm tracking-widest lg:text-fontMainBrown text-white w-10/12 ml-2">
-                                            特典・クーポン
+                                            スタッフ一覧
                                         </span>
                                     </Link>
                                 </li>
                                 <li className="lg:border-r-2 lg:border-neutral-700 px-5 lg:px-0">
                                     <Link
                                         className="flex justify-center items-center"
-                                        href="#">
+                                        href="/sns-list">
                                         <FontAwesomeIcon
                                             icon={faHeart}
                                             className="lg:text-fontMainBrown text-mainPink text-2xl w-2/12"
                                         />
                                         <span className="zen-kaku-medium text-sm tracking-widest lg:text-fontMainBrown text-white w-10/12 ml-2">
-                                            ACE女子割
+                                            SNS一覧
                                         </span>
                                     </Link>
                                 </li>
@@ -95,20 +95,20 @@ const DrawerMenu = () => {
                                 <li className="lg:border-r-2 lg:border-neutral-700 px-5 lg:px-0">
                                     <Link
                                         className="flex justify-center items-center"
-                                        href="#">
+                                        href="/company">
                                         <FontAwesomeIcon
                                             icon={faComment}
                                             className="lg:text-fontMainBrown text-mainPink text-2xl w-2/12"
                                         />
                                         <span className="zen-kaku-medium text-sm tracking-widest lg:text-fontMainBrown text-white w-10/12 ml-2">
-                                            よくある質問
+                                            会社概要
                                         </span>
                                     </Link>
                                 </li>
                                 <li className="px-5 lg:px-0">
                                     <Link
                                         className="flex justify-center items-center"
-                                        href="#
+                                        href="/contact
                                         ">
                                         <FontAwesomeIcon
                                             icon={faEnvelope}
