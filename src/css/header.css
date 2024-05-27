@@ -113,6 +113,7 @@ nav a.current {
     position: fixed;
     z-index: 999;
     /*ナビのスタート位置と形状*/
+    width: 58%;
     top: 0;
     right: -120%;
     height: 100vh;
