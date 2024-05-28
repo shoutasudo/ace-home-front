@@ -9,15 +9,6 @@ import {
     faEnvelope,
     faComment,
 } from '@fortawesome/free-solid-svg-icons'
-import {
-    faLine,
-    faInstagram,
-    faXTwitter,
-    faSquareYoutube,
-    faFacebook,
-    faTiktok,
-} from '@fortawesome/free-brands-svg-icons'
-import { faHeart } from '@fortawesome/free-regular-svg-icons'
 import SnsIconList from './SnsIconList'
 
 
