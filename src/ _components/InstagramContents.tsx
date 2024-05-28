@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import DoubleLineBtn from './DoubleLineBtn';
-import { getUserData, getPostId, getPostInfo } from '@/lib/api/instagramApi';
+// import { getUserData, getPostId, getPostInfo } from '@/lib/api/instagramApi';
 
 interface idProps {
     id: string
@@ -16,6 +16,19 @@ interface PostInfoType {
     permalink: string,
     timestamp: string,
     username: string
+}
+
+const getPostId = async () => {
+    const res = await fetch(`https://graph.facebook.com/v19.0/${process.env.NEXT_PUBLIC_INSTAGRAM_ID}/media?fields=id&access_token=${process.env.NEXT_PUBLIC_INSTAGRAM_TOKEN}`, { cache: 'no-store' });
+    const postIdsObj = await res.json();
+    const postIdArr = postIdsObj.data;
+    return postIdArr;
+}
+
+const getPostInfo = async (id: string) => {
+    const res = await fetch(`https://graph.facebook.com/v19.0/${id}?fields=id,media_type,permalink,media_url,caption,username,timestamp&access_token=${process.env.NEXT_PUBLIC_INSTAGRAM_TOKEN}`, { cache: 'no-store' });
+    const info = await res.json();
+    return info;
 }
 
 const InstagramContents = async () => {
