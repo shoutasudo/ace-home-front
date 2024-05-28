@@ -19,14 +19,14 @@ interface PostInfoType {
 }
 
 const getPostId = async () => {
-    const res = await fetch(`https://graph.facebook.com/v19.0/${process.env.NEXT_PUBLIC_INSTAGRAM_ID}/media?fields=id&access_token=${process.env.NEXT_PUBLIC_INSTAGRAM_TOKEN}`);
+    const res = await fetch(`https://graph.facebook.com/v19.0/17841466829213309/media?fields=id&access_token=EAAGl415fINwBO3DliININT7TfQ0hnkylr16ZBqwcRtYNHDBIt44GzfUHngVLVNjdDHpYTlQtJYnWKwhbCxHtcAiNatZCqlFXVy7ms5aR3OZAYg2b4pwiqhA8GzTXvpoxD04kbxARZAh4poFZCoZCcopQBQ9RNNhTiOb78lJmhB5IOCDvoYZABkdrLInHiiUOINU`);
     const postIdsObj = await res.json();
     const postIdArr = postIdsObj.data;
     return postIdArr;
 }
 
 const getPostInfo = async (id: string) => {
-    const res = await fetch(`https://graph.facebook.com/v19.0/${id}?fields=id,media_type,permalink,media_url,caption,username,timestamp&access_token=${process.env.NEXT_PUBLIC_INSTAGRAM_TOKEN}`);
+    const res = await fetch(`https://graph.facebook.com/v19.0/${id}?fields=id,media_type,permalink,media_url,caption,username,timestamp&access_token=EAAGl415fINwBO3DliININT7TfQ0hnkylr16ZBqwcRtYNHDBIt44GzfUHngVLVNjdDHpYTlQtJYnWKwhbCxHtcAiNatZCqlFXVy7ms5aR3OZAYg2b4pwiqhA8GzTXvpoxD04kbxARZAh4poFZCoZCcopQBQ9RNNhTiOb78lJmhB5IOCDvoYZABkdrLInHiiUOINU`);
     const info = await res.json();
     return info;
 }
