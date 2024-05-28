@@ -5,7 +5,7 @@
     background-repeat: no-repeat;
 }
 
-.service {
+/* .service {
     background-color: hsla(309, 100%, 96%, 1);
     background-image:
         radial-gradient(at 90% 0%, hsla(189, 100%, 64%, 0.5) 0px, transparent 50%),
@@ -14,7 +14,7 @@
         radial-gradient(at 56% 0%, hsla(355, 100%, 93%, 0) 0px, transparent 50%),
         radial-gradient(at 4% 0%, hsla(22, 100%, 77%, 0) 0px, transparent 50%),
         radial-gradient(at 75% 0%, hsla(0, 0%, 100%, 0) 0px, transparent 50%);
-}
+} */
 
 /* .card-footer {
     position: relative;
@@ -32,9 +32,9 @@
     z-index: 3;
 } */
 
-.service-2-container-card {
+/* .service-2-container-card {
     background-color: hsla(310, 66%, 98%, 1);
     background-image:
         radial-gradient(at 10% 0%, hsla(28, 100%, 74%, 0.38) 0px, transparent 50%),
         radial-gradient(at 89% 0%, hsla(187, 100%, 76%, 0.68) 0px, transparent 50%);
-}
+} */

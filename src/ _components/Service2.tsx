@@ -24,12 +24,14 @@ const Service2 = () => {
                         </p>
                     </div>
                     <div className="service-2-container-card-description flex justify-center items-center flex-col mt-6 md:text-center leading-6">
-                        <p className="font-normal md:text-sm text-xs leading-6 md:tracking-widest tracking-tight">
+                        <p className="font-normal md:text-sm text-xs leading-6 md:tracking-widest tracking-tight text-center">
                             希望条件がたくさんある・・・
                             <br />
                             なんとなく「一人暮らしがした」・・・
                             <br />
-                            そんな「なんとなく」から希望のお部屋をお探ししますっ！
+                            そんな『こだわり』や『なんとなく』から
+                            <br />
+                            希望のお部屋をお探ししますっ！
                         </p>
                     </div>
                     <div className="service-2-container-more-btn mt-6">

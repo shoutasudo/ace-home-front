@@ -12,7 +12,7 @@ import Link from 'next/link'
 
 const SnsIconList = () => {
     return (
-        <div className="flex justify-around items-end w-full px-12">
+        <div className="flex justify-around items-end w-full">
             <Link href="#" className="">
                 <FontAwesomeIcon
                     icon={faLine}
