@@ -1,9 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: [
-            'scdn.line-apps.com',
-            'scontent-itm1-1.cdninstagram.com'
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'scdn.line-apps.com',
+            },
+            {
+                protocol: 'https',
+                hostname: 'scontent-itm1-1.cdninstagram.com',
+            },
         ],
     },
 };
