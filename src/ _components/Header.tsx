@@ -27,7 +27,7 @@ const Header = () => {
                                     </div>
                                 </Link>
                             </div>
-                            <div className="header-pc-sns-icons w-1/2 text-white">
+                            <div className="header-pc-sns-icons w-1/2 text-white px-12 text-lg">
                                 <SnsIconList />
                             </div>
                         </section>

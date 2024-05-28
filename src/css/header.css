@@ -76,17 +76,17 @@ nav a.current {
 }
 
 .openbtn6 span:nth-of-type(1) {
-    top: 13px;
+    top: 16px;
     width: 45%;
 }
 
 .openbtn6 span:nth-of-type(2) {
-    top: 25px;
+    top: 28px;
     width: 45%;
 }
 
 .openbtn6 span:nth-of-type(3) {
-    top: 37px;
+    top: 40px;
     width: 45%;
 }
 

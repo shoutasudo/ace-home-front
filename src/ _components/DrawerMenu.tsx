@@ -9,11 +9,21 @@ import {
     faEnvelope,
     faComment,
 } from '@fortawesome/free-solid-svg-icons'
+import {
+    faLine,
+    faInstagram,
+    faXTwitter,
+    faSquareYoutube,
+    faFacebook,
+    faTiktok,
+} from '@fortawesome/free-brands-svg-icons'
 import { faHeart } from '@fortawesome/free-regular-svg-icons'
+import SnsIconList from './SnsIconList'
 
 
 const DrawerMenu = () => {
     const [toggle, setToggle] = useState(false)
+
     const drawerToggle = () => {
         setToggle(prev => !prev)
     }
@@ -43,7 +53,9 @@ const DrawerMenu = () => {
                                 <li className="lg:border-r-2 lg:border-neutral-700 px-5 lg:px-0">
                                     <Link
                                         className="flex justify-center items-center"
-                                        href="/about">
+                                        href="/about"
+                                        onClick={() => drawerToggle()}
+                                    >
                                         <FontAwesomeIcon
                                             icon={faMobileScreenButton}
                                             className="lg:text-fontMainBrown text-mainPink text-2xl w-2/12"
@@ -56,7 +68,9 @@ const DrawerMenu = () => {
                                 <li className="lg:border-r-2 lg:border-neutral-700 px-5 lg:px-0">
                                     <Link
                                         className="flex justify-center items-center"
-                                        href="staff-list">
+                                        href="staff-list"
+                                        onClick={() => drawerToggle()}
+                                    >
                                         <FontAwesomeIcon
                                             icon={faTicket}
                                             className="lg:text-fontMainBrown text-mainPink text-2xl rotate-custom w-2/12"
@@ -69,20 +83,9 @@ const DrawerMenu = () => {
                                 <li className="lg:border-r-2 lg:border-neutral-700 px-5 lg:px-0">
                                     <Link
                                         className="flex justify-center items-center"
-                                        href="/sns-list">
-                                        <FontAwesomeIcon
-                                            icon={faHeart}
-                                            className="lg:text-fontMainBrown text-mainPink text-2xl w-2/12"
-                                        />
-                                        <span className="zen-kaku-medium text-sm tracking-widest lg:text-fontMainBrown text-white w-10/12 ml-2">
-                                            SNS一覧
-                                        </span>
-                                    </Link>
-                                </li>
-                                <li className="lg:border-r-2 lg:border-neutral-700 px-5 lg:px-0">
-                                    <Link
-                                        className="flex justify-center items-center"
-                                        href="#">
+                                        href="/sns-list"
+                                        onClick={() => drawerToggle()}
+                                    >
                                         <FontAwesomeIcon
                                             icon={faMobileScreenButton}
                                             className="lg:text-fontMainBrown text-mainPink text-2xl w-2/12"
@@ -95,7 +98,9 @@ const DrawerMenu = () => {
                                 <li className="lg:border-r-2 lg:border-neutral-700 px-5 lg:px-0">
                                     <Link
                                         className="flex justify-center items-center"
-                                        href="/company">
+                                        href="/company"
+                                        onClick={() => drawerToggle()}
+                                    >
                                         <FontAwesomeIcon
                                             icon={faComment}
                                             className="lg:text-fontMainBrown text-mainPink text-2xl w-2/12"
@@ -108,8 +113,9 @@ const DrawerMenu = () => {
                                 <li className="px-5 lg:px-0">
                                     <Link
                                         className="flex justify-center items-center"
-                                        href="/contact
-                                        ">
+                                        href="/contact"
+                                        onClick={() => drawerToggle()}
+                                    >
                                         <FontAwesomeIcon
                                             icon={faEnvelope}
                                             className="lg:text-fontMainBrown text-mainPink text-2xl w-2/12"
@@ -119,6 +125,11 @@ const DrawerMenu = () => {
                                         </span>
                                     </Link>
                                 </li>
+                                <div className='w-full flex justify-center mt-9 px-3'>
+                                    <div className="drawer-icons text-mainPink text-md w-56 w-max-md flex justify-center">
+                                        <SnsIconList />
+                                    </div>
+                                </div>
                             </ul>
                         </nav>
                     </ul>

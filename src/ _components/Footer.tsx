@@ -7,7 +7,7 @@ const Footer = () => {
     return (
         <>
             <div className="flex justify-center items-center flex-col w-full py-10">
-                <div className="footer-sns-icons text-mainPink w-full max-w-sm text-sm px-14">
+                <div className="footer-sns-icons text-mainPink w-full max-w-sm text-lg px-14">
                     <SnsIconList />
                 </div>
                 <div className="footer-description mt-6">
