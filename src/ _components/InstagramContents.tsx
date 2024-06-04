@@ -24,10 +24,16 @@ const InstagramContents = () => {
     const [visibleItems, setVisibleItems] = useState(6);
 
     useEffect(() => {
+        // const fetchData = async () => {
+        //     const postIdArr = await getPostId();
+        //     const data = await Promise.all(postIdArr.map((id: idProps) => getPostInfo(id.id)));
+        //     setInfos(data);
+        // }
+        // fetchData();
         const fetchData = async () => {
-            const postIdArr = await getPostId();
-            const data = await Promise.all(postIdArr.map((id: idProps) => getPostInfo(id.id)));
-            setInfos(data);
+            const postIdData = await fetch('/api/instagram/getPostId');
+            const DataArray = await postIdData.json();
+            
         }
         fetchData();
     }, []);

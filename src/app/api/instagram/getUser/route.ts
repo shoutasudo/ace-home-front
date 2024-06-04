@@ -5,5 +5,5 @@ export const GET = async () => {
 
     const userData = await res.json();
     console.log(userData);
-    return Response.json(userData)
+    return NextResponse.json(userData)
 }
