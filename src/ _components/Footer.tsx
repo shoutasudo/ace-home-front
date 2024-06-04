@@ -21,9 +21,9 @@ const Footer = () => {
                 </div>
                 <div className="footer-log mt-4">
                     <Image
-                        src="/images/206x80.png"
-                        width={206}
-                        height={80}
+                        src="/icons/banner-horizontal.png"
+                        width={289}
+                        height={50}
                         alt="footer-log"
                     />
                 </div>
