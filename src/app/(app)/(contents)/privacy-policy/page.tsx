@@ -1,6 +1,11 @@
 'use client'
 import PrivacyContent from '@/ _components/PrivacyContent'
+import { Metadata } from 'next'
 import React from 'react'
+
+export const metadata: Metadata = {
+    title: 'プライバシポリシー'
+}
 
 const PrivacyPolicyPage = () => {
     return (

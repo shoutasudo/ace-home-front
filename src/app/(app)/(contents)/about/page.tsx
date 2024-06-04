@@ -1,7 +1,12 @@
 import Contents from '@/ _components/Contents'
 import MemberRegister from '@/ _components/MemberRegister'
+import { Metadata } from 'next'
 import Image from 'next/image'
 import React from 'react'
+
+export const metadata: Metadata = {
+    title: 'ACE HOMEとは？'
+}
 
 const AboutPage = () => {
     return (

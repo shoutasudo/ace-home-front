@@ -1,6 +1,11 @@
 import React from 'react'
 import Image from 'next/image'
 import Contents from '@/ _components/Contents'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+    title: 'SNS一覧'
+}
 
 const SnsListPage = () => {
     return (

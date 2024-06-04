@@ -1,6 +1,14 @@
 import React from 'react'
 import '@/css/contents.css'
 import MemberRegister from '@/ _components/MemberRegister'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+    title: {
+        template: "%s | 女性の為の不動産ACE HOME",
+        default: "女性の為の不動産ACE HOME",
+    }
+}
 
 const ContentLayout = ({ children }: { children: React.ReactNode }) => {
     return (
