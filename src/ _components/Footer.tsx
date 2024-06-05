@@ -12,11 +12,9 @@ const Footer = () => {
                 </div>
                 <div className="footer-description mt-6">
                     <h3 className="text-xs text-center tracking-wider leading-5">
-                        MAISON ABLEは、
+                        ACE HOMEは、
                         <br />
-                        ひとり暮らし女性を応援する
-                        <br />
-                        エイブルが運営しています。
+                        ひとり暮らし女性を応援します
                     </h3>
                 </div>
                 <div className="footer-log mt-4">
@@ -30,15 +28,9 @@ const Footer = () => {
             </div>
             <div className="footer-link-list w-full border-t-2 border-mainGray px-2 py-4">
                 <div className="flex justify-center items-center">
-                    <div className="grid grid-cols-3 gap-3 max-w-xl">
-                        <div className="privacy-policy-link text-xs text-center noto-sans-jp text-fontMainBrown border-r border-fontMainBrown px-2">
-                            <Link href={'#'}>プライバシーポリシー</Link>
-                        </div>
-                        <div className="social-media-link text-xs text-center noto-sans-jp text-fontMainBrown border-r border-fontMainBrown px-2">
-                            <Link href={'#'}>ソーシャルメディアポリシー</Link>
-                        </div>
-                        <div className="about-link text-xs text-center noto-sans-jp text-fontMainBrown border-fontMainBrown px-2">
-                            <Link href={'#'}>testtesttesttest</Link>
+                    <div className="grid grid-cols-1 gap-3 max-w-xl">
+                        <div className="privacy-policy-link text-xs text-center noto-sans-jp text-fontMainBrown px-2">
+                            <Link href='/privacy-policy'>プライバシーポリシー</Link>
                         </div>
                     </div>
                 </div>
