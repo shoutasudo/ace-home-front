@@ -3,8 +3,6 @@ import Image from 'next/image'
 import SnsIconList from '@/ _components/SnsIconList'
 import LinkList from '@/ _components/LinkList'
 import DrawerMenu from '@/ _components/DrawerMenu'
-import bannerDemoImage from '../../public/images/560x50.png'
-import bannerDemoImageSp from '../../public/images/40x40.png'
 import Link from 'next/link'
 
 const Header = () => {

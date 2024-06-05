@@ -4,11 +4,12 @@ import React from 'react'
 import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
-    faTicket,
     faMobileScreenButton,
     faEnvelope,
     faComment,
+    faCrown
 } from '@fortawesome/free-solid-svg-icons'
+import { faHeart } from '@fortawesome/free-regular-svg-icons'
 import SnsIconList from './SnsIconList'
 
 
@@ -48,7 +49,7 @@ const DrawerMenu = () => {
                                         onClick={() => drawerToggle()}
                                     >
                                         <FontAwesomeIcon
-                                            icon={faMobileScreenButton}
+                                            icon={faHeart}
                                             className="lg:text-fontMainBrown text-mainPink text-2xl w-2/12"
                                         />
                                         <span className="zen-kaku-medium text-sm tracking-widest lg:text-fontMainBrown text-white w-10/12 ml-2">
@@ -63,7 +64,7 @@ const DrawerMenu = () => {
                                         onClick={() => drawerToggle()}
                                     >
                                         <FontAwesomeIcon
-                                            icon={faTicket}
+                                            icon={faCrown}
                                             className="lg:text-fontMainBrown text-mainPink text-2xl rotate-custom w-2/12"
                                         />
                                         <span className="zen-kaku-medium text-sm tracking-widest lg:text-fontMainBrown text-white w-10/12 ml-2">
