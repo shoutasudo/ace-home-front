@@ -8,7 +8,7 @@ interface ContentsProps {
 
 const Contents = ({ subTitle, mainTitle, children }: ContentsProps) => {
     return (
-        <div className='md:px-8 px-2 w-full'>
+        <div className='md:px-8 w-full'>
             <div className="staff-list-sub-title text-center">
                 <h2 className="text-mainPink zen-kaku-black text-md">
                     {subTitle}
