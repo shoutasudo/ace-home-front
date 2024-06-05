@@ -1,7 +1,10 @@
-'use client'
-
 import Contents from '@/ _components/Contents'
+import { Metadata } from 'next'
 import React from 'react'
+
+export const metadata: Metadata = {
+    title: '会社概要'
+}
 
 const Company = () => {
     return (

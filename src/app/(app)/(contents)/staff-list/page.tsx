@@ -1,6 +1,11 @@
 import Contents from '@/ _components/Contents'
 import StaffCard from '@/ _components/StaffCard'
+import { Metadata } from 'next'
 import React from 'react'
+
+export const metadata: Metadata = {
+    title: 'スタッフリスト'
+}
 
 const StaffListPage = () => {
     return (
