@@ -11,9 +11,9 @@ import React, { useEffect, useState } from "react";
 import { MuiFileInput } from "mui-file-input";
 import Image from "next/image";
 import AttachFileIcon from "@mui/icons-material/AttachFile";
-import { EditorState, ContentState, convertToRaw } from "draft-js";
-import { Editor } from "react-draft-wysiwyg";
-import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+// import { EditorState, ContentState, convertToRaw } from "draft-js";
+// import { Editor } from "react-draft-wysiwyg";
+// import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
 const InformationRegister = () => {
     const [selectedFile, setSelectedFile] = useState<File | null>(null);
@@ -158,7 +158,7 @@ const InformationRegister = () => {
                                     )}
                                 </Box>
                             </div>
-                            <div className="col-span-2 pb-10">
+                            {/* <div className="col-span-2 pb-10">
                                 {editorEnable && (
                                     <div>
                                         <h1>editor</h1>
@@ -179,7 +179,7 @@ const InformationRegister = () => {
                                         </div>
                                     </div>
                                 )}
-                            </div>
+                            </div> */}
                         </div>
                     </Box>
                 </div>
