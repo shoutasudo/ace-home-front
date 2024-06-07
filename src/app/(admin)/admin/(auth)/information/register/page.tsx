@@ -20,9 +20,9 @@ const InformationRegister = () => {
     const [preview, setPreview] = useState<string | null>(null);
     const [select, setSelect] = useState<string | undefined>();
     const [editorEnable, setEditorEnable] = useState(false);
-    const [editorState, setEditorState] = useState(() =>
-        EditorState.createEmpty()
-    );
+    // const [editorState, setEditorState] = useState(() =>
+    //     // EditorState.createEmpty()
+    // );
 
     useEffect(() => {
         // コンポーネントがマウントされた後にsetEditorEnableを呼び出す
