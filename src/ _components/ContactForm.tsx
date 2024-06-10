@@ -3,6 +3,44 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
 import DoubleLineBtn from '@/ _components/DoubleLineBtn'
+import ContactRadioBtn from './ContactRadioBtn'
+import ContactInputForm from './ContactInputForm'
+
+const RadioContent = [
+    { "id": "1", "content": "ACE HOMEについて" },
+    { "id": "2", "content": "物件について" },
+    { "id": "3", "content": "リフォームについて" },
+    { "id": "4", "content": "売買について" },
+    { "id": "5", "content": "求人について" },
+    { "id": "6", "content": "その他のお問合せについて" },
+];
+
+const InputField = [
+    {
+        "id": "username",
+        "requiredMark": true,
+        "placeholder": "例）山田　花子",
+        "children": "お名前",
+    },
+    {
+        "id": "company-name",
+        "requiredMark": false,
+        "placeholder": "例）株式会社ACE HOME",
+        "children": "会社名",
+    },
+    {
+        "id": "tel-number",
+        "requiredMark": true,
+        "placeholder": "例）09012345678",
+        "children": "電話番号",
+    },
+    {
+        "id": "email",
+        "requiredMark": true,
+        "placeholder": "aaa@aaa.com",
+        "children": "メールアドレス",
+    },
+]
 
 const ContactForm = () => {
     //TODO: 処理
@@ -13,171 +51,22 @@ const ContactForm = () => {
         <form>
             <div className="contact-contents w-full">
                 <div className="contact-content-contact-detail md:px-6 px-0 my-7">
-                    <div className="flex justify-start items-center">
-                        <input
-                            type="radio"
-                            name="title"
-                            id="radio1"
-                            value="1"
-                            className="h-3 w-3 mr-3 checked:bg-mainPink bg-gray-300 border-none"
-                        />
-                        <label
-                            htmlFor="radio1"
-                            className="zen-kaku-regular text-xs ml-1 tracking-wide">
-                            ACE HOMEについて
-                        </label>
-                    </div>
-                    <div className="flex justify-start items-center mt-3">
-                        <input
-                            type="radio"
-                            name="title"
-                            id="radio2"
-                            value="2"
-                            className="h-3 w-3 mr-3 checked:bg-mainPink bg-gray-300 border-none"
-                        />
-                        <label
-                            htmlFor="radio2"
-                            className="zen-kaku-regular text-xs ml-1 tracking-wide">
-                            物件について
-                        </label>
-                    </div>
-                    <div className="flex justify-start items-center mt-3">
-                        <input
-                            type="radio"
-                            name="title"
-                            id="radio3"
-                            value="3"
-                            className="h-3 w-3 mr-3 checked:bg-mainPink bg-gray-300 border-none"
-                        />
-                        <label
-                            htmlFor="radio3"
-                            className="zen-kaku-regular text-xs ml-1 tracking-wide">
-                            求人について
-                        </label>
-                    </div>
-                    <div className="flex justify-start items-center mt-3">
-                        <input
-                            type="radio"
-                            name="title"
-                            id="radio4"
-                            value="4"
-                            className="h-3 w-3 mr-3 checked:bg-mainPink bg-gray-300 border-none"
-                        />
-                        <label
-                            htmlFor="radio4"
-                            className="zen-kaku-regular text-xs ml-1 tracking-wide">
-                            その他のお問合せについて
-                        </label>
-                    </div>
+                    {RadioContent.map((item) => (
+                        <div className="flex justify-start items-center mt-3" key={item.id}>
+                            <ContactRadioBtn id={`radio${item.id}`} value={item.id}>
+                                {item.content}
+                            </ContactRadioBtn>
+                        </div>
+                    ))}
                 </div>
                 <div className="contact-content-user-detail mt-5 md:px-6 px-0">
-                    <div className="username-filed text-sm noto-sans-jp font-normal">
-                        <div>
-                            <label
-                                htmlFor="username"
-                                className="zen-kaku-regular text-sm ml-1 tracking-wide">
-                                <span className="text-mainPink mr-2">
-                                    <FontAwesomeIcon icon={faCaretDown} />
-                                </span>
-                                お名前
-                                <span className="text-mainPink ml-1">
-                                    ※
-                                </span>
-                            </label>
+                    {InputField.map((item) => (
+                        <div className="text-sm noto-sans-jp font-normal mb-3" key={item.id}>
+                            <ContactInputForm id={item.id} requiredMark={item.requiredMark} placeholder={item.placeholder}>
+                                {item.children}
+                            </ContactInputForm>
                         </div>
-                        <input
-                            type="text"
-                            id="username"
-                            value=""
-                            className="w-full h-10 border-gray-300 mt-3 focus:outline-none text-sm placeholder-gray-400"
-                            placeholder="例）山田　花子"
-                        />
-                    </div>
-                    <div className="company-name-filed text-sm noto-sans-jp font-normal mt-5">
-                        <div>
-                            <label
-                                htmlFor="company-name"
-                                className="zen-kaku-regular text-sm ml-1 tracking-wide">
-                                <span className="text-mainPink mr-2">
-                                    <FontAwesomeIcon icon={faCaretDown} />
-                                </span>
-                                会社名
-                            </label>
-                        </div>
-                        <input
-                            type="text"
-                            id="company-name"
-                            value=""
-                            className="w-full h-10 border-gray-300 mt-3 focus:outline-none text-sm placeholder-gray-400"
-                            placeholder="例）株式会社ACE HOME"
-                        />
-                    </div>
-                    <div className="tel-number-filed text-sm noto-sans-jp font-normal mt-5">
-                        <div>
-                            <label
-                                htmlFor="tel-number"
-                                className="zen-kaku-regular text-sm ml-1 tracking-wide">
-                                <span className="text-mainPink mr-2">
-                                    <FontAwesomeIcon icon={faCaretDown} />
-                                </span>
-                                電話番号
-                                <span className="text-mainPink ml-1">
-                                    ※
-                                </span>
-                            </label>
-                        </div>
-                        <input
-                            type="text"
-                            id="tel-number"
-                            value=""
-                            className="w-full h-10 border-gray-300 mt-3 focus:outline-none text-sm placeholder-gray-400"
-                            placeholder="例）09012345678"
-                        />
-                    </div>
-                    <div className="email-filed text-sm noto-sans-jp font-normal mt-5">
-                        <div>
-                            <label
-                                htmlFor="email"
-                                className="zen-kaku-regular text-sm ml-1 tracking-wide">
-                                <span className="text-mainPink mr-2">
-                                    <FontAwesomeIcon icon={faCaretDown} />
-                                </span>
-                                メールアドレス
-                                <span className="text-mainPink ml-1">
-                                    ※
-                                </span>
-                            </label>
-                        </div>
-                        <input
-                            type="text"
-                            id="email"
-                            value=""
-                            className="w-full h-10 border-gray-300 mt-3 focus:outline-none text-sm placeholder-gray-400"
-                            placeholder="例）aaa@aaa.com"
-                        />
-                    </div>
-                    <div className="email-confirm-filed text-sm noto-sans-jp font-normal mt-5">
-                        <div>
-                            <label
-                                htmlFor="email-confirm"
-                                className="zen-kaku-regular text-sm ml-1 tracking-wide">
-                                <span className="text-mainPink mr-2">
-                                    <FontAwesomeIcon icon={faCaretDown} />
-                                </span>
-                                メールアドレス
-                                <span className="text-mainPink ml-1">
-                                    ※
-                                </span>
-                            </label>
-                        </div>
-                        <input
-                            type="text"
-                            id="email-confirm"
-                            value=""
-                            className="w-full h-10 border-gray-300 mt-3 focus:outline-none text-sm placeholder-gray-400"
-                            placeholder="例）aaa@aaa.com"
-                        />
-                    </div>
+                    ))}
                     <div className="content-filed text-sm noto-sans-jp font-normal mt-5">
                         <div>
                             <label
