@@ -10,7 +10,9 @@ import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { ThemeProvider, createTheme } from '@mui/material';
+import { Alert, CircularProgress, Snackbar, ThemeProvider, createTheme } from '@mui/material';
+import { signIn } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 
 const theme = createTheme({
     // 既存のテーマプロパティを定義する
@@ -25,22 +27,38 @@ const theme = createTheme({
   });
 
 const Login = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    // formの状態
+    const [email, setEmail] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
+    // API通信の状態
+    const [isProceeding, setIsProceeding] = useState<boolean>(false);
+    const [error, setError] = useState<boolean>(false);
+
+    const router = useRouter();
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault()
-        const data = {
-            email,
-            password
-        }
-        const res = await http.get('/sanctum/csrf-cookie');
-        console.log(res);
+      e.preventDefault();
+      try {
+        setIsProceeding(true);
 
-        const loginResponse = await http.post('/api/login', data);
-        console.log(loginResponse);
-    }
+        const data = { email, password };
+        // nextauthのauthorize関数を呼び出しています
+        const result = await signIn('credentials', { ...data, redirect: false });
 
+        if (result?.error) throw new Error(result.error);
+
+        router.push('/admin/dashboard');
+      } catch (error) {
+        console.error('error', error);
+        setError(true);
+      } finally {
+        setIsProceeding(false);
+      }
+    };
+
+    const handleClose = () => {
+      setError(false);
+    };
     return (
         <ThemeProvider theme={theme}>
         <div className='w-screen h-screen flex justify-center items-center'>
@@ -95,13 +113,38 @@ const Login = () => {
                     fullWidth
                     variant="contained"
                     sx={{ mt: 3, mb: 2 }}
+                    disabled={isProceeding}
                 >
+                {/* 通信中はローディングUI表示＆ボタン非活性化 */}
+                  {isProceeding && (
+                      <CircularProgress
+                          sx={{ mr: 2 }}
+                          color="secondary"
+                          size={20}
+                      />
+                    )
+                  }
                     ログイン
                 </Button>
               </Box>
             </Box>
           </Container>
         </div>
+        {/* エラーはスナックバーで知らせる 余力があればもう少し細かいエラー内容を */}
+        <Snackbar
+          open={error}
+          autoHideDuration={6000}
+          onClose={handleClose}
+          anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+        >
+          <Alert
+            onClose={handleClose}
+            severity="error"
+            sx={{ width: '100%' }}
+          >
+            通信に失敗しました。時間をおいてもう一度お試しください。
+          </Alert>
+        </Snackbar>
         </ThemeProvider>
       );
 }
