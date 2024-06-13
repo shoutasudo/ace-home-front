@@ -1,12 +1,15 @@
-import React from 'react'
+import React from 'react';
+import { UseFormRegisterReturn } from 'react-hook-form';
 
 interface ContentRadioBtnProps {
-    id: string,
-    value: string,
-    children: string,
+    id: string
+    value: string
+    children: string
+    register?: UseFormRegisterReturn
 }
 
-const ContactRadioBtn = ({ id, value, children }: ContentRadioBtnProps) => {
+export const ContactRadioBtn = (props: ContentRadioBtnProps) => {
+    const { id, value, children, register} = props
     return (
         <>
             <input
@@ -14,6 +17,7 @@ const ContactRadioBtn = ({ id, value, children }: ContentRadioBtnProps) => {
                 name="title"
                 id={id}
                 value={value}
+                {...register}
                 className="h-4 w-4 mr-3 checked:bg-mainPink bg-gray-300 border-gray-200"
             />
             <label
