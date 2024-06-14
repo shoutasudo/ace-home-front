@@ -4,8 +4,6 @@ import {
     faLine,
     faInstagram,
     faXTwitter,
-    faSquareYoutube,
-    faFacebook,
     faTiktok,
 } from '@fortawesome/free-brands-svg-icons'
 import Link from 'next/link'

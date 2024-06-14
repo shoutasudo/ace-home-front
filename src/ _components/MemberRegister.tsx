@@ -18,12 +18,12 @@ const MemberRegister = () => {
                             <p>「ACE HOME」を友達に追加！</p>
                         </div>
                         <div className="line-register-btn flex justify-center items-center flex-col mt-3">
-                            <Link href="https://lin.ee/TwXHWov" target="_blank">
+                            <Link href="https://lin.ee/TwXHWov" target="_blank" className='flex justify-center'>
                                 <Image
-                                    src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png"
+                                    src="/icons/line-add.png"
                                     alt="お友達追加"
-                                    width={110}
-                                    height={36}
+                                    width={229}
+                                    height={130}
                                 />
                             </Link>
                         </div>

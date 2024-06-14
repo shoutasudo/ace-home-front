@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import Contents from '@/ _components/Contents'
 import { Metadata } from 'next'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
     title: 'SNS一覧'
@@ -14,12 +15,14 @@ const SnsListPage = () => {
                 <div className="sns-list-card-content-sns-card w-full py-6 px-5 mt-3 bg-white ring-mainPink rounded-lg flex justify-center sm:flex-col items-center ring-4">
                     <div className="w-3/12 sm:w-full">
                         <div className="sns-list-card-content-sns-card-icon flex justify-center items-center">
-                            <Image
-                                src="/socal-logo/LINE.png"
-                                width={66}
-                                height={66}
-                                alt="icon"
-                            />
+                            <Link href="https://lin.ee/TwXHWov" target="_blank">
+                                <Image
+                                    src="/socal-logo/LINE.png"
+                                    width={66}
+                                    height={66}
+                                    alt="icon"
+                                />
+                            </Link>
                         </div>
                         <div className="sns-list-card-content-sns-card-title hidden sm:flex sm: justify-center sm:mt-3">
                             <h3>LINE</h3>
@@ -34,12 +37,14 @@ const SnsListPage = () => {
                 <div className="sns-list-card-content-sns-card w-full py-6 px-5 mt-3 bg-white ring-mainPink rounded-lg flex justify-center sm:flex-col items-center ring-4">
                     <div className="w-3/12 sm:w-full">
                         <div className="sns-list-card-content-sns-card-icon flex justify-center items-center">
-                            <Image
-                                src="/socal-logo/TikTok.png"
-                                width={66}
-                                height={66}
-                                alt="icon"
-                            />
+                            <Link href="https://www.tiktok.com/@ace_home_kobe" target='_blank'>
+                                <Image
+                                    src="/socal-logo/TikTok.png"
+                                    width={66}
+                                    height={66}
+                                    alt="icon"
+                                />
+                            </Link>
                         </div>
                         <div className="sns-list-card-content-sns-card-title hidden sm:flex sm: justify-center sm:mt-3">
                             <h3>TikTok</h3>
@@ -54,12 +59,14 @@ const SnsListPage = () => {
                 <div className="sns-list-card-content-sns-card w-full py-6 px-5 mt-3 bg-white ring-mainPink rounded-lg flex justify-center sm:flex-col items-center ring-4">
                     <div className="w-3/12 sm:w-full">
                         <div className="sns-list-card-content-sns-card-icon flex justify-center items-center">
-                            <Image
-                                src="/socal-logo/Instagram.png"
-                                width={66}
-                                height={66}
-                                alt="icon"
-                            />
+                            <Link href="https://www.instagram.com/ace_home_kobe/" target='_blank'>
+                                <Image
+                                    src="/socal-logo/Instagram.png"
+                                    width={66}
+                                    height={66}
+                                    alt="icon"
+                                />
+                            </Link>
                         </div>
                         <div className="sns-list-card-content-sns-card-title hidden sm:flex sm: justify-center sm:mt-3">
                             <h3>Instagram</h3>
@@ -74,12 +81,14 @@ const SnsListPage = () => {
                 <div className="sns-list-card-content-sns-card w-full py-6 px-5 mt-3 bg-white ring-mainPink rounded-lg flex justify-center sm:flex-col items-center ring-4">
                     <div className="w-3/12 sm:w-full">
                         <div className="sns-list-card-content-sns-card-icon flex justify-center items-center">
-                            <Image
-                                src="/socal-logo/x.png"
-                                width={66}
-                                height={66}
-                                alt="icon"
-                            />
+                            <Link href="https://x.com/ace_home4367" target='_blank'>
+                                <Image
+                                    src="/socal-logo/x.png"
+                                    width={66}
+                                    height={66}
+                                    alt="icon"
+                                />
+                            </Link>
                         </div>
                         <div className="sns-list-card-content-sns-card-title hidden sm:flex sm: justify-center sm:mt-3">
                             <h3>X</h3>
