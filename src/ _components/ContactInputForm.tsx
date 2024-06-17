@@ -35,7 +35,7 @@ export const ContactInputForm = (props: ContactInputFormProps) => {
                 type="text"
                 id={id}
                 name={id}
-                className="w-full h-10 border-gray-300 mt-3 focus:outline-none text-sm placeholder-gray-400"
+                className="pl-2 w-full h-10 border-gray-300 mt-3 focus:outline-none text-sm placeholder-gray-400 hover:border-pink-300 focus:border-pink-300"
                 placeholder={placeholder}
                 {...register}
             />
