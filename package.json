@@ -2,7 +2,7 @@
     "name": "front",
     "version": "0.1.0",
     "private": true,
-   "scripts": {
+    "scripts": {
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
@@ -55,5 +55,9 @@
         "postcss": "^8",
         "tailwindcss": "^3.4.1",
         "typescript": "^5"
+    },
+    "volta": {
+        "node": "20.9.0",
+        "npm": "10.1.0"
     }
 }
