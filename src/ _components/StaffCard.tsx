@@ -5,22 +5,24 @@ interface StaffCardProps {
     src: string,
     jobTitle: string,
     name: string,
+    comment: string
 }
 
-const StaffCard = ({ src, jobTitle, name }: StaffCardProps) => {
+const StaffCard = ({ src, jobTitle, name, comment }: StaffCardProps) => {
     return (
         <div className="flex justify-center flex-col md:w-11/12 w-full">
             <div className="card-top-banner bg-mainPink py-1 text-center">
                 <h1 className="card-top-banner-title text-white md:text-xs text-sm noto-sans-jp font-bold">
-                    あなたに合ったお部屋を探します！
+                    { comment }
                 </h1>
             </div>
             <div className="card-image">
                 <Image
                     src={src}
-                    width={518}
-                    height={350}
                     alt="cart"
+                    className='object-contain h-[100px] w-full'
+                    height={500}
+                    width={500}
                 />
             </div>
             <div className="card-footer bg-mainPink  p-4 text-white text-center noto-sans-jp py-1">
@@ -29,7 +31,7 @@ const StaffCard = ({ src, jobTitle, name }: StaffCardProps) => {
                 </p>
                 <p className="font-semibold md:text-sm text-lg">
                     {name}
-                </p>
+                </p>s
             </div>
         </div>
     )
