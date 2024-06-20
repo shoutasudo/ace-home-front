@@ -26,14 +26,16 @@ const AppLayout = ({ children }: { children: React.ReactNode }) => {
                 </div>
             </footer>
             <div
-                className="fixed z-50 bottom-10 right-3 pt-5 pb-4 px-5 border-2 bg-mainPink rounded-full cursor-pointer text-white border-white"
+                className="fixed z-50 bottom-10 right-3 w-20 h-20 border-2 bg-mainPink rounded-full cursor-pointer text-white border-white"
             >
-                <a href={`tel:${phone}`}>
-                    <FontAwesomeIcon
-                        icon={faPhoneVolume}
-                        className="w-full cursor-pointer sns-icon"
-                    />
-                </a>
+                <div className="pt-5">
+                    <a href={`tel:${phone}`}>
+                        <FontAwesomeIcon
+                            icon={faPhoneVolume}
+                            className="w-full cursor-pointer sns-icon"
+                        />
+                    </a>
+                </div>
             </div>
         </>
 
