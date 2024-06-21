@@ -29,7 +29,7 @@ const AppLayout = ({ children }: { children: React.ReactNode }) => {
                 className="fixed z-50 bottom-10 right-3 w-20 h-20 border-2 bg-mainPink rounded-full cursor-pointer text-white border-white"
             >
                 <div className="pt-5">
-                    <a href={`tel:${phone}`}>
+                    <a href={`tel:${process.env.TEL_NUM}`}>
                         <FontAwesomeIcon
                             icon={faPhoneVolume}
                             className="w-full cursor-pointer sns-icon"
