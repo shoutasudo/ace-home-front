@@ -3,7 +3,7 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 interface ToolBarProps {
     editor: any;
-    fontSizeOption:Array<num>
+    fontSizeOption:Array<number>
     fontOption: Array<Array<String>>
 }
 
@@ -18,7 +18,7 @@ const ToolBar: React.FC<ToolBarProps> = ({ editor,fontSizeOption,fontOption }) =
                     <div className="w-full flex justify-center">
                         <input
                             type="color"
-                            onInput={(event) =>
+                            onInput={(event: React.ChangeEvent<HTMLInputElement>) =>
                                 editor
                                     .chain()
                                     .focus()
@@ -69,7 +69,7 @@ const ToolBar: React.FC<ToolBarProps> = ({ editor,fontSizeOption,fontOption }) =
                             {fontOption &&
                                 fontOption.map((font, index) => {
                                     return (
-                                        <option key={index} value={font[0]}>
+                                        <option key={index} value={String(font[0])}>
                                             {font[1]}
                                         </option>
                                     );

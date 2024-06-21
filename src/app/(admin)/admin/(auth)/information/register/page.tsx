@@ -6,7 +6,7 @@ const InformationRegister = () => {
         <div className="w-full flex justify-center">
             <div className="w-[90%] h-fit my-10 bg-gray-100 rounded-xl flex justify-center">
                 <div className="w-[90%]">
-                    <RegisterForm pageType="register"/>
+                    <RegisterForm infoId="register"/>
                 </div>
             </div>
         </div>

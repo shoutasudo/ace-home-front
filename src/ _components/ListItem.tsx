@@ -11,7 +11,7 @@ import LayersIcon from "@mui/icons-material/Layers";
 import AssignmentIcon from "@mui/icons-material/Assignment";
 import Link from "next/link";
 
-export const mainListItems = (handleListItemClick) =>(
+export const mainListItems = (handleListItemClick:any) =>(
     <React.Fragment>
         <ListItemButton>
             <ListItemIcon>

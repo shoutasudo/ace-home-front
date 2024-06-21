@@ -47,7 +47,7 @@ const Bubble: React.FC<BubbleProps> = ({ editor }) => {
                         }
                         className={editor.isActive("strike") ? "is-active" : ""}
                     >
-                        <strike>S</strike>
+                        <p>S</p>
                     </button>
                 </div>
             </div>
