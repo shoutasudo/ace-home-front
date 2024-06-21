@@ -1,15 +1,19 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
+import { UseFormRegisterReturn } from 'react-hook-form'
 
 interface ContactInputFormProps {
-    id: string,
-    requiredMark: boolean,
-    placeholder: string,
-    children: string,
+    id: string
+    requiredMark: boolean
+    placeholder: string
+    children: string
+    register?: UseFormRegisterReturn
+    errMessage?: string
 }
 
-const ContactInputForm = ({ id, requiredMark, placeholder, children }: ContactInputFormProps) => {
+export const ContactInputForm = (props: ContactInputFormProps) => {
+    const { id, requiredMark, placeholder, children, register, errMessage } = props
     return (
         <>
             <div>
@@ -30,10 +34,18 @@ const ContactInputForm = ({ id, requiredMark, placeholder, children }: ContactIn
             <input
                 type="text"
                 id={id}
-                value=""
-                className="w-full h-10 border-gray-300 mt-3 focus:outline-none text-sm placeholder-gray-400"
+                name={id}
+                className="pl-2 w-full h-10 border-gray-300 mt-3 focus:outline-none text-sm placeholder-gray-400 hover:border-pink-300 focus:border-pink-300"
                 placeholder={placeholder}
+                {...register}
             />
+            <div className="h-4">
+                {errMessage ? (
+                    <div className="text-sm text-red-500">
+                        {errMessage}
+                    </div>
+                ) : ""}
+            </div>
         </>
     )
 }
