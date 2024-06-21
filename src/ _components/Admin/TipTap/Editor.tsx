@@ -1,17 +1,18 @@
 "use client";
-import { EditorContent } from "@tiptap/react";
+import { Editor as TipTapEditor, EditorContent, JSONContent } from "@tiptap/react";
 import { useTipTap } from '../../../hooks/useTipTap';
 import Bubble from './Bubble';
 import Floating from './Floating';
 import ToolBar from './ToolBar';
 
 interface EditorpProps {
-    content: any;
-    onChange: (content: any) => void;
+    editor:TipTapEditor | null
+    fontSizeOption: number[];
+    fontOption: string[][];
 }
 
-const Editor: React.FC<EditorpProps> = ({ content, onChange }) => {
-    const { editor, fontSizeOption, fontOption } = useTipTap(content,onChange);
+const Editor: React.FC<EditorpProps> = ({ editor, fontSizeOption, fontOption}) => {
+
     return (
         <>
             <div className="border border-solid border-black">

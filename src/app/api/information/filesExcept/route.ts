@@ -1,13 +1,15 @@
-import { NextResponse } from "next/server";
+import { NextResponse, NextRequest } from "next/server";
 import http from "../../../../lib/axios";
-import type { NextRequest } from 'next/server.js';
 
-export async function DELETE(req: NextRequest) {
+export async function POST(req: NextRequest) {
     try {
+        // Read the request body as a ReadableStream
         const body = await req.json();
+        console.log(body)
 
-        const res = await http.delete(
-            "http://localhost:8080/api/admin/information/delete/" + body.uuid
+        const res = await http.post(
+            "http://localhost:8080/api/admin/information/filesExcept",
+            body,
         );
 
         console.log('レスポンスデータ:', res);

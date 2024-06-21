@@ -3,10 +3,10 @@ import MUITableBody from "@mui/material/TableBody";
 import TableRow from "@mui/material/TableRow";
 import TableCell from "@mui/material/TableCell";
 import { Button } from "@mui/material";
-import useState from "react";
+import { useRouter } from 'next/navigation';
 
 interface RowsObj {
-    id: number;
+    uuid: string;
     created_at: string;
     img_path: string;
     tag: string;
@@ -15,25 +15,29 @@ interface RowsObj {
 }
 
 interface TableBodyProps {
+    setRows: React.Dispatch<React.SetStateAction<Array<RowsObj>>>;
     rows: Array<RowsObj>;
     page: number;
     rowsPerPage: number;
 }
 
-const TableBody = ({ rows, page, rowsPerPage }: TableBodyProps) => {
-    const deleteList = async (id: number) => {
+const TableBody = ({setRows, rows, page, rowsPerPage }: TableBodyProps) => {
+    const router = useRouter();
+
+    const deleteList = async (uuid: string) => {
         try {
             const res = await fetch(
-                "http://localhost:3000/api/information/register",
+                process.env.NEXT_PUBLIC_FRONTEND_URL + "/api/information/delete",
                 {
                     method: "DELETE",
                     headers: {
                         "Content-Type": "application/json",
                     },
-                    body: JSON.stringify({ id }),
+                    body: JSON.stringify({ uuid: uuid }),
                 }
             );
             const responseBody = await res.json();
+            setRows(responseBody);
 
             console.log("Response Data:", responseBody);
         } catch (error) {
@@ -48,7 +52,7 @@ const TableBody = ({ rows, page, rowsPerPage }: TableBodyProps) => {
                     .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                     .map((row, index) => (
                         <TableRow
-                            key={row.id}
+                            key={row.uuid}
                             sx={{
                                 backgroundColor:
                                     index % 2 === 0 ? "#ffffff" : "#e8e8e8",
@@ -66,7 +70,7 @@ const TableBody = ({ rows, page, rowsPerPage }: TableBodyProps) => {
                                 <div className="flex justify-end">
                                     <div className="flex">
                                         <div>
-                                            <Button variant="outlined">
+                                            <Button variant="outlined" onClick={() => router.push('/admin/information/edit/' + row.uuid)}>
                                                 詳細
                                             </Button>
                                         </div>
@@ -75,7 +79,7 @@ const TableBody = ({ rows, page, rowsPerPage }: TableBodyProps) => {
                                                 variant="outlined"
                                                 color="error"
                                                 onClick={() =>
-                                                    deleteList(row.id)
+                                                    deleteList(row.uuid)
                                                 }
                                             >
                                                 削除

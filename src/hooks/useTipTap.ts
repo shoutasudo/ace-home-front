@@ -2,17 +2,11 @@ import FileHandler from "@tiptap-pro/extension-file-handler";
 import ImageResize from "tiptap-extension-resize-image";
 import TextAlign from "@tiptap/extension-text-align";
 import TextStyle from "@tiptap/extension-text-style";
-import Text from "@tiptap/extension-text";
 import { Color } from "@tiptap/extension-color";
-import Emoji, { gitHubEmojis } from "@tiptap-pro/extension-emoji";
 import FontFamily from "@tiptap/extension-font-family";
-import Heading from "@tiptap/extension-heading";
-import { Extension } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
-import Image from "@tiptap/extension-image";
-import { useEditor } from "@tiptap/react";
-
-import React, { useEffect, useState } from "react";
+import { HTMLContent, JSONContent, generateHTML, useEditor } from "@tiptap/react";
+import { useEffect, useState } from "react";
 
 declare module "@tiptap/core" {
     interface Commands<ReturnType> {
@@ -54,22 +48,29 @@ const FontSize = TextStyle.extend({
             ...this.parent?.(),
             setFontSize:
                 (fontSize) =>
-                ({ commands }) => {
-                    return commands.setMark(this.name, { fontSize: fontSize });
-                },
+                    ({ commands }) => {
+                        return commands.setMark(this.name, { fontSize: fontSize });
+                    },
             unsetFontSize:
                 () =>
-                ({ chain }) => {
-                    return chain()
-                        .setMark(this.name, { fontSize: null })
-                        .removeEmptyTextStyle()
-                        .run();
-                },
+                    ({ chain }) => {
+                        return chain()
+                            .setMark(this.name, { fontSize: null })
+                            .removeEmptyTextStyle()
+                            .run();
+                    },
         };
     },
 });
 
-export const useTipTap = (content, onChange) => {
+interface tipTapProp {
+    content: JSON | JSONContent | string;
+    setContent: (content: JSONContent) => void;
+    defaultContent: JSONContent | undefined;
+}
+
+export const useTipTap = ({ content, setContent, defaultContent }: tipTapProp) => {
+
     // エディター初期化
     const editor = useEditor({
         editorProps: {
@@ -103,7 +104,10 @@ export const useTipTap = (content, onChange) => {
                             ? "video"
                             : "image"; // ファイルのタイプをチェック
 
+                        const uniqueId = 'node_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9); // 一意のIDを生成
+
                         fileReader.readAsDataURL(file);
+
                         fileReader.onload = () => {
                             currentEditor
                                 .chain()
@@ -111,6 +115,7 @@ export const useTipTap = (content, onChange) => {
                                     type: type, // 動画か画像かによって type を設定
                                     attrs: {
                                         src: fileReader.result,
+                                        id: uniqueId, // ノードにIDを追加
                                     },
                                 })
                                 .focus()
@@ -152,12 +157,28 @@ export const useTipTap = (content, onChange) => {
             }),
         ],
         // defaultテキスト
-        content: "<p>Hello World! 🌎️</p>",
+        content: '',
         // エディタ内容が変更あるたびにreacthookformのValueにセット
         onUpdate: ({ editor }) => {
-            onChange(editor.getJSON());
+            const editorContent = editor.getJSON();
+            setContent(editorContent);
         },
     });
+
+    useEffect(() => {
+        if (defaultContent !== undefined && editor !== null) {
+            editor.commands.setContent(generateHTML(defaultContent, [
+                StarterKit,
+                FontSize,
+                FontFamily,
+                ImageResize,
+                TextStyle,
+                Color,
+                FileHandler
+            ])
+            )
+        }
+    }, [defaultContent, editor])
 
     useEffect(() => {
         if (

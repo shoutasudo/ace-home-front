@@ -2,12 +2,13 @@ import { NextResponse } from "next/server";
 import http from "../../../../lib/axios";
 import type { NextRequest } from 'next/server.js';
 
-export async function DELETE(req: NextRequest) {
+export async function GET(req: NextRequest) {
     try {
-        const body = await req.json();
+        const { searchParams } = new URL(req.url);
+        const infoId = searchParams.get('infoId');
 
-        const res = await http.delete(
-            "http://localhost:8080/api/admin/information/delete/" + body.uuid
+        const res = await http.get(
+            "http://localhost:8080/api/admin/information/edit/" + infoId
         );
 
         console.log('レスポンスデータ:', res);

@@ -9,13 +9,15 @@ import { Button } from "@mui/material";
 import { useState, useEffect } from "react";
 import TableBody from "../../../../../../ _components/Admin/Info/TableBody";
 import { MouseEvent } from 'react';
+import { useRouter } from "next/navigation";
 
 const Information = () => {
     const [page, setPage] = useState(0);
     const [rows, setRows] = useState<any[]>([]);
+    const router = useRouter();
     const getList = async () => {
         try {
-            const res = await fetch("http://localhost:3000/api/information/list");
+            const res = await fetch(process.env.NEXT_PUBLIC_FRONTEND_URL + "/api/information/list");
             const responseBody = await res.json();
             setRows(responseBody)
             console.log("Response Data:", responseBody);
@@ -37,6 +39,9 @@ const Information = () => {
     return (
         <div className="w-full flex justify-center">
             <div className="w-[90%] my-20">
+                <div className="w-full flex justify-end mb-5" >
+                    <Button variant="outlined" onClick={() => router.push('/admin/information/register')}>新規登録</Button>
+                </div>
                 <Table size="small">
                     <TableHead
                         sx={{
@@ -55,7 +60,7 @@ const Information = () => {
                             <TableCell align="right"></TableCell>
                         </TableRow>
                     </TableHead>
-                    <TableBody rows={rows} page={page} rowsPerPage={rowsPerPage} />
+                    <TableBody setRows={setRows} rows={rows} page={page} rowsPerPage={rowsPerPage} />
                 </Table>
                 {rows && (
                     <TablePagination

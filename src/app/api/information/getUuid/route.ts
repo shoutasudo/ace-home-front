@@ -1,13 +1,10 @@
-import { NextResponse } from "next/server";
+import { NextResponse, NextRequest } from "next/server";
 import http from "../../../../lib/axios";
-import type { NextRequest } from 'next/server.js';
 
-export async function DELETE(req: NextRequest) {
+export async function GET() {
     try {
-        const body = await req.json();
-
-        const res = await http.delete(
-            "http://localhost:8080/api/admin/information/delete/" + body.uuid
+        const res = await http.get(
+            "http://localhost:8080/api/admin/information/store/uuid"
         );
 
         console.log('レスポンスデータ:', res);

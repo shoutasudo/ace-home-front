@@ -5,103 +5,34 @@ import {
     Typography,
     Select,
     MenuItem,
+    Button,
 } from "@mui/material";
-import React, { useState } from "react";
+import React from "react";
 import { MuiFileInput } from "mui-file-input";
 import Image from "next/image";
 import AttachFileIcon from "@mui/icons-material/AttachFile";
-import { useForm, Controller } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
+import { Controller} from "react-hook-form";
 import Editor from "../TipTap/Editor";
-import { useRouter } from 'next/navigation';
+import { useInfoForm } from "@/hooks/useInfoForm";
 
+interface RegisterFormProps {
+    infoId: string | null
+}
 
-const nodeSchema = z.object({
-    type: z.string(),
-    attrs: z.record(z.any()).optional(),
-    content: z.lazy(() => z.array(nodeSchema)).optional(),
-    marks: z
-        .array(
-            z.object({
-                type: z.string(),
-                attrs: z.record(z.any()).optional(),
-            })
-        )
-        .optional(),
-    text: z.string().optional(),
-});
-
-const schema = z.object({
-    title: z.string().nonempty("タイトルは必須です"),
-    tag: z.string().nonempty("タグは必須です"),
-    file: z
-        .any()
-        .refine(
-            (file) =>
-                file &&
-                (file.type === "image/png" || file.type === "image/jpeg"),
-            "PNG/JPEG ファイルのみサポートされています。"
-        )
-        .refine(
-            (file) => file && file.size <= 5 * 1024 * 1024,
-            "ファイルサイズは5MB以内にしてください。"
-        ),
-    content: z
-        .object({
-            type: z.literal("doc"),
-            content: z.array(nodeSchema),
-        })
-        .required("contentフィールドは必須です"),
-});
-
-const RegisterForm = () => {
-    const [selectedFile, setSelectedFile] = useState<File | null>(null);
-    const [preview, setPreview] = useState<string | null>(null);
-    const [select, setSelect] = useState<string | undefined>();
-    const router = useRouter();
-
+const RegisterForm = ({ infoId = null }: RegisterFormProps) => {
     const {
         handleSubmit,
+        onSubmit,
         control,
-        setValue,
-        formState: { errors },
-    } = useForm({
-        resolver: zodResolver(schema),
-    });
-
-    const handleFileChange = (file) => {
-        setSelectedFile(file);
-        setValue("file", file); // React Hook Formの値を更新
-        if (file) {
-            const reader = new FileReader();
-            reader.onloadend = () => {
-                setPreview(reader.result);
-            };
-            reader.readAsDataURL(file);
-        } else {
-            setPreview(null);
-        }
-    };
-
-    const onSubmit = async (data) => {
-        const formData = new FormData();
-        formData.append('title',data.title);
-        formData.append('tag',data.tag);
-        formData.append('file',data.file);
-        formData.append('content',JSON.stringify(data.content));
-        try {
-            const res = await fetch("http://localhost:3000/api/information/register", {
-                method: 'POST',
-                body: formData,
-            });
-            const responseBody = await res.json(); // Response bodyを読み取る
-            console.log("Response Data:", responseBody);
-            router.push('/admin/information/list')
-        } catch (error) {
-            console.log("Response Data:", error);
-        }
-    };
+        errors,
+        defaultValue,
+        selectedFile,
+        handleFileChange,
+        preview,
+        fontSizeOption,
+        fontOption,
+        editor
+    } = useInfoForm(infoId)
 
     return (
         <Box
@@ -126,6 +57,7 @@ const RegisterForm = () => {
                         render={({ field }) => (
                             <TextField
                                 {...field}
+                                value={field.value} // valueをfield.valueに設定
                                 variant="outlined"
                                 required
                                 fullWidth
@@ -160,9 +92,9 @@ const RegisterForm = () => {
                                 fullWidth
                                 error={!!errors.tag}
                             >
-                                <MenuItem value="新着">新着</MenuItem>
-                                <MenuItem value="Twenty">Twenty</MenuItem>
-                                <MenuItem value="Thirty">Thirty</MenuItem>
+                                <MenuItem value="新着" selected={defaultValue?.tag == '新着'} >新着</MenuItem>
+                                <MenuItem value="Twenty" selected={defaultValue?.tag == 'Twenty'} >Twenty</MenuItem>
+                                <MenuItem value="Thirty" selected={defaultValue?.tag == 'Thirty'} >Thirty</MenuItem>
                             </Select>
                         )}
                     />
@@ -258,8 +190,9 @@ const RegisterForm = () => {
                         control={control}
                         render={({ field }) => (
                             <Editor
-                                content={field.value}
-                                onChange={(value) => setValue("content", value)}
+                                editor={editor}
+                                fontSizeOption={fontSizeOption}
+                                fontOption={fontOption}
                             />
                         )}
                     />
@@ -275,7 +208,9 @@ const RegisterForm = () => {
                     )}
                 </div>
             </div>
-            <button>登録</button>
+            <div className="w-full flex justify-end mb-10">
+                <Button type="submit" variant="outlined">登録</Button>
+            </div>
         </Box>
     );
 };

@@ -69,6 +69,9 @@ const AdminHeader = ({ toggleDrawer, open }: AdminHeaderProps) => {
             case "register":
                 setPathType("登録");
                 break;
+            case "edit":
+                setPathType("更新");
+                break;
 
             default:
                 break;
