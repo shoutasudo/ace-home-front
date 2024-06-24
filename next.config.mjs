@@ -11,12 +11,16 @@ const nextConfig = {
                 hostname: 'scontent-itm1-1.cdninstagram.com',
             },
             {
-                protocol: 'https',
-                hostname: 'nikkan-spa.jp',
+                protocol: 'http',
+                hostname: process.env.NEXT_PUBLIC_BACKEND_URL,
             },
             {
                 protocol: 'http',
                 hostname: 'localhost',
+            },
+            {
+                protocol: 'https',
+                hostname: 'nikkan-spa.jp',
             },
         ],
     },

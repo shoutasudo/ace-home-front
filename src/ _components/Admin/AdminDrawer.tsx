@@ -45,7 +45,14 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
     }
 );
 
-const AdminDrawer = ({  toggleDrawer, open ,theme }: AdminDrawerProps) => (
+const AdminDrawer = ({  toggleDrawer, open ,theme }: AdminDrawerProps) =>{
+    const handleListItemClick = () => {
+        if(open) {
+            console.log(open)
+            toggleDrawer();
+        }
+    };
+    return(
     <>
     <div style={{width: theme.spacing(7)}}></div>
     <Drawer variant="permanent" open={open}>
@@ -63,12 +70,12 @@ const AdminDrawer = ({  toggleDrawer, open ,theme }: AdminDrawerProps) => (
         </Toolbar>
         <Divider />
         <List component="nav">
-            {mainListItems}
+            {mainListItems(handleListItemClick)}
             <Divider sx={{ my: 1 }} />
             {secondaryListItems}
         </List>
     </Drawer>
     </>
-);
+);}
 
 export default AdminDrawer;
