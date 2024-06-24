@@ -18,8 +18,11 @@ const nextConfig = {
                 protocol: 'http',
                 hostname: 'localhost',
             },
+            {
+                protocol: 'https',
+                hostname: 'nikkan-spa.jp',
+            },
         ],
     },
 };
-
 export default nextConfig;
