@@ -1,11 +1,10 @@
-import { NextResponse } from "next/server";
-import http from "../../../../lib/axios";
-import type { NextRequest } from 'next/server.js';
+import { NextRequest, NextResponse } from "next/server";
+import http from "../../../../../lib/axios";
 
-export async function GET(req: NextRequest) {
+export async function GET(request: NextRequest,{ params }: { params: {infoId: string } }) {
     try {
-        const { searchParams } = new URL(req.url);
-        const infoId = searchParams.get('infoId');
+        console.log(params)
+        const infoId = params.infoId
 
         const res = await http.get(
             "http://localhost:8080/api/admin/information/edit/" + infoId

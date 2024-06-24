@@ -114,23 +114,27 @@ export const useInfoForm = (infoId:string | null) => {
 
     const { editor, fontSizeOption, fontOption } = useTipTap({ content, setContent, defaultContent });
 
+
+
     useEffect(() => {
         if (infoId !== null) {
-            getDetail()
-        }
-    }, [infoId])
+            const getDetail = async (infoId:string) => {
+                const res = await fetch(process.env.NEXT_PUBLIC_FRONTEND_URL + "/api/information/edit/" + infoId);
+                const responseBody: detailValue = await res.json();
+                setValue('uuid', responseBody.uuid);
+                setValue('title', responseBody.title);
+                setValue('tag', responseBody.tag);
+                setValue('content', responseBody.content);
+                setDefaultValue(responseBody)
+                setPreview(responseBody.img_path);
+                console.log(responseBody)
+            }
 
-    const getDetail = async () => {
-        const res = await fetch(process.env.NEXT_PUBLIC_FRONTEND_URL + "/api/information/edit?infoId=" + infoId);
-        const responseBody: detailValue = await res.json();
-        setValue('uuid', responseBody.uuid);
-        setValue('title', responseBody.title);
-        setValue('tag', responseBody.tag);
-        setValue('content', responseBody.content);
-        setDefaultValue(responseBody)
-        setPreview(responseBody.img_path);
-        console.log(responseBody)
-    }
+            getDetail(infoId)
+        }
+    }, [infoId, setValue])
+
+
 
 
 
