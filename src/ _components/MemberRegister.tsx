@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const MemberRegister = () => {
     return (
@@ -17,12 +18,14 @@ const MemberRegister = () => {
                             <p>「ACE HOME」を友達に追加！</p>
                         </div>
                         <div className="line-register-btn flex justify-center items-center flex-col mt-3">
-                            <Image
-                                src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png"
-                                alt="お友達追加"
-                                width={116}
-                                height={36}
-                            />
+                            <Link href="https://lin.ee/TwXHWov" target="_blank" className='flex justify-center'>
+                                <Image
+                                    src="/icons/line-add.png"
+                                    alt="お友達追加"
+                                    width={229}
+                                    height={130}
+                                />
+                            </Link>
                         </div>
                     </div>
                 </div>

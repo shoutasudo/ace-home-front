@@ -1,5 +1,5 @@
 'use client'
-import { isValid, object, z } from 'zod'
+import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm, FormProvider } from 'react-hook-form'
 import http from '@/lib/axios'
@@ -10,6 +10,8 @@ import ContactInputForm from './ContactInputForm'
 import { useRouter } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import '@/css/doubleLineBtn.css'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
 // radio button (FormInput name = contactType)
 const RadioContent: Array<{ id: string; content: string }> = [
@@ -106,7 +108,6 @@ const ContactForm = () => {
     // checkbox validation
     const [isInitial, setIsInitial] = useState(true)
     const [isChecked, setIsChecked] = useState(false)
-
     const handleCheck = async () => {
         setIsChecked(!isChecked)
         setIsInitial(false)
@@ -155,15 +156,29 @@ const ContactForm = () => {
     const onSubmit = async (data: FormData) => {
         try {
             // console.log(data)
-            http.post('/api/contact', data, {
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-            }).then(() => {
-                router.push('/')
+            const res = await fetch('/api/contact', {
+                method: 'POST',
+                body: JSON.stringify(data),
             })
+            const resdata = await res.json()
+            if (!res.ok) {
+                if (res.status === 422 && resdata.errors) {
+                    Object.values(resdata.errors).forEach((errorArray: any) => {
+                        errorArray.forEach((error: string) => {
+                            toast.error(error)
+                        })
+                    })
+                } else if (res.status === 500) {
+                    toast.error('サーバーエラーが発生しました.お手数ですが時間を置いて再実行してください.')
+                } else {
+                    toast.error(resdata.message || 'エラーが発生しました. お手数ですが時間を置いて再実行してください.')
+                }
+            } else {
+                toast.success(resdata.message)
+            }
         } catch (error) {
             console.error('error', error)
+            toast.error('サーバーエラーが発生しました')
         }
     }
 
@@ -279,6 +294,7 @@ const ContactForm = () => {
                     </div>
                 </div>
             </form>
+            <ToastContainer autoClose={5000} theme='dark' pauseOnFocusLoss={false} pauseOnHover={false} />
         </FormProvider>
     )
 }
