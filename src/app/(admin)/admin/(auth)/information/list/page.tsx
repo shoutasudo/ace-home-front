@@ -1,96 +1,47 @@
 "use client";
 import * as React from "react";
 import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import TablePagination from "@mui/material/TablePagination";
 import { Button } from "@mui/material";
-
-// Generate Order Data
-function createData(
-    id: number,
-    date: string,
-    name: string,
-    shipTo: string,
-    paymentMethod: string,
-    amount: number
-) {
-    return { id, date, name, shipTo, paymentMethod, amount };
-}
-
-const rows = [
-    createData(
-        0,
-        "16 Mar, 2019",
-        "Elvis Presley",
-        "Tupelo, MS",
-        "VISA ⠀•••• 3719",
-        312.44
-    ),
-    createData(
-        1,
-        "16 Mar, 2019",
-        "Paul McCartney",
-        "London, UK",
-        "VISA ⠀•••• 2574",
-        866.99
-    ),
-    createData(
-        2,
-        "16 Mar, 2019",
-        "Tom Scholz",
-        "Boston, MA",
-        "MC ⠀•••• 1253",
-        100.81
-    ),
-    createData(
-        3,
-        "16 Mar, 2019",
-        "Michael Jackson",
-        "Gary, IN",
-        "AMEX ⠀•••• 2000",
-        654.39
-    ),
-    createData(
-        4,
-        "15 Mar, 2019",
-        "Bruce Springsteen",
-        "Long Branch, NJ",
-        "VISA ⠀•••• 5919",
-        212.79
-    ),
-    createData(
-        5,
-        "15 Mar, 2019",
-        "Bruce Springsteen",
-        "Long Branch, NJ",
-        "VISA ⠀•••• 5919",
-        212.79
-    ),
-    createData(
-        6,
-        "15 Mar, 2019",
-        "Bruce Springsteen",
-        "Long Branch, NJ",
-        "VISA ⠀•••• 5919",
-        212.79
-    ),
-    // Add more rows as needed
-];
+import { useState, useEffect } from "react";
+import TableBody from "../../../../../../ _components/Admin/Info/TableBody";
+import { MouseEvent } from 'react';
+import { useRouter } from "next/navigation";
 
 const Information = () => {
-    const [page, setPage] = React.useState(0);
+    const [page, setPage] = useState(0);
+    const [rows, setRows] = useState<any[]>([]);
+    const router = useRouter();
+    const getList = async () => {
+        try {
+            const res = await fetch(process.env.NEXT_PUBLIC_FRONTEND_URL + "/api/information/list");
+            const responseBody = await res.json();
+            setRows(responseBody)
+            console.log("Response Data:", responseBody);
+        } catch (error) {
+            console.log("Response Data:", error);
+        }
+    };
+    useEffect(() => {
+        getList();
+    }, []);
     const rowsPerPage = 5;
 
-    const handleChangePage = (event: unknown, newPage: number) => {
+    const handleChangePage = (event: MouseEvent<HTMLButtonElement> | null, newPage: number) => {
         setPage(newPage);
     };
+
+
 
     return (
         <div className="w-full flex justify-center">
             <div className="w-[90%] my-20">
+                <div className="w-full flex justify-end mb-5" >
+                    <Button variant="outlined" onClick={() => router.push('/admin/information/register')}>新規登録</Button>
+                </div>
                 <Table size="small">
                     <TableHead
                         sx={{
@@ -104,73 +55,34 @@ const Information = () => {
                         <TableRow>
                             <TableCell>作成日</TableCell>
                             <TableCell>タイトル</TableCell>
-                            <TableCell>内容</TableCell>
                             <TableCell>タグ</TableCell>
+                            {/* <TableCell>内容</TableCell> */}
                             <TableCell align="right"></TableCell>
                         </TableRow>
                     </TableHead>
-                    <TableBody>
-                        {rows
-                            .slice(
-                                page * rowsPerPage,
-                                page * rowsPerPage + rowsPerPage
-                            )
-                            .map((row, index) => (
-                                <TableRow
-                                    key={row.id}
-                                    sx={{
-                                        backgroundColor:
-                                            index % 2 === 0
-                                                ? "#ffffff"
-                                                : "#e8e8e8",
-                                    }}
-                                >
-                                    <TableCell>{row.date}</TableCell>
-                                    <TableCell>{row.name}</TableCell>
-                                    <TableCell>{row.shipTo}</TableCell>
-                                    <TableCell>{row.paymentMethod}</TableCell>
-                                    <TableCell align="right">
-                                        <div className="flex justify-end">
-                                            <div className="flex">
-                                                <div>
-                                                    <Button variant="outlined">
-                                                        詳細
-                                                    </Button>
-                                                </div>
-                                                <div className="ml-5">
-                                                    <Button
-                                                        variant="outlined"
-                                                        color="error"
-                                                    >
-                                                        削除
-                                                    </Button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </TableCell>
-                                </TableRow>
-                            ))}
-                    </TableBody>
+                    <TableBody setRows={setRows} rows={rows} page={page} rowsPerPage={rowsPerPage} />
                 </Table>
-                <TablePagination
-                    rowsPerPageOptions={[]} // オプションを空にする
-                    component="div"
-                    count={rows.length}
-                    rowsPerPage={rowsPerPage}
-                    page={page}
-                    onPageChange={handleChangePage}
-                    labelRowsPerPage="" // ラベルを空にする
-                    sx={{
-                        "& .MuiTablePagination-toolbar": {
-                            display: "flex",
-                            justifyContent: "flex-end", // ページネーションコントロールの位置調整
-                        },
-                        "& .MuiTablePagination-selectLabel, & .MuiTablePagination-input":
-                            {
-                                display: "none", // Rows per page を非表示にする
+                {rows && (
+                    <TablePagination
+                        rowsPerPageOptions={[]} // オプションを空にする
+                        component="div"
+                        count={rows.length}
+                        rowsPerPage={rowsPerPage}
+                        page={page}
+                        onPageChange={handleChangePage}
+                        labelRowsPerPage="" // ラベルを空にする
+                        sx={{
+                            "& .MuiTablePagination-toolbar": {
+                                display: "flex",
+                                justifyContent: "flex-end", // ページネーションコントロールの位置調整
                             },
-                    }}
-                />
+                            "& .MuiTablePagination-selectLabel, & .MuiTablePagination-input":
+                                {
+                                    display: "none", // Rows per page を非表示にする
+                                },
+                        }}
+                    />
+                )}
             </div>
         </div>
     );
