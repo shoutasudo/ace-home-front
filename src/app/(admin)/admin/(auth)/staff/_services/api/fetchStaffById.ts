@@ -1,5 +1,5 @@
 import createAxiosInstance from "@/lib/axiosWithToken";
-import { Staff } from "../../[staffId]/page";
+import { Staff } from "@/types/staff";
 
 export const fetchStaffById = async (id: string): Promise<Staff> => {
     try {

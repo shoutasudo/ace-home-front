@@ -9,12 +9,9 @@ interface Props {
 
 const StaffDetail = async ({ params }: Props) => {
     const staffId = params.staffId;
-    try {
-        var staff: Staff = await fetchStaffById(staffId);
-        console.log(staff);
-    } catch (error) {
-        console.error(error);
-    }
+
+    let staff: Staff = await fetchStaffById(staffId);
+
     return (
         <section className="w-full mx-auto p-6 bg-white rounded-lg shadow-lg my-8">
             <PageTitle>
