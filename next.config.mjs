@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: [process.env.NEXT_PUBLIC_BACKEND_URL, 'localhost'],
         remotePatterns: [
             {
                 protocol: 'https',
@@ -10,6 +9,14 @@ const nextConfig = {
             {
                 protocol: 'https',
                 hostname: 'scontent-itm1-1.cdninstagram.com',
+            },
+            {
+                protocol: 'http',
+                hostname: process.env.NEXT_PUBLIC_BACKEND_URL,
+            },
+            {
+                protocol: 'http',
+                hostname: 'localhost',
             },
         ],
     },
