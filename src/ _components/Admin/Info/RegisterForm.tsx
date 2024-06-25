@@ -14,10 +14,9 @@ import AttachFileIcon from "@mui/icons-material/AttachFile";
 import { Controller} from "react-hook-form";
 import Editor from "../TipTap/Editor";
 import { useInfoForm } from "@/hooks/useInfoForm";
+import { RegisterFormProps } from "@/types/information";
 
-interface RegisterFormProps {
-    infoId: string | null
-}
+
 
 const RegisterForm = ({ infoId = null }: RegisterFormProps) => {
     const {
@@ -209,7 +208,7 @@ const RegisterForm = ({ infoId = null }: RegisterFormProps) => {
                 </div>
             </div>
             <div className="w-full flex justify-end mb-10">
-                <Button type="submit" variant="outlined">登録</Button>
+                <Button type="submit" variant="outlined">{infoId === null ? '登録':'更新'}</Button>
             </div>
         </Box>
     );

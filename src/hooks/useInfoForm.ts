@@ -6,39 +6,9 @@ import { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useTipTap } from "./useTipTap";
 import { z } from "zod";
+import { ImageBody, detailValue, formData, zodObjType } from "@/types/information";
 
-interface zodObjType {
-    type: string;
-    attrs?: Record<string, any>;
-    content?: zodObjType[];
-    marks?: { type: string; attrs?: Record<string, any> }[];
-    text?: string;
-}
 
-type formData = {
-    uuid: string;
-    title: string;
-    tag: string;
-    file: File;
-    content: JSON | JSONContent;
-}
-
-type detailValue = formData & {
-    img_path: string;
-    created_at: string;
-    update_at: string;
-}
-
-type ImageBody = {
-    src: string;
-    uuid: string;
-};
-
-type ResponseBody = {
-    success: boolean;
-    message: string;
-    // 必要に応じて追加のプロパティを定義
-};
 
 const nodeSchema = z.object({
     type: z.string(),

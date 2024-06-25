@@ -7,6 +7,7 @@ import FontFamily from "@tiptap/extension-font-family";
 import StarterKit from "@tiptap/starter-kit";
 import { HTMLContent, JSONContent, generateHTML, useEditor } from "@tiptap/react";
 import { useEffect, useState } from "react";
+import { tipTapProp } from "@/types/information";
 
 declare module "@tiptap/core" {
     interface Commands<ReturnType> {
@@ -63,11 +64,7 @@ const FontSize = TextStyle.extend({
     },
 });
 
-interface tipTapProp {
-    content: JSON | JSONContent | string;
-    setContent: (content: JSONContent) => void;
-    defaultContent: JSONContent | undefined;
-}
+
 
 export const useTipTap = ({ content, setContent, defaultContent }: tipTapProp) => {
 

@@ -34,7 +34,6 @@ const Information = () => {
     };
 
 
-
     return (
         <div className="w-full flex justify-center">
             <div className="w-[90%] my-20">
@@ -59,9 +58,12 @@ const Information = () => {
                             <TableCell align="right"></TableCell>
                         </TableRow>
                     </TableHead>
-                    <TableBody setRows={setRows} rows={rows} page={page} rowsPerPage={rowsPerPage} />
+                    {rows.length === 0 &&
+                        <TableBody setRows={setRows} rows={rows} page={page} rowsPerPage={rowsPerPage} />
+
+                    }
                 </Table>
-                {rows && (
+                {rows.length === 0 && (
                     <TablePagination
                         rowsPerPageOptions={[]} // オプションを空にする
                         component="div"
@@ -76,9 +78,9 @@ const Information = () => {
                                 justifyContent: "flex-end", // ページネーションコントロールの位置調整
                             },
                             "& .MuiTablePagination-selectLabel, & .MuiTablePagination-input":
-                                {
-                                    display: "none", // Rows per page を非表示にする
-                                },
+                            {
+                                display: "none", // Rows per page を非表示にする
+                            },
                         }}
                     />
                 )}

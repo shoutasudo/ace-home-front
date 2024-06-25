@@ -4,22 +4,9 @@ import TableRow from "@mui/material/TableRow";
 import TableCell from "@mui/material/TableCell";
 import { Button } from "@mui/material";
 import { useRouter } from 'next/navigation';
+import { TableBodyProps } from "@/types/information";
 
-interface RowsObj {
-    uuid: string;
-    created_at: string;
-    img_path: string;
-    tag: string;
-    title: string;
-    update_at: string;
-}
 
-interface TableBodyProps {
-    setRows: React.Dispatch<React.SetStateAction<Array<RowsObj>>>;
-    rows: Array<RowsObj>;
-    page: number;
-    rowsPerPage: number;
-}
 
 const TableBody = ({setRows, rows, page, rowsPerPage }: TableBodyProps) => {
     const router = useRouter();
