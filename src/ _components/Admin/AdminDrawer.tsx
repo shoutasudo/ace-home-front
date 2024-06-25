@@ -48,7 +48,6 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 const AdminDrawer = ({  toggleDrawer, open ,theme }: AdminDrawerProps) =>{
     const handleListItemClick = () => {
         if(open) {
-            console.log(open)
             toggleDrawer();
         }
     };

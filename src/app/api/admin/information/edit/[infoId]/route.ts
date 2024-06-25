@@ -1,10 +1,13 @@
-import { NextResponse, NextRequest } from "next/server";
-import http from "../../../../lib/axios";
+import http from "@/lib/axios";
+import { NextRequest, NextResponse } from "next/server";
 
-export async function GET() {
+
+export async function GET(request: NextRequest,{ params }: { params: {infoId: string } }) {
     try {
+        const infoId = params.infoId
+
         const res = await http.get(
-            "http://localhost:8080/api/admin/information/store/uuid"
+            process.env.NEXT_PUBLIC_BACKEND_URL + "/api/admin/information/edit/" + infoId
         );
 
         console.log('レスポンスデータ:', res);

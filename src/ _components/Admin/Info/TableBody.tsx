@@ -27,7 +27,7 @@ const TableBody = ({setRows, rows, page, rowsPerPage }: TableBodyProps) => {
     const deleteList = async (uuid: string) => {
         try {
             const res = await fetch(
-                process.env.NEXT_PUBLIC_FRONTEND_URL + "/api/information/delete",
+                process.env.NEXT_PUBLIC_FRONTEND_URL + "/api/admin/information/delete",
                 {
                     method: "DELETE",
                     headers: {
@@ -38,8 +38,6 @@ const TableBody = ({setRows, rows, page, rowsPerPage }: TableBodyProps) => {
             );
             const responseBody = await res.json();
             setRows(responseBody);
-
-            console.log("Response Data:", responseBody);
         } catch (error) {
             console.log("Response Data:", error);
         }

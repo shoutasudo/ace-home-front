@@ -1,17 +1,11 @@
+import http from "@/lib/axios";
 import { NextResponse, NextRequest } from "next/server";
-import http from "../../../../lib/axios";
 
-export async function POST(req: NextRequest) {
+
+export async function GET() {
     try {
-        // Read the request body as a ReadableStream
-        const formData = await req.formData();
-        const { searchParams } = new URL(req.url);
-        const infoId = searchParams.get('infoId');
-
-
-        const res = await http.post(
-            "http://localhost:8080/api/admin/information/update/" + infoId,
-            formData,
+        const res = await http.get(
+            process.env.NEXT_PUBLIC_BACKEND_URL+ "/api/information/getAll"
         );
 
         console.log('レスポンスデータ:', res);

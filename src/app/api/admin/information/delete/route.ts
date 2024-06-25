@@ -1,13 +1,13 @@
-import { NextRequest, NextResponse } from "next/server";
-import http from "../../../../../lib/axios";
+import http from "@/lib/axios";
+import { NextResponse } from "next/server";
+import type { NextRequest } from 'next/server.js';
 
-export async function GET(request: NextRequest,{ params }: { params: {infoId: string } }) {
+export async function DELETE(req: NextRequest) {
     try {
-        console.log(params)
-        const infoId = params.infoId
+        const body = await req.json();
 
-        const res = await http.get(
-            "http://localhost:8080/api/admin/information/edit/" + infoId
+        const res = await http.delete(
+            process.env.NEXT_PUBLIC_BACKEND_URL + "/api/admin/information/delete/" + body.uuid
         );
 
         console.log('レスポンスデータ:', res);

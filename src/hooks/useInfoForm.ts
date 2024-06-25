@@ -119,7 +119,7 @@ export const useInfoForm = (infoId:string | null) => {
     useEffect(() => {
         if (infoId !== null) {
             const getDetail = async (infoId:string) => {
-                const res = await fetch(process.env.NEXT_PUBLIC_FRONTEND_URL + "/api/information/edit/" + infoId);
+                const res = await fetch(process.env.NEXT_PUBLIC_FRONTEND_URL + "/api/admin/information/edit/" + infoId);
                 const responseBody: detailValue = await res.json();
                 setValue('uuid', responseBody.uuid);
                 setValue('title', responseBody.title);
@@ -127,7 +127,6 @@ export const useInfoForm = (infoId:string | null) => {
                 setValue('content', responseBody.content);
                 setDefaultValue(responseBody)
                 setPreview(responseBody.img_path);
-                console.log(responseBody)
             }
 
             getDetail(infoId)
@@ -214,7 +213,7 @@ export const useInfoForm = (infoId:string | null) => {
 
     const imageStore = async (body: ImageBody): Promise<string> => {
         try {
-            const res = await fetch(process.env.NEXT_PUBLIC_FRONTEND_URL + "/api/information/storeImage", {
+            const res = await fetch(process.env.NEXT_PUBLIC_FRONTEND_URL + "/api/admin/information/storeImage", {
                 method: 'POST',
                 body: JSON.stringify(body),
             });
@@ -224,7 +223,6 @@ export const useInfoForm = (infoId:string | null) => {
             }
 
             const responseBody = await res.json(); // Response bodyを読み取る
-            console.log(responseBody);
 
             return responseBody;
         } catch (error) {
@@ -235,14 +233,12 @@ export const useInfoForm = (infoId:string | null) => {
 
     const filesExcept = async (uuid: string, srcArray: Array<string> | undefined): Promise<void> => {
         try {
-            console.log(srcArray)
             const body = {
                 uuid: uuid,
                 exclude_paths: srcArray
             }
-            console.log(body)
 
-            const res = await fetch(process.env.NEXT_PUBLIC_FRONTEND_URL + "/api/information/filesExcept", {
+            const res = await fetch(process.env.NEXT_PUBLIC_FRONTEND_URL + "/api/admin/information/filesExcept", {
                 method: 'POST',
                 body: JSON.stringify(body),
             });
@@ -252,7 +248,6 @@ export const useInfoForm = (infoId:string | null) => {
             }
 
             const responseBody = await res.json(); // Response bodyを読み取る
-            console.log(responseBody);
 
             return responseBody;
         } catch (error) {
@@ -263,7 +258,7 @@ export const useInfoForm = (infoId:string | null) => {
 
 
     const getUuid = async () => {
-        const res1 = await fetch(process.env.NEXT_PUBLIC_FRONTEND_URL + "/api/information/getUuid");
+        const res1 = await fetch(process.env.NEXT_PUBLIC_FRONTEND_URL + "/api/admin/information/getUuid");
         const responseBody: string = await res1.json(); // Response bodyを読み取る
         return responseBody
     }
@@ -275,7 +270,7 @@ export const useInfoForm = (infoId:string | null) => {
         formData.append('tag', data.tag);
         formData.append('file', getValues('file'));
         formData.append('content', JSON.stringify(editor?.getJSON()));
-        const res = await fetch(process.env.NEXT_PUBLIC_FRONTEND_URL + "/api/information/register", {
+        const res = await fetch(process.env.NEXT_PUBLIC_FRONTEND_URL + "/api/admin/information/register", {
             method: 'POST',
             body: formData,
         });
@@ -288,7 +283,7 @@ export const useInfoForm = (infoId:string | null) => {
         formData.append('tag', data.tag);
         formData.append('file', getValues('file'));
         formData.append('content', JSON.stringify(editor?.getJSON()));
-        const res = await fetch(process.env.NEXT_PUBLIC_FRONTEND_URL + "/api/information/update?infoId=" + infoId, {
+        const res = await fetch(process.env.NEXT_PUBLIC_FRONTEND_URL + "/api/admin/information/update?infoId=" + infoId, {
             method: 'POST',
             body: formData,
         });
@@ -299,6 +294,7 @@ export const useInfoForm = (infoId:string | null) => {
             if (infoId === null) {
                 const uuid: string = await getUuid();
                 const srcArray = await updateAllImageSrc(editor, uuid)
+
                 await filesExcept(uuid, srcArray)
                 await informationRegister(data, uuid)
 

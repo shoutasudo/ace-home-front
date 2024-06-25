@@ -2,8 +2,9 @@ import TopImage from '@/ _components/TopImage'
 import TopAbout from '@/ _components/TopAbout'
 import MemberRegister from '@/ _components/MemberRegister'
 import Service2 from '@/ _components/Service2'
-import Information from '@/ _components/Information'
+
 import InstagramContents from '@/ _components/InstagramContents'
+import Information from '@/ _components/Info/Information'
 
 const Home = () => {
     return (

@@ -1,13 +1,15 @@
+import http from "@/lib/axios";
 import { NextResponse, NextRequest } from "next/server";
-import http from "../../../../lib/axios";
+
 
 export async function POST(req: NextRequest) {
     try {
         // Read the request body as a ReadableStream
         const body = await req.json();
+        console.log(body)
 
         const res = await http.post(
-            "http://localhost:8080/api/admin/information/store/image",
+            process.env.NEXT_PUBLIC_BACKEND_URL + "/api/admin/information/filesExcept",
             body,
         );
 

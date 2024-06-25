@@ -127,7 +127,6 @@ export const useTipTap = ({ content, setContent, defaultContent }: tipTapProp) =
                     files.forEach((file) => {
                         if (htmlContent) {
                             // HTMLコンテンツがある場合、他の拡張機能が挿入を処理するのを止める
-                            console.log(htmlContent);
                             return false;
                         }
 
