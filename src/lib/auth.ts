@@ -55,6 +55,9 @@ export const authOptions: NextAuthOptions = {
       },
     }),
   ],
+  pages: {
+    signIn: '/admin/login',
+  },
   callbacks: {
     async jwt({ token, user }) {
       if (user) {
@@ -64,10 +67,10 @@ export const authOptions: NextAuthOptions = {
       return token
     },
     async session({ session, token }) {
-    //   session.accessToken = token.access_token
-    session.user = token.user
-    console.log('session コールバック　' + JSON.stringify(session.user.access_token))
-      return session
+        //   session.accessToken = token.access_token
+        session.user = token.user
+        console.log('session コールバック　' + JSON.stringify(session.user.access_token))
+        return session
     },
   },
 }

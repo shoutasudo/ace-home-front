@@ -61,7 +61,7 @@ const useRegisterForm = () => {
             formData.append('role', data.role);
             if(data.image) formData.append('image', data.image);
 
-            const res = await fetch('http://localhost:3000/api/staff/store', {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/staff/store`, {
                 method: 'POST',
                 body: formData,
             });
@@ -70,6 +70,7 @@ const useRegisterForm = () => {
                 const errorText = await res.text();
                 throw new Error(`データフェッチに失敗しました: ${res.status} - ${errorText}`);
             }
+            await router.refresh();
             await router.push('/admin/staff/list');
         } catch (error) {
             console.error(error);
