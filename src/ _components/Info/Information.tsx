@@ -52,23 +52,20 @@ const Information = () => {
                         information
                     </h2>
                 </div>
-                {!loading && info.length > 0 && (
-                    <>
-                        {info.map(v => (
-                            <InfoList key={v.uuid} info={v} />
-                        ))}
-                        {totalInfo.length > info.length && (
-                            <div className="information-container-more-btn mt-6">
-                                <div className="center btn_more z-10">
-                                    <button onClick={handleLoadMore} className="bdr_btn">
-                                        <span>
-                                            more <FontAwesomeIcon icon={faChevronRight} />
-                                        </span>
-                                    </button>
-                                </div>
-                            </div>
-                        )}
-                    </>
+                {info.length !== 0 &&
+                    info.map(v => (
+                        <InfoList key={v.uuid} info={v} />
+                    ))}
+                {totalInfo.length > info.length && (
+                    <div className="information-container-more-btn mt-6">
+                        <div className="center btn_more z-10">
+                            <button onClick={handleLoadMore} className="bdr_btn">
+                                <span>
+                                    more <FontAwesomeIcon icon={faChevronRight} />
+                                </span>
+                            </button>
+                        </div>
+                    </div>
                 )}
             </div>
         </div>

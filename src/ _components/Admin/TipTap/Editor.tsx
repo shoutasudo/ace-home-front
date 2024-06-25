@@ -1,20 +1,17 @@
 "use client";
 import { Editor as TipTapEditor, EditorContent, JSONContent } from "@tiptap/react";
-import { useTipTap } from '../../../hooks/useTipTap';
 import Bubble from './Bubble';
 import Floating from './Floating';
 import ToolBar from './ToolBar';
+import { EditorFontsProps } from "@/types/information";
 
-interface EditorpProps {
-    editor:TipTapEditor | null
-    fontSizeOption: number[];
-    fontOption: string[][];
-}
 
-const Editor: React.FC<EditorpProps> = ({ editor, fontSizeOption, fontOption}) => {
+
+const Editor: React.FC<EditorFontsProps> = ({ editor, fontSizeOption, fontOption}) => {
 
     return (
         <>
+        <p className="text-sm">※画像はドラッグ＆ドロップで挿入してください</p>
             <div className="border border-solid border-black">
                 {editor && (
                     <>

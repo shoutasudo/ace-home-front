@@ -7,7 +7,7 @@ import MuiDrawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import { mainListItems, secondaryListItems } from '../ListItem';
+import { mainListItems } from '../ListItem';
 
 interface AdminDrawerProps {
     toggleDrawer: () => void;
@@ -70,8 +70,6 @@ const AdminDrawer = ({  toggleDrawer, open ,theme }: AdminDrawerProps) =>{
         <Divider />
         <List component="nav">
             {mainListItems(handleListItemClick)}
-            <Divider sx={{ my: 1 }} />
-            {secondaryListItems}
         </List>
     </Drawer>
     </>
