@@ -1,14 +1,11 @@
+import http from "@/lib/axios";
 import { NextResponse, NextRequest } from "next/server";
-import http from "../../../../lib/axios";
 
-export async function POST(req: NextRequest) {
+
+export async function GET() {
     try {
-        // Read the request body as a ReadableStream
-        const formData = await req.formData();
-
-        const res = await http.post(
-            "http://localhost:8080/api/admin/information/store",
-            formData,
+        const res = await http.get(
+            process.env.NEXT_PUBLIC_BACKEND_URL+ "/api/admin/information/list"
         );
 
         console.log('レスポンスデータ:', res);

@@ -17,10 +17,9 @@ const Information = () => {
     const router = useRouter();
     const getList = async () => {
         try {
-            const res = await fetch(process.env.NEXT_PUBLIC_FRONTEND_URL + "/api/information/list");
+            const res = await fetch(process.env.NEXT_PUBLIC_FRONTEND_URL + "/api/admin/information/list");
             const responseBody = await res.json();
             setRows(responseBody)
-            console.log("Response Data:", responseBody);
         } catch (error) {
             console.log("Response Data:", error);
         }
