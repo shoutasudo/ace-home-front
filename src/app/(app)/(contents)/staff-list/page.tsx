@@ -43,14 +43,6 @@ const StaffListPage = async () => {
         console.log(staff)
     } catch (error) {
         console.log(error)
-        //どうするか考える
-        return (
-            <div className="w-full flex justify-center">
-              <div className="w-[90%] my-20">
-                <p>通信に失敗しました。時間をおいてもう一度お試しください。</p>
-              </div>
-            </div>
-        );
     }
     return (
         <Contents subTitle={'STAFF LIST'} mainTitle={'スタッフ紹介'}>

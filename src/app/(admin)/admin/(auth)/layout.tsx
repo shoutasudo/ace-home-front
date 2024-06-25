@@ -1,25 +1,13 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import AdminMenu from "@/ _components/Admin/AdminMenu";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
+import { redirect } from "next/navigation";
 
-const AuthLayout = ({ children }: { children: React.ReactNode }) => {
-    // const [user, setUser] = useState(null);
-    // const router = useRouter();
-
-    // useEffect(() => {
-    //     const fetchUser = async () => {
-    //         try {
-    //             const { data } = await http.get('/api/user');
-    //             console.log(data)
-    //             setUser(data);
-    //         } catch (error) {
-    //             console.error('Failed to fetch user:', error);
-    //             router.push('/admin/login');
-    //         }
-    //     };
-
-    //     fetchUser();
-    // }, []);
+const AuthLayout = async ({ children }: { children: React.ReactNode }) => {
+    const session = await getServerSession(authOptions);
+    if (!session?.user) redirect('/admin/login');
 
     return (
         <div className="h-screen">

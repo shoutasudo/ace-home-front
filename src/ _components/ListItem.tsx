@@ -27,12 +27,14 @@ export const mainListItems = (handleListItemClick:any) =>(
                 <ListItemText primary="お知らせ" />
             </ListItemButton>
         </Link>
-        <ListItemButton>
-            <ListItemIcon>
-                <PeopleIcon />
-            </ListItemIcon>
-            <ListItemText primary="Customers" />
-        </ListItemButton>
+        <Link href={"/admin/staff/list"} onClick={handleListItemClick}>
+            <ListItemButton>
+                <ListItemIcon>
+                    <PeopleIcon />
+                </ListItemIcon>
+                <ListItemText primary="スタッフ" />
+            </ListItemButton>
+        </Link>
         <ListItemButton>
             <ListItemIcon>
                 <BarChartIcon />
