@@ -90,6 +90,10 @@ const AdminHeader = ({ toggleDrawer, open }: AdminHeaderProps) => {
                 setPathType("詳細");
                 break;
 
+            case  pathArray[3] === undefined:
+                setPathType("");
+                break;
+
             default:
                 break;
         }
