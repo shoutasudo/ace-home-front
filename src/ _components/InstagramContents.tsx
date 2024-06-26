@@ -26,13 +26,18 @@ const InstagramContents = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch('/api/instagram/getPostId');
-            const ids = await response.json();
+            try {
+                const response = await fetch('/api/instagram/getPostId');
+                const ids = await response.json();
 
-            const infoDataPromise = await Promise.all(ids.map((id: idProps) => fetch(`/api/instagram/getPostInfo?id=${id.id}`)));
-            const infoData = await Promise.all(infoDataPromise.map((i) => i.json()));
+                const infoDataPromise = await Promise.all(ids.map((id: idProps) => fetch(`/api/instagram/getPostInfo?id=${id.id}`)));
+                const infoData = await Promise.all(infoDataPromise.map((i) => i.json()));
 
-            setInfos(infoData);
+                setInfos(infoData);
+            } catch (error) {
+                console.log(error);
+            }
+            
         }
 
         fetchData();
