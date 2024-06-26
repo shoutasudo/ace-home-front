@@ -8,10 +8,10 @@ const nextConfig = {
             },
             {
                 protocol: 'https',
-                hostname: 'scontent-itm1-1.cdninstagram.com',
+                hostname: '**.cdninstagram.com',
             },
             {
-                protocol: 'http',
+                protocol: 'https',
                 hostname: process.env.NEXT_PUBLIC_BACKEND_URL,
             },
             {
