@@ -4,6 +4,7 @@ import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import DoubleLineBtn from './DoubleLineBtn';
 import { getUserData, getPostId, getPostInfo } from '@/lib/api/instagramApi';
+import { info } from 'console';
 
 interface idProps {
     id: string
@@ -20,15 +21,20 @@ interface PostInfoType {
 }
 
 const InstagramContents = () => {
+    const [ids, setIds] = useState([]);
     const [infos, setInfos] = useState<PostInfoType[]>([]);
-    const [visibleItems, setVisibleItems] = useState(6);
 
     useEffect(() => {
         const fetchData = async () => {
-            const postIdArr = await getPostId();
-            const data = await Promise.all(postIdArr.map((id: idProps) => getPostInfo(id.id)));
-            setInfos(data);
+            const response = await fetch('/api/instagram/getPostId');
+            const ids = await response.json();
+
+            const infoDataPromise = await Promise.all(ids.map((id: idProps) => fetch(`/api/instagram/getPostInfo?id=${id.id}`)));
+            const infoData = await Promise.all(infoDataPromise.map((i) => i.json()));
+
+            setInfos(infoData);
         }
+
         fetchData();
     }, []);
 
@@ -46,7 +52,7 @@ const InstagramContents = () => {
                     </div>
                     <div className="member-register-container w-full my-10 flex justify-center">
                         <div className='w-full grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-4 place-items-center'>
-                            {infos?.slice(0, visibleItems).map((info) =>
+                            {infos?.slice(0, 6).map((info) =>
                             (
                                 <div key={info.id} className='flex justify-center items-center w-11/12'>
                                     <Link href={info.permalink}>
@@ -64,10 +70,8 @@ const InstagramContents = () => {
                             )}
                         </div>
                     </div>
-                    {infos.length > visibleItems && (
+                    {infos.length > 6 && (
                         <div className="instagram-more-btn">
-                            {/* 現状クライアントで組んでるが想定ではonclickで６個ずづ表示していく想定。 */}
-                            {/* もし、遷移先をインスタグラムにする場合は、サーバーサイドで組みなす */}
                             <DoubleLineBtn content={'more'} link={`${process.env.INSTAGRAM_URL}`} />
                         </div>
                     )}
