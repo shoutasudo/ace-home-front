@@ -16,9 +16,6 @@ const StaffList: React.FC = async () => {
 
     return (
         <div className='w-[90%] my-10 space-y-4 items-end'>
-            <PageTitle>
-                スタッフ一覧
-            </PageTitle>
             <div className='w-full flex justify-end'>
                 <RegisterButton />
             </div>

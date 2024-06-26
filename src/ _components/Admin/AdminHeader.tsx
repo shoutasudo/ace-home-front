@@ -47,7 +47,7 @@ const AdminHeader = ({ toggleDrawer, open }: AdminHeaderProps) => {
     const [pathType, setPathType] = useState<String>();
 
     useEffect(() => {
-        const pathArray = pathname.split("/");
+        const pathArray: Array<string> = pathname.split("/");
         switch (pathArray[2]) {
             case "dashboard":
                 setPathCategory("Dashboard");
@@ -57,20 +57,37 @@ const AdminHeader = ({ toggleDrawer, open }: AdminHeaderProps) => {
                 setPathCategory("お知らせ");
                 break;
 
+            case "staff":
+                setPathCategory("スタッフ");
+                break;
+
+            case "contact":
+                setPathCategory("お問い合わせ");
+                break;
+
             default:
                 break;
         }
 
-        switch (pathArray[3]) {
-            case "list":
+        switch (true) {
+            case !isNaN(Number(pathArray[3])):
+                setPathType("更新");
+                break;
+
+            case pathArray[3] === "list":
                 setPathType("一覧");
                 break;
 
-            case "register":
+            case pathArray[3] === "register":
                 setPathType("登録");
                 break;
-            case "edit":
+
+            case pathArray[3] === "edit":
                 setPathType("更新");
+                break;
+
+            case pathArray[3] === "detail":
+                setPathType("詳細");
                 break;
 
             default:

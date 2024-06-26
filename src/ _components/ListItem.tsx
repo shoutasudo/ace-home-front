@@ -9,14 +9,16 @@ import EmailIcon from '@mui/icons-material/Email';
 import LayersIcon from "@mui/icons-material/Layers";
 import Link from "next/link";
 
-export const mainListItems = (handleListItemClick:any) =>(
+export const mainListItems = (handleListItemClick: any) => (
     <React.Fragment>
-        <ListItemButton>
-            <ListItemIcon>
-                <DashboardIcon />
-            </ListItemIcon>
-            <ListItemText primary="Dashboard" />
-        </ListItemButton>
+        <Link href={"/admin/dashboard"} onClick={handleListItemClick}>
+            <ListItemButton>
+                <ListItemIcon>
+                    <DashboardIcon />
+                </ListItemIcon>
+                <ListItemText primary="Dashboard" />
+            </ListItemButton>
+        </Link>
         <Link href={"/admin/information/list"} onClick={handleListItemClick}>
             <ListItemButton>
                 <ListItemIcon>
@@ -39,11 +41,11 @@ export const mainListItems = (handleListItemClick:any) =>(
             </ListItemIcon>
             <ListItemText primary="お問い合わせ" />
         </ListItemButton>
-        <ListItemButton>
+        {/* <ListItemButton>
             <ListItemIcon>
                 <LayersIcon />
             </ListItemIcon>
-            <ListItemText primary="Integrations" />
-        </ListItemButton>
+            <ListItemText primary="SNS投稿" />
+        </ListItemButton> */}
     </React.Fragment>
 );
