@@ -14,9 +14,6 @@ const StaffDetail = async ({ params }: Props) => {
 
     return (
         <section className="w-full mx-auto p-6 bg-white rounded-lg shadow-lg my-8">
-            <PageTitle>
-                スタッフ編集
-            </PageTitle>
             <UpdateForm staff={staff}/>
         </section>
     );
