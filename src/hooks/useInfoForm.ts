@@ -57,7 +57,7 @@ const EditSchema = z.object({
     // .required("contentフィールドは必須です"),
 });
 
-export const useInfoForm = (infoId:string | null) => {
+export const useInfoForm = (infoId: string | null) => {
     const [selectedFile, setSelectedFile] = useState<File | null>(null);
     const [preview, setPreview] = useState<string | StaticImport | null>(null);
     const [defaultValue, setDefaultValue] = useState<detailValue | null>(null)
@@ -88,7 +88,7 @@ export const useInfoForm = (infoId:string | null) => {
 
     useEffect(() => {
         if (infoId !== null) {
-            const getDetail = async (infoId:string) => {
+            const getDetail = async (infoId: string) => {
                 const res = await fetch(process.env.NEXT_PUBLIC_FRONTEND_URL + "/api/admin/information/edit/" + infoId);
                 const responseBody: detailValue = await res.json();
                 setValue('uuid', responseBody.uuid);
@@ -228,7 +228,15 @@ export const useInfoForm = (infoId:string | null) => {
 
 
     const getUuid = async () => {
-        const res1 = await fetch(process.env.NEXT_PUBLIC_FRONTEND_URL + "/api/admin/information/getUuid");
+        const res1 = await fetch(process.env.NEXT_PUBLIC_FRONTEND_URL + "/api/admin/information/getUuid", {
+            method: 'GET',
+            headers: {
+                'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
+                'Pragma': 'no-cache',
+                'Expires': '0',
+                'Surrogate-Control': 'no-store'
+            }
+        });
         const responseBody: string = await res1.json(); // Response bodyを読み取る
         return responseBody
     }
