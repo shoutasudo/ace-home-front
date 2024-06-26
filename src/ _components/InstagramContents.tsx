@@ -68,6 +68,7 @@ const InstagramContents = () => {
                                             alt='instagram-img'
                                             object-fit="cover"
                                             className='instagram-img rounded-md'
+                                            unoptimized
                                         />
                                     </Link>
                                 </div>
