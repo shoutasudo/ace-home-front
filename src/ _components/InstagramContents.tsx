@@ -3,8 +3,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import DoubleLineBtn from './DoubleLineBtn';
-import { getUserData, getPostId, getPostInfo } from '@/lib/api/instagramApi';
-import { error, info } from 'console';
 
 interface idProps {
     id: string
@@ -29,15 +27,12 @@ const InstagramContents = () => {
             try {
                 const response = await fetch('/api/instagram/getPostId');
                 const ids = await response.json();
-                console.log(ids);
                 const infoDataPromise = await Promise.all(ids.map((id: idProps) => fetch(`/api/instagram/getPostInfo?id=${id.id}`)));
                 const infoData = await Promise.all(infoDataPromise.map((i) => i.json()));
-                console.log(infoData);
                 setInfos(infoData);
             } catch (error) {
                 console.log(error);
             }
-            
         }
 
         fetchData();
