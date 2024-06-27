@@ -136,11 +136,6 @@ const AdminHeader = ({ toggleDrawer, open }: AdminHeaderProps) => {
                     {pathCategory && pathCategory}
                     {pathType && pathType}
                 </Typography>
-                <IconButton color="inherit">
-                    <Badge badgeContent={4} color="secondary">
-                        <NotificationsIcon />
-                    </Badge>
-                </IconButton>
             </Toolbar>
         </AppBar>
     );

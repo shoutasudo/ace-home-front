@@ -37,7 +37,7 @@ const Information = () => {
 
     return (
         <div className="w-full flex justify-center">
-            <div className="w-[90%] my-20">
+            <div className="w-[90%] my-10">
                 <RegisterButton />
                 <Table size="small">
                     <TableHead
