@@ -8,7 +8,7 @@ import { TableBodyProps } from "@/types/information";
 
 
 
-const TableBody = ({setRows, rows, page, rowsPerPage }: TableBodyProps) => {
+const TableBody = ({ setRows, rows, page, rowsPerPage }: TableBodyProps) => {
     const router = useRouter();
 
     const deleteList = async (uuid: string) => {
@@ -32,7 +32,7 @@ const TableBody = ({setRows, rows, page, rowsPerPage }: TableBodyProps) => {
 
     return (
         <MUITableBody>
-            {rows &&
+            {rows.length !== 0 &&
                 rows
                     .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                     .map((row, index) => (

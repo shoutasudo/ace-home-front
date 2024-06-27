@@ -92,8 +92,8 @@ const RegisterForm = ({ infoId = null }: RegisterFormProps) => {
                                 error={!!errors.tag}
                             >
                                 <MenuItem value="新着" selected={defaultValue?.tag == '新着'} >新着</MenuItem>
-                                <MenuItem value="Twenty" selected={defaultValue?.tag == 'お知らせ'} >お知らせ</MenuItem>
-                                <MenuItem value="Thirty" selected={defaultValue?.tag == 'キャンペーン'} >キャンペーン</MenuItem>
+                                <MenuItem value="お知らせ" selected={defaultValue?.tag == 'お知らせ'} >お知らせ</MenuItem>
+                                <MenuItem value="キャンペーン" selected={defaultValue?.tag == 'キャンペーン'} >キャンペーン</MenuItem>
                             </Select>
                         )}
                     />

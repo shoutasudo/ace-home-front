@@ -9,10 +9,13 @@ export async function GET() {
         );
 
         console.log('レスポンスデータ:', res);
-        return new Response(JSON.stringify(res.data), {
+        return NextResponse.json(res.data, {
             status: res.status,
             headers: {
                 'Content-Type': 'application/json',
+                'Cache-Control': 'no-store',
+                'CDN-Cache-Control': 'no-store',
+                'Vercel-CDN-Cache-Control': 'no-store'
             },
         });
     } catch (error) {
