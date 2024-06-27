@@ -10,13 +10,6 @@ const Footer = () => {
                 <div className="footer-sns-icons text-mainPink w-full max-w-sm text-lg px-14">
                     <SnsIconList />
                 </div>
-                <div className="footer-description mt-6">
-                    <h3 className="text-xs text-center tracking-wider leading-5">
-                        ACE HOMEは、
-                        <br />
-                        ひとり暮らし女性を応援します
-                    </h3>
-                </div>
                 <div className="footer-log mt-4">
                     <Image
                         src="/icons/banner-horizontal.png"

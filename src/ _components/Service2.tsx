@@ -25,13 +25,11 @@ const Service2 = () => {
                     </div>
                     <div className="service-2-container-card-description flex justify-center items-center flex-col mt-6 md:text-center leading-6">
                         <p className="font-normal md:text-sm text-xs leading-6 md:tracking-widest tracking-tight text-center">
-                            希望条件がたくさんある・・・
-                            <br />
-                            なんとなく「一人暮らしがした」・・・
-                            <br />
-                            そんな『こだわり』や『なんとなく』から
-                            <br />
-                            希望のお部屋をお探ししますっ！
+                            希望条件がたくさんある・・・<br />
+                            「一人暮らしがしたい」「新しい家がほしい」<br />
+                            「家をリフォームしたい」<br />
+                            そんな『こだわり』や『なんとなく』から<br />
+                            お客様にあったご提案をいたします！
                         </p>
                     </div>
                     <div className="service-2-container-more-btn mt-6">
