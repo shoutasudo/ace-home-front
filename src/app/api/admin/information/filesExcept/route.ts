@@ -6,7 +6,6 @@ export async function POST(req: NextRequest) {
     try {
         // Read the request body as a ReadableStream
         const body = await req.json();
-        console.log(body)
 
         const res = await http.post(
             process.env.NEXT_PUBLIC_BACKEND_URL + "/api/admin/information/filesExcept",
