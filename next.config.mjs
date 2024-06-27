@@ -16,6 +16,10 @@ const nextConfig = {
             },
             {
                 protocol: 'https',
+                hostname: 'ace-home-api.com',
+            },
+            {
+                protocol: 'https',
                 hostname: process.env.NEXT_PUBLIC_FRONTEND_URL
             },
             {

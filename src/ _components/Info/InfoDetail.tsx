@@ -90,7 +90,7 @@ export const InfoDetail = ({ infoDetail }: InfoDetailProps) => {
     return (
         <div className="w-full">
             <div className="flex">
-                <div className="bg-mainPink px-3 py-1 text-center w-14 flex justify-center">
+                <div className="bg-mainPink px-3 py-1 text-center w-fit flex justify-center">
                     <p className="text-white noto-sans-jp font-medium text-sm">
                         {infoDetail.tag}
                     </p>
