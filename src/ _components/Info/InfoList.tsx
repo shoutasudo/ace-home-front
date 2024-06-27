@@ -18,7 +18,7 @@ const InfoList = ({ info }: infoListProps) => {
         <Link href={'/information/' + info.uuid}>
             <div key={info.uuid} className="information-container-content w-full border-b-mainPink border-b pb-5 mt-5">
                 <div className="information-container-content-tag text-left w-full mb-3">
-                    <div className="bg-mainPink px-3 py-1 text-center w-14 flex justify-center">
+                    <div className="bg-mainPink px-3 py-1 text-center w-fit flex justify-center">
                         <p className="text-white noto-sans-jp font-medium text-sm">
                             {info.tag}
                         </p>
