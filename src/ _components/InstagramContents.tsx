@@ -30,7 +30,6 @@ const InstagramContents = () => {
                 const ids = await response.json();
                 const infoDataPromise = await Promise.all(ids.map((id: idProps) => fetch(`/api/instagram/getPostInfo?id=${id.id}`)));
                 const infoData = await Promise.all(infoDataPromise.map((i) => i.json()));
-                console.log(infoData);
                 setInfos(infoData);
             } catch (error) {
                 console.log(error);

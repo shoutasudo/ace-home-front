@@ -257,7 +257,6 @@ export const useInfoForm = (infoId: string | null) => {
         try {
             if (infoId === null) {
                 const uuid: string = await uuidv4();
-                console.log(uuid)
                 const srcArray = await updateAllImageSrc(editor, uuid)
 
                 await filesExcept(uuid, srcArray)
