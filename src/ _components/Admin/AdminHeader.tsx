@@ -65,6 +65,14 @@ const AdminHeader = ({ toggleDrawer, open }: AdminHeaderProps) => {
                 setPathCategory("お問い合わせ");
                 break;
 
+            case "staff":
+                setPathCategory("スタッフ");
+                break;
+
+            case "contact":
+                setPathCategory("お問い合わせ");
+                break;
+
             default:
                 break;
         }

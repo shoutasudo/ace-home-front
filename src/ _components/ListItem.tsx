@@ -35,12 +35,14 @@ export const mainListItems = (handleListItemClick: any) => (
                 <ListItemText primary="スタッフ" />
             </ListItemButton>
         </Link>
-        <ListItemButton>
-            <ListItemIcon>
-                <EmailIcon />
-            </ListItemIcon>
-            <ListItemText primary="お問い合わせ" />
-        </ListItemButton>
+        <Link href={"/admin/contact/list"} onClick={handleListItemClick}>
+            <ListItemButton>
+                <ListItemIcon>
+                    <EmailIcon />
+                </ListItemIcon>
+                <ListItemText primary="お問い合わせ" />
+            </ListItemButton>
+        </Link>
         {/* <ListItemButton>
             <ListItemIcon>
                 <LayersIcon />
