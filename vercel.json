@@ -1,0 +1,16 @@
+{
+    "routes": [
+      {
+        "src": "/api/admin/information/getUuid",
+        "headers": {
+          "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate"
+        }
+      },
+      {
+        "src": "/api/admin/information/list",
+        "headers": {
+          "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate"
+        }
+      }
+    ]
+  }
