@@ -12,6 +12,7 @@ const createAxiosInstance = async () => {
     headers: {
       'X-Requested-With': 'XMLHttpRequest',
       'Application': 'application/json',
+      'Accept': 'application/json',
     },
     withCredentials: true,
     withXSRFToken: true,
