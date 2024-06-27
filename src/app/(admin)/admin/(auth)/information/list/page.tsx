@@ -58,12 +58,12 @@ const Information = () => {
                             <TableCell align="right"></TableCell>
                         </TableRow>
                     </TableHead>
-                    {rows.length === 0 &&
+                    {rows.length !== 0 &&
                         <TableBody setRows={setRows} rows={rows} page={page} rowsPerPage={rowsPerPage} />
 
                     }
                 </Table>
-                {rows.length === 0 && (
+                {rows.length !== 0 && (
                     <TablePagination
                         rowsPerPageOptions={[]} // オプションを空にする
                         component="div"

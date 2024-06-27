@@ -7,6 +7,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { useTipTap } from "./useTipTap";
 import { z } from "zod";
 import { ImageBody, detailValue, formData, zodObjType } from "@/types/information";
+import { v4 as uuidv4 } from 'uuid';
 
 
 
@@ -226,21 +227,6 @@ export const useInfoForm = (infoId: string | null) => {
         }
     };
 
-
-    const getUuid = async () => {
-        const res1 = await fetch(process.env.NEXT_PUBLIC_FRONTEND_URL + "/api/admin/information/getUuid", {
-            method: 'GET',
-            headers: {
-                'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
-                'Pragma': 'no-cache',
-                'Expires': '0',
-                'Surrogate-Control': 'no-store'
-            }
-        });
-        const responseBody: string = await res1.json(); // Response bodyを読み取る
-        return responseBody
-    }
-
     const informationRegister = async (data: formData, uuid: string) => {
         const formData = new FormData();
         formData.append('uuid', uuid);
@@ -270,7 +256,8 @@ export const useInfoForm = (infoId: string | null) => {
     const onSubmit: SubmitHandler<formData> = async (data: formData) => {
         try {
             if (infoId === null) {
-                const uuid: string = await getUuid();
+                const uuid: string = await uuidv4();
+                console.log(uuid)
                 const srcArray = await updateAllImageSrc(editor, uuid)
 
                 await filesExcept(uuid, srcArray)
