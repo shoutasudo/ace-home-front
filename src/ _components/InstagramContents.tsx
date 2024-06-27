@@ -16,6 +16,7 @@ interface PostInfoType {
     permalink: string,
     timestamp: string,
     username: string
+    thumbnail_url: string
 }
 
 const InstagramContents = () => {
@@ -29,6 +30,7 @@ const InstagramContents = () => {
                 const ids = await response.json();
                 const infoDataPromise = await Promise.all(ids.map((id: idProps) => fetch(`/api/instagram/getPostInfo?id=${id.id}`)));
                 const infoData = await Promise.all(infoDataPromise.map((i) => i.json()));
+                console.log(infoData);
                 setInfos(infoData);
             } catch (error) {
                 console.log(error);
@@ -54,15 +56,14 @@ const InstagramContents = () => {
                         <div className='w-full grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-4 place-items-center'>
                             {infos?.slice(0, 6).map((info) =>
                             (
-                                <div key={info.id} className='flex justify-center items-center w-11/12'>
+                                <div key={info.id} className='flex justify-center items-center w-11/12 h-1/2'>
                                     <Link href={info.permalink}>
                                         <Image
-                                            src={info.media_url}
+                                            src={info.media_type === 'IMAGE'? info.media_url : info.thumbnail_url}
                                             width={300}
                                             height={300}
                                             alt='instagram-img'
-                                            object-fit="cover"
-                                            className='instagram-img rounded-md'
+                                            className='instagram-img object-fill rounded-md'
                                             unoptimized
                                         />
                                     </Link>
