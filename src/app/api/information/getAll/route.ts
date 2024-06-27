@@ -1,6 +1,7 @@
 import http from "@/lib/axios";
 import { NextResponse, NextRequest } from "next/server";
 
+export const revalidate = 0;
 
 export async function GET() {
     try {
