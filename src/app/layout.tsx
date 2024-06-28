@@ -15,10 +15,10 @@ export const metadata: Metadata = {
         template: "%s | 女性の為の不動産ACE HOME",
         default: "女性の為の不動産ACE HOME",
     },
-    description: "兵庫県で女性が運営する女性の為の不動産会社",
+    description: "ACE HOMEは、兵庫県神戸市で女性が運営する女性スタッフによる不動産・リフォーム屋さんです。一人暮らしの女性、学生さん、ファミリーの方、もちろん男性の方も安心して相談出来るように宅地建物取引士・行政書士・２級管理施工技師などのプロフェッショナルがサポートいたします。女性の為の不動産ACE HOME",
     openGraph: {
         title: "女性の為の不動産ACE HOME",
-        description: "兵庫県で女性が運営する女性の為の不動産会社",
+        description: "ACE HOMEは、兵庫県神戸市で女性が運営する女性スタッフによる不動産・リフォーム屋さんです。一人暮らしの女性、学生さん、ファミリーの方、もちろん男性の方も安心して相談出来るように宅地建物取引士・行政書士・２級管理施工技師などのプロフェッショナルがサポートいたします。女性の為の不動産ACE HOME",
         url: "https://ace-home-kobe.com",
         siteName: "ACE HOMEのホームページ",
         locale: "jp",

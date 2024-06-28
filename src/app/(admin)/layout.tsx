@@ -1,7 +1,7 @@
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-    title: 'TOPページ',
+    title: '管理ページ',
     robots: 'noindex'
 }
 
