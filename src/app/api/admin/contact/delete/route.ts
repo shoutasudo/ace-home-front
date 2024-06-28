@@ -1,4 +1,5 @@
 import http from "@/lib/axios";
+import createAxiosInstance from "@/lib/axiosWithToken";
 import { NextResponse } from "next/server";
 import type { NextRequest } from 'next/server.js';
 
@@ -6,7 +7,8 @@ export async function DELETE(req: NextRequest) {
     try {
         const body = await req.json();
 
-        const res = await http.delete(
+        const axios = await createAxiosInstance();
+        const res = await axios.delete(
             process.env.NEXT_PUBLIC_BACKEND_URL + "/api/admin/contact/delete/" + body.id
         );
 

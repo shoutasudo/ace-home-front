@@ -12,7 +12,10 @@ const Contact = () => {
     const getList = async () => {
         try {
             const res = await fetch(process.env.NEXT_PUBLIC_FRONTEND_URL + "/api/admin/contact/list");
-            const resBody = await res.json();
+            let resBody = null;
+            if(res.status === 200) {
+                resBody = await res.json();
+            }
             setRows(resBody);
         } catch (error) {
             console.error("Response Data : ", error);
@@ -47,11 +50,11 @@ const Contact = () => {
                             <TableCell align="right"></TableCell>
                         </TableRow>
                     </TableHead>
-                    {rows.length !== 0 &&
+                    {rows !== null && rows.length !== 0 &&
                         <ContactTableBody setRows={setRows} rows={rows} page={page} rowsPerPage={rowsPerPage} />
                     }
                 </Table>
-                {rows.length !== 0 && (
+                {rows !== null && rows.length !== 0 && (
                     <TablePagination
                         rowsPerPageOptions={[]} // オプションを空にする
                         component="div"

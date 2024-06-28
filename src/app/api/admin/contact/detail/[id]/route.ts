@@ -1,4 +1,5 @@
-import http from "@/lib/axios";
+
+import createAxiosInstance from "@/lib/axiosWithToken";
 import { NextRequest, NextResponse } from "next/server";
 
 
@@ -6,8 +7,9 @@ export async function GET(request: NextRequest, { params }: { params: {id: strin
     try {
         const { id } = params;
         console.log("/api/admin/contact/detail/" + id);
-        
-        const res = await http.get(process.env.NEXT_PUBLIC_BACKEND_URL + "/api/admin/contact/detail/" + id );
+
+        const axios = await createAxiosInstance();
+        const res = await axios.get(process.env.NEXT_PUBLIC_BACKEND_URL + "/api/admin/contact/detail/" + id );
 
         // console.log('レスポンスデータ:', res);
         return NextResponse.json(res.data);
@@ -24,7 +26,8 @@ export async function GET(request: NextRequest, { params }: { params: {id: strin
 export async function POST(request: NextRequest) {
     try {
         const { id } = await request.json();
-        const res = await http.post(process.env.NEXT_PUBLIC_BACKEND_URL + "/api/admin/contact/unread", { id });
+        const axios = await createAxiosInstance();
+        const res = await axios.post(process.env.NEXT_PUBLIC_BACKEND_URL + "/api/admin/contact/unread", { id });
         return NextResponse.json(res.data);
     } catch (error) {
         // console.error('Error:', error);
