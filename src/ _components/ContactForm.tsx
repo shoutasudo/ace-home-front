@@ -2,7 +2,6 @@
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm, FormProvider } from 'react-hook-form'
-import http from '@/lib/axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretDown, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import ContactRadioBtn from './ContactRadioBtn'
@@ -132,7 +131,8 @@ const ContactForm = () => {
         register,
         formState: { errors, isValid },
         watch,
-        handleSubmit
+        handleSubmit,
+        reset
     } = methods
 
     // watch input fields (初期状態はvalidationが有効になっていないため)
@@ -174,6 +174,9 @@ const ContactForm = () => {
                     toast.error(resdata.message || 'エラーが発生しました. お手数ですが時間を置いて再実行してください.')
                 }
             } else {
+                reset()
+                setIsInitial(true)
+                setIsChecked(false)
                 toast.success(resdata.message)
             }
         } catch (error) {
