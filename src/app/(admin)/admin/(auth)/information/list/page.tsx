@@ -12,7 +12,7 @@ import { RegisterButton } from "@/ _components/Admin/Info/RegisterButton";
 
 const Information = () => {
     const [page, setPage] = useState(0);
-    const [rows, setRows] = useState<any[]>([]);
+    const [rows, setRows] = useState<any[] | null>(null);
 
     const getList = async () => {
         try {
@@ -59,7 +59,7 @@ const Information = () => {
                     </TableHead>
                     <TableBody setRows={setRows} rows={rows} page={page} rowsPerPage={rowsPerPage} />
                 </Table>
-                {rows.length !== 0 && (
+                {(rows !== null && rows !== undefined && rows.length !== 0 )&& (
                     <TablePagination
                         rowsPerPageOptions={[]} // オプションを空にする
                         component="div"
