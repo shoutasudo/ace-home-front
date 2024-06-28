@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 }
 
 const AppLayout = ({ children }: { children: React.ReactNode }) => {
-    const phone = '09014497070'
+
     return (
         <>
             <div className="w-full fixed top-0 z-50">
