@@ -10,7 +10,6 @@ import { TableBodyProps } from "@/types/information";
 
 const TableBody = ({ setRows, rows, page, rowsPerPage }: TableBodyProps) => {
     const router = useRouter();
-    console.log(rows)
 
     const deleteList = async (uuid: string) => {
         try {
