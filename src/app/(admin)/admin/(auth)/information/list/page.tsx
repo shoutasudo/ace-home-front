@@ -23,6 +23,7 @@ const Information = () => {
             setRows(responseBody);
         } catch (error) {
             console.log("Response Data:", error);
+            setRows([]); // エラー時には空の配列を設定
         }
     };
     useEffect(() => {
