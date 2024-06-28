@@ -1,4 +1,4 @@
-import http from "@/lib/axios";
+import createAxiosInstance from "@/lib/axiosWithToken";
 import { NextResponse, NextRequest } from "next/server";
 
 
@@ -10,7 +10,8 @@ export async function POST(req: NextRequest) {
         const infoId = searchParams.get('infoId');
 
 
-        const res = await http.post(
+        const axios = await createAxiosInstance();
+        const res = await axios.post(
             process.env.NEXT_PUBLIC_BACKEND_URL + "/api/admin/information/update/" + infoId,
             formData,
         );

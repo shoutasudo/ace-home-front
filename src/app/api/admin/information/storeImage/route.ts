@@ -1,4 +1,4 @@
-import http from "@/lib/axios";
+import createAxiosInstance from "@/lib/axiosWithToken";
 import { NextResponse, NextRequest } from "next/server";
 
 
@@ -7,7 +7,8 @@ export async function POST(req: NextRequest) {
         // Read the request body as a ReadableStream
         const body = await req.json();
 
-        const res = await http.post(
+        const axios = await createAxiosInstance();
+        const res = await axios.post(
             process.env.NEXT_PUBLIC_BACKEND_URL + "/api/admin/information/store/image",
             body,
         );
