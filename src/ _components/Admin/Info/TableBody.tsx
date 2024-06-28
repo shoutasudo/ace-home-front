@@ -10,6 +10,7 @@ import { TableBodyProps } from "@/types/information";
 
 const TableBody = ({ setRows, rows, page, rowsPerPage }: TableBodyProps) => {
     const router = useRouter();
+    console.log(rows)
 
     const deleteList = async (uuid: string) => {
         try {
@@ -32,49 +33,47 @@ const TableBody = ({ setRows, rows, page, rowsPerPage }: TableBodyProps) => {
 
     return (
         <MUITableBody>
-            {(rows !== null && rows !== undefined && rows.length !== 0 ) &&
-                rows
-                    .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                    .map((row, index) => (
-                        <TableRow
-                            key={row.uuid}
-                            sx={{
-                                backgroundColor:
-                                    index % 2 === 0 ? "#ffffff" : "#e8e8e8",
-                            }}
-                        >
-                            <TableCell>
-                                {new Date(row.created_at).toLocaleDateString(
-                                    "ja-JP"
-                                )}
-                            </TableCell>
-                            <TableCell>{row.title}</TableCell>
-                            <TableCell>{row.tag}</TableCell>
-                            {/* <TableCell>{row.paymentMethod}</TableCell> */}
-                            <TableCell align="right">
-                                <div className="flex justify-end">
-                                    <div className="flex">
-                                        <div>
-                                            <Button variant="outlined" onClick={() => router.push('/admin/information/edit/' + row.uuid)}>
-                                                詳細
-                                            </Button>
-                                        </div>
-                                        <div className="ml-5">
-                                            <Button
-                                                variant="outlined"
-                                                color="error"
-                                                onClick={() =>
-                                                    deleteList(row.uuid)
-                                                }
-                                            >
-                                                削除
-                                            </Button>
-                                        </div>
+            {(rows !== null && rows !== undefined && rows.length !== 0) &&
+                (rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row, index) => (
+                    <TableRow
+                        key={row.uuid}
+                        sx={{
+                            backgroundColor:
+                                index % 2 === 0 ? "#ffffff" : "#e8e8e8",
+                        }}
+                    >
+                        <TableCell>
+                            {new Date(row.created_at).toLocaleDateString(
+                                "ja-JP"
+                            )}
+                        </TableCell>
+                        <TableCell>{row.title}</TableCell>
+                        <TableCell>{row.tag}</TableCell>
+                        {/* <TableCell>{row.paymentMethod}</TableCell> */}
+                        <TableCell align="right">
+                            <div className="flex justify-end">
+                                <div className="flex">
+                                    <div>
+                                        <Button variant="outlined" onClick={() => router.push('/admin/information/edit/' + row.uuid)}>
+                                            詳細
+                                        </Button>
+                                    </div>
+                                    <div className="ml-5">
+                                        <Button
+                                            variant="outlined"
+                                            color="error"
+                                            onClick={() =>
+                                                deleteList(row.uuid)
+                                            }
+                                        >
+                                            削除
+                                        </Button>
                                     </div>
                                 </div>
-                            </TableCell>
-                        </TableRow>
-                    ))}
+                            </div>
+                        </TableCell>
+                    </TableRow>
+                )))}
         </MUITableBody>
     );
 };
