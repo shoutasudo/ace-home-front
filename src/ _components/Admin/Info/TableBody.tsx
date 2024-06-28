@@ -32,7 +32,7 @@ const TableBody = ({ setRows, rows, page, rowsPerPage }: TableBodyProps) => {
 
     return (
         <MUITableBody>
-            {(rows.length !== 0 && rows !== null && rows !== undefined) &&
+            {(rows !== null && rows !== undefined && rows.length !== 0 ) &&
                 rows
                     .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                     .map((row, index) => (

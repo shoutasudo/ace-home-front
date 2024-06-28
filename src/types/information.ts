@@ -10,8 +10,8 @@ export interface RowsObj {
 }
 
 export interface TableBodyProps {
-    setRows: React.Dispatch<React.SetStateAction<Array<RowsObj>>>;
-    rows: Array<RowsObj>;
+    setRows: React.Dispatch<React.SetStateAction<Array<RowsObj> | null>>;
+    rows: Array<RowsObj> | null;
     page: number;
     rowsPerPage: number;
 }
