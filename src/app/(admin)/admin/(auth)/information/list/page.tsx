@@ -19,16 +19,20 @@ const Information = () => {
             const res = await fetch(process.env.NEXT_PUBLIC_FRONTEND_URL + "/api/admin/information/list", {
                 cache: 'no-store', // キャッシュを無効化するオプションを追加
             });
-            const responseBody = await res.json();
+            let responseBody = null
+            if(res.status == 200) {
+                responseBody = await res.json();
+            }
             setRows(responseBody);
         } catch (error) {
             console.log("Response Data:", error);
-            setRows([]); // エラー時には空の配列を設定
+            setRows(null); // エラー時には空の配列を設定
         }
     };
     useEffect(() => {
         getList();
     }, []);
+
     const rowsPerPage = 5;
 
     const handleChangePage = (event: MouseEvent<HTMLButtonElement> | null, newPage: number) => {
@@ -60,7 +64,7 @@ const Information = () => {
                     </TableHead>
                     <TableBody setRows={setRows} rows={rows} page={page} rowsPerPage={rowsPerPage} />
                 </Table>
-                {(rows !== null && rows !== undefined && rows.length !== 0 )&& (
+                {(rows !== null && rows !== undefined && rows.length !== 0) && (
                     <TablePagination
                         rowsPerPageOptions={[]} // オプションを空にする
                         component="div"
