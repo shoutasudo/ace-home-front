@@ -21,8 +21,8 @@ const StaffCard = ({ src, jobTitle, name, comment }: StaffCardProps) => {
                     src={src}
                     alt="cart"
                     className='object-contain h-[100px] w-full'
-                    height={518}
-                    width={350}
+                    height={350}
+                    width={518}
                 />
             </div>
             <div className="card-footer bg-mainPink  p-4 text-white text-center noto-sans-jp py-1">
