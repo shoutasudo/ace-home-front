@@ -30,8 +30,8 @@ const useUpdateForm = (staff: Staff) => {
             .min(1, {
                 message: '役職は必須項目です'
             })
-            .max(10, {
-                message: '役職は10文字以下で入力してください'
+            .max(20, {
+                message: '役職は20文字以下で入力してください'
             }),
         image: z.instanceof(File, {
             message: '画像ファイルを選択してください'
