@@ -20,7 +20,7 @@ const StaffCard = ({ src, jobTitle, name, comment }: StaffCardProps) => {
                 <Image
                     src={src}
                     alt="cart"
-                    className='object-contain h-[100px] w-full'
+                    className='object-contain h-[100%] w-full'
                     height={350}
                     width={518}
                 />
