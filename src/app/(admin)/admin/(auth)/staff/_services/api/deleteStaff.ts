@@ -4,7 +4,7 @@ export const deleteStaff = async (staffId: string) => {
         const params = {
             staffId: staffId
         };
-        const res = await fetch('http://localhost:3000/api/staff/delete', {
+        const res = await fetch('/api/staff/delete', {
             method: 'POST',
             body: JSON.stringify(params),
         });
