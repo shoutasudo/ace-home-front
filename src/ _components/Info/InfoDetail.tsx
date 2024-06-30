@@ -97,7 +97,7 @@ export const InfoDetail = ({ infoDetail }: InfoDetailProps) => {
                 </div>
             </div>
             <div className="flex justify-center">
-                <p className="font-bold text-4xl">{infoDetail.title}</p>
+                <p className="font-bold text-xl md:text-4xl">{infoDetail.title}</p>
             </div>
             <div className="flex justify-center my-10">
                 <Image
