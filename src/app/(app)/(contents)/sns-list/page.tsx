@@ -81,7 +81,7 @@ const SnsListPage = () => {
                 <div className="sns-list-card-content-sns-card w-full py-6 px-5 mt-3 bg-white ring-mainPink rounded-lg flex justify-center sm:flex-col items-center ring-4">
                     <div className="w-3/12 sm:w-full">
                         <div className="sns-list-card-content-sns-card-icon flex justify-center items-center">
-                            <Link href="https://x.com/ace_home4367" target='_blank'>
+                            <Link href="https://x.com/ace_home_kobe" target='_blank'>
                                 <Image
                                     src="/socal-logo/x.png"
                                     width={66}
