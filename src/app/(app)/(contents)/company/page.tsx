@@ -32,7 +32,7 @@ const Company = () => {
                                 </tr>
                                 <tr className="flex flex-col sm:flex-row items-center">
                                     <th className='bg-mainPink text-white font-bold text-center w-full sm:w-1/3 min-w-4 border-t-0 border-l border-b border-gray-300 px-4 py-2 text-sm'>免許番号</th>
-                                    <td className='border border-t-0 border-gray-300 bg-white px-4 py-2 w-full sm:w-2/3 text-center text-fontMainBrown text-sm'>国土交通大臣免許番号(0)第0000号</td>
+                                    <td className='border border-t-0 border-gray-300 bg-white px-4 py-2 w-full sm:w-2/3 text-center text-fontMainBrown text-sm'>兵庫県知事(1)第12571号</td>
                                 </tr>
                             </tbody>
                         </table>
