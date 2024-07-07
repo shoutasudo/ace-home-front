@@ -58,7 +58,7 @@ const InstagramContents = () => {
                                 <div key={info.id} className='flex justify-center items-center w-11/12 h-1/2'>
                                     <Link href={info.permalink}>
                                         <Image
-                                            src={info.media_type === 'IMAGE'? info.media_url : info.thumbnail_url}
+                                            src={info.media_type === 'VIDEO' ? info.thumbnail_url : info.media_url}
                                             width={300}
                                             height={300}
                                             alt='instagram-img'
